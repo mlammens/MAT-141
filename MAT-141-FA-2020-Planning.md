@@ -10,4 +10,10 @@
 
 ## Some ideas for group meetings
 
-* Data vis - disect a visualization on COVID from a news source, such as NYT or iveThirtyEight, and from CDC (or Johns Hopkins site)
+* Data vis - disect a visualization on COVID from a news source, such as NYT or FiveThirtyEight, and from CDC (or Johns Hopkins site)
+* Conditional probability - COVID testing specificity and sensitivity (could also do this with Lyme pretty easily) 
+
+
+## Some ideas for assignments and problems
+
+* Statistically creative project
