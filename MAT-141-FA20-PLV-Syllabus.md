@@ -65,15 +65,17 @@ Assessment
 I will assess your achievement of the learning objectives based on your
 performance on the following formative and summative assessments. In
 calculating your final score, I will drop the lowest quiz score and the
-lowest in-class analysis assignment score.
+lowest analysis review/write-up score.
 
-Quizzes - 10%
+Quizzes - 20%
 
-In-class analysis assignments - 20%
+R / `learnr` modules - 20%
 
-Term project - 10%
+Analysis reviews/write-ups (Group work) - 10%
 
-Three exams - 60% (20% each)
+Term project - 15%
+
+Three exams - 30% (10% each)
 
 The following is the **course grading scale**:
 
