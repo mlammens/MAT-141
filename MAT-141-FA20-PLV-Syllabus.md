@@ -184,21 +184,29 @@ campus Counseling Center (Pace Plaza, 212-346-1526; Westchester,
 Course calendar (warning -- subject to change)
 ----------------------------------------------
 
-This schedule is subject to change. Assignments are to be submitted at
-the end of the class period. Quizes are to be completed before the class
-period.
+This schedule is subject to change. 
+
+| **Week** | **Dates** | **Groups<br>Meeting** |**Topic** | **Textbook<br>Readings ** | **Quiz and<br> Assignment** |
+|-----|-----------|--------------------|----------------------|-------------|---------------------|
+|1|Aug 24 & 26    |Mon - all students online <br> Wed - Groups A & B  |Introduction to data and statistical analysis & scientific studies|Ch 1 - Sec 1-3|Quiz 1 - Due Fri, Aug 28|
+|2|Aug 31 & Sep 2 |Mon - Groups C & D <br> Wed - Groups A & B         |Exploratory data analysis and descriptive statistics|Ch 1 - Sec 4-7|Quiz 2 - Due Wed, Sep 2|
+|3|Sep 7 & 9      |Mon - *asynchronous online* <br> Wed - Groups C & D       |Probability |Ch 2 - Sec 1-4| Quiz 3 - Due Wed Sep 9|
+|4|Sep 14 & 16    |Mon - Groups A & B <br> Wed - Groups C & D         |Distributions of random variables | Ch 3 - Sec 1-4 | Quiz 4 - Due Mon Sep 14 |
+|5|Sep 21 & 23    |Mon - **Review** - all online <br> Wed - **Exam 1** | |||
+
+
+
 
 +-----------------+-----------------+-----------------+-----------------+
-| **Date**        | **Topic**       | **Assignment /  | **Relevant      |
-|                 |                 | Quiz Due**      | Reading**       |
+| **Date**        | **Topic**       | **Quiz Due**    | **Textbook Readings** |
 +=================+=================+=================+=================+
 | **Mon, Aug 24** | Introduction to |                 |                 |
 |                 | data and        |                 |                 |
 |                 | statistical     |                 |                 |
 |                 | analysis        |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **Wed, Aug 26** | Scientific      | Quiz 1          | OS3 - Ch 1 -    |
-|                 | studies and     |                 | Sections 1-5    |
+| **Wed, Aug 26** | Scientific      | Quiz 1 -        | OS3 - Ch 1 -    |
+|                 | studies and     | Syllabus        | Sections 1-5    |
 |                 | sampling        |                 |                 |
 |                 | strategies      |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -318,9 +326,5 @@ period.
 +-----------------+-----------------+-----------------+-----------------+
 | **Wed, Dec 2**  | Exam 3          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
+
+
