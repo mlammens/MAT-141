@@ -16,8 +16,6 @@ MAT 141 -- CRN 71236: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 
 **Office Hours:** TBD
 
-> If these don't fit your schedule, please contact me to schedule
-> another time.
 
 Course description
 ------------------
@@ -90,9 +88,9 @@ B 86%-83% C- 69%-67%
 Required Text
 -------------
 
-Diez, Barr, and Çetinkaya-Rundel. 2015. OpenIntro Statistics, **[Third
+Vu, J. and Harrington, D. Introductory Statistics for the Life and Biomedical Sciences, **[First
 Edition]{.underline}**. OpenIntro Project (available for free at
-<https://www.openintro.org/stat/textbook.php>)
+<https://www.openintro.org/book/biostat/>)
 
 Required Software
 -----------------
