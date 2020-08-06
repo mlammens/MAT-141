@@ -1,20 +1,15 @@
-MAT 141 -- CRN 71236: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
+MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 ===================================================================
 
 **Credits:** 4\
 **Meeting day and time:** Monday and Wednesday, 7:55 AM to 9:55 AM\
 **Term:** Fall 2020\
-**Location:** Environmental Classroom
-
-**Professor:** Dr. Matthew Aiello-Lammens
-
-**Email:** <maiellolammens@pace.edu>
-
-**Phone:** (914) 773-3110
-
-**Office Location:** 102 Environmental Classroom Building
-
-**Office Hours:** TBD
+**Location:** Environmental Classroom\
+**Professor:** Dr. Matthew Aiello-Lammens\
+**Email:** <maiellolammens@pace.edu>\
+**Phone:** (914) 773-3110\
+**Office Location:** 102 Environmental Classroom Building\
+**Office Hours:** TBD\
 
 
 Course description
@@ -33,57 +28,42 @@ sets.
 Rationale {#rationale-1}
 ---------
 
-Scientists need to analyze data in order to evaluate hypotheses and
-extract further insights from their observations. Further, the ability
-to analyze data collected during lab and field work is a key component
-of effective science communication. This course will provide students
-with these techniques. Additionally, the methods of biostatistical
-analysis are applicable in all fields relating to science, whether they
-are applied directly when analyzing data or indirectly by providing a
-structure to interpret scientific findings.
+Scientists and biomedical professionals need to analyze data to get insights from their observations, determine what the best practices in a field are, and evaluate hypotheses. 
+Further, the ability to analyze data is a key part of effective science communication. 
+This course will provide students with these techniques. 
+Additionally, the methods of biostatistical analysis are applicable in all fields relating to science, whether they are applied directly when analyzing data or indirectly by providing a structure to interpret scientific findings.
 
-Learning objectives
+Course learning objectives
 -------------------
 
--   How to perform exploratory data analysis.
+During this course, students will be introduced to the foundational mathematics of the basic principles of statistics and learn how to apply these principles to data analysis and communication. Specific course learning objectives are:
 
--   How to evaluate data quality.
-
--   Methods to visualize patterns in data.
-
--   How to identify the most appropriate analysis techniques to use with
-    a given dataset.
-
--   How to perform standard data analysis techniques, including linear
-    regression, ANOVA, and generalized linear modeling.
+* To become familiar with different data collection approaches and identify the uses and limitations of these approaches in context of life science applicaitons.
+* To acquire the knowledge and skills to confidently carry out exploritory data analyses, including the ability to construct effective data visualizations.
+* To develop and practice the skills of evalutating data quality. 
+* To be able to identify the most appropriate analysis techniques to use with a given dataset.
+* To acquire the knowledge and skills to confidently perform standard data analysis techniques, including T tests, linear regression, ANOVA, and $\chi^2$ tests.
 
 Assessment
 ----------
 
-I will assess your achievement of the learning objectives based on your
-performance on the following formative and summative assessments. In
-calculating your final score, I will drop the lowest quiz score and the
-lowest analysis review/write-up score.
+I will assess your achievement of the course learning objectives and class learning outcomes based on your performance on the formative and summative assessments listed below. 
+In calculating your final score, I will drop the lowest quiz score and the lowest analysis review/write-up score.
 
-Quizzes - 20%
-
-R / `learnr` modules - 20%
-
-Analysis reviews/write-ups (Group work) - 10%
-
-Term project - 15%
-
-Three exams - 30% (10% each)
+* Quizzes - 20%\
+* R / `learnr` modules - 20%\
+* Analysis reviews/write-ups (Group work) - 10%\
+* Term project - 15%\
+* Three exams - 30% (10% each)\
 
 The following is the **course grading scale**:
 
-A 100%-94% B- 82%-80% D+ 66%-63%
+A 100%-94%; A- 93%-90%\
+B+ 89%-87%; B 86%-83%; B- 82%-80%\
+C+ 79%-75%; C 74%-70%; C- 69%-67%\
+D+ 66%-63%; D 62%-60%\
+F below 60%\
 
-A- 93%-90% C+ 79%-75% D 62%-60%
-
-B+ 89%-87% C 74%-70% F below 60%
-
-B 86%-83% C- 69%-67%
 
 Required Text
 -------------
@@ -110,10 +90,8 @@ Course Policies
 
 ### Attendance
 
-Attendance and punctuality are required. Excused absences will be
-considered, but must be discussed with Prof. Aiello-Lammens. Unexcused
-absences and/or consistent lateness will negatively impact a student's
-final assessment and could result in failure.
+Attendance and punctuality during your in-person and/or synchronous meeting session are expected.
+However, given the extraordinary times we are working through, excused absences will be granted if you contact me by email.
 
 ### Late assignments
 
@@ -187,142 +165,17 @@ This schedule is subject to change.
 | **Week** | **Dates** | **Groups<br>Meeting** |**Topic** | **Textbook<br>Readings ** | **Quiz and<br> Assignment** |
 |-----|-----------|--------------------|----------------------|-------------|---------------------|
 |1|Aug 24 & 26    |Mon - all students online <br> Wed - Groups A & B  |Introduction to data and statistical analysis & scientific studies|Ch 1 - Sec 1-3|Quiz 1 - Due Fri, Aug 28|
-|2|Aug 31 & Sep 2 |Mon - Groups C & D <br> Wed - Groups A & B         |Exploratory data analysis and descriptive statistics|Ch 1 - Sec 4-7|Quiz 2 - Due Wed, Sep 2|
-|3|Sep 7 & 9      |Mon - *asynchronous online* <br> Wed - Groups C & D       |Probability |Ch 2 - Sec 1-4| Quiz 3 - Due Wed Sep 9|
-|4|Sep 14 & 16    |Mon - Groups A & B <br> Wed - Groups C & D         |Distributions of random variables | Ch 3 - Sec 1-4 | Quiz 4 - Due Mon Sep 14 |
-|5|Sep 21 & 23    |Mon - **Review** - all online <br> Wed - **Exam 1** | |||
-
-
-
-
-+-----------------+-----------------+-----------------+-----------------+
-| **Date**        | **Topic**       | **Quiz Due**    | **Textbook Readings** |
-+=================+=================+=================+=================+
-| **Mon, Aug 24** | Introduction to |                 |                 |
-|                 | data and        |                 |                 |
-|                 | statistical     |                 |                 |
-|                 | analysis        |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Aug 26** | Scientific      | Quiz 1 -        | OS3 - Ch 1 -    |
-|                 | studies and     | Syllabus        | Sections 1-5    |
-|                 | sampling        |                 |                 |
-|                 | strategies      |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Aug 31** | Introduction to | Assignment 1 -- | [Software       |
-|                 | R/RStudio and   | Working with    | Carpentry -     |
-|                 | reproducible    | Rmd files       | Programming     |
-|                 | work            |                 | with R - Sects. |
-|                 |                 |                 | 1, 2, and       |
-|                 |                 |                 | 7](https://swca |
-|                 |                 |                 | rpentry.github. |
-|                 |                 |                 | io/r-novice-inf |
-|                 |                 |                 | lammation/)     |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Sep 2**  | Random sampling |                 | OS3 -- Ch 1 --  |
-|                 | and data        |                 | Sections 4-6    |
-|                 | visualization   |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Sep 7**  | More data vis   | Quiz 2          |                 |
-| *Asynchronous*  | and random      |                 |                 |
-|                 | sampling        | Assignment 2 -- |                 |
-|                 |                 | Exploring data  |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Sep 9**  | Descriptive     |                 | OS3 -- Ch 1 --  |
-|                 | statistics      |                 | Sections 6-7    |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Sep 14** | Probability     | Quiz 3          | OS3 -- Ch 2 --  |
-|                 |                 |                 | Section 1       |
-|                 |                 | Assignment 3 -- |                 |
-|                 |                 | Tossing coins   |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Sep 16** | No Class --     |                 |                 |
-|                 | Rosh Hashanah   |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Sep 21** | Probability and |                 | OS3 -- Ch 2 --  |
-|                 | distributions   |                 | Sec 2; Ch 3 Sec |
-|                 | -- Lecture      |                 | 4               |
-|                 | online -- no    |                 |                 |
-|                 | in-class        |                 |                 |
-|                 | session         |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Sep 23** | Probability and | Quiz 4 (DUE     | OS3 -- Ch 3 --  |
-|                 | distributions   | WED)            | Sections 1 and  |
-|                 |                 |                 | 4               |
-|                 |                 | Assignment 4 -- |                 |
-|                 |                 | Distributions   |                 |
-|                 |                 | in nature       |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Sep 28** | Review and term |                 |                 |
-| *Asynchronous*  | project         |                 |                 |
-|                 | proposal        |                 |                 |
-|                 | discussion      |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Sep 30** | Exam 1          |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Oct 5**  | Confidence      | Term project    | OS3 -- Ch 4 --  |
-|                 | Intervals       | proposal due    | Sections 1 and  |
-|                 |                 |                 | 2               |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Oct 7**  | Hypothesis      | Quiz 5          | OS3 -- Ch 4 --  |
-|                 | testing         |                 | Section 3       |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Oct 12** | Hypothesis      | Assignment 5 -- | OS3 -- Ch 4 --  |
-|                 | testing         | Confidence      | Sections 4 and  |
-|                 | (cont'd)        | intervals and   | 5               |
-|                 |                 | Hypothesis      |                 |
-|                 |                 | Testing         |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Oct 14** | Hypothesis      |                 | OS3 -- Ch 5 --  |
-|                 | testing - one   |                 | Sections 1 and  |
-|                 | sample          |                 | 2               |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Oct 19** | Comparing two   |                 | OS3 -- Ch 5 --  |
-|                 | means -- t      |                 | Section 3       |
-|                 | tests           |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Oct 21** | Violation of    | Quiz 6          | OS3 -- Ch 3 --  |
-|                 | assumptions and |                 | Section 2;      |
-|                 | non-parametric  | Assignment 6 -- | other resources |
-|                 | stats,          | Hypothesis      | noted in Class  |
-|                 | bootstrapping   | testing, two    | Plan            |
-|                 | and             | ways            |                 |
-|                 | randomization   |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Oct 26** | ANOVA           |                 | OS3 -- Ch 5 --  |
-|                 |                 |                 | Section 5       |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Oct 28** |                 | Term project    |                 |
-|                 |  Term           | data search     |                 |
-|                 | project         | activity        |                 |
-|                 | proposal        |                 |                 |
-|                 | discussion      |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Nov 2**  | Review          | Term project    |                 |
-|                 |                 | update due      |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Nov 4**  | Exam 2          |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Nov 9**  | ANOVA           | Assignment 7 -  | OS3 -- Ch 5 --  |
-|                 |                 | ANOVA           | Section 5       |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Nov 11** | Linear          |                 | OS3 -- Ch 7 --  |
-|                 | regression      |                 | Sections 1-2    |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Nov 16** | Linear          | Quiz 7;         | OS3 -- Ch 7 --  |
-|                 | regression      |                 | Sections 3-4    |
-|                 |                 | Assignment 8 -  |                 |
-|                 |                 | Regression      |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Nov 18** | Multiple and    |                 | OS3 -- Ch 8 --  |
-|                 | GLM regression  |                 | Section 4       |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mon, Nov 23** | Goodness of fit | Quiz 8;         | OS3 -- Ch 6 --  |
-|                 | and contingency |                 | Sections 1-3    |
-|                 | tables          | Assignment 9 -- |                 |
-|                 |                 | Complex         |                 |
-|                 |                 | regressions     |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Wed, Dec 2**  | Exam 3          |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-
+|2|Aug 31 & Sep 2 |Mon - Groups C & D <br> Wed - Groups A & B         |Exploratory data analysis and descriptive statistics|Ch 1 - Sec 4-7|Quiz 2 - Due Fri, Sep 4|
+|3|Sep 7 & 9      |Mon - *asynchronous online* <br> Wed - Groups C & D       |Probability |Ch 2 - Sec 1-4| Quiz 3 - Due Fri, Sep 11|
+|4|Sep 14 & 16    |Mon - Groups A & B <br> Wed - Groups C & D         |Distributions of random variables | Ch 3 - Sec 1-4 | Quiz 4 - Due Fri, Sep 18 |
+|5|Sep 21 & 23    |Mon - **Review** - all online <br> Wed - **Exam 1**| |||
+|6|Sep 28 & 30    |Mon - *asynchronous* - schedule one-on-one meetings <br> Wed - all students online  |Variability and confidence intervals | Ch 4 - Sec 1-2 |Term Project Proposal - Due Wed, Sep 30 |
+|7|Oct 5 & 7      |Mon - Groups A & B <br> Wed - Groups C & D         |Hypothesis testing | Ch 4 - Sec 3-4 |Quiz 5 - Due Fri, Oct 9 |
+|8|Oct 12 & 14    |Mon - Groups A & B <br> Wed - Groups C & D         |Inference for numerical data: *t* tests | Ch 5 - Sec 1-3 |Quiz 6 - Due Fri, Oct 14 |
+|9|Oct 19 & 21    |Mon - Groups A & B <br> Wed - Groups C & D         |Inference for numerical data: power and ANOVA | Ch 5 - Sec 4-6 |Quiz 7 - Due Fri, Oct 21 |
+|10|Oct 26 & 28   |Mon - **Review** - all online <br> Wed - **Exam 2**| ||Term Project Update - Due Fri, Oct 30|
+|11|Nov 2 & 4     |Mon - Groups A & B <br> Wed - Groups C & D         |Simple linear regression | Ch 6 - Sec 1-6 | Quiz 8 - Due Fri, Nov 6 |
+|12|Nov 9 & 11    |Mon - Groups A & B <br> Wed - Groups C & D         |Multiple linear regression | Ch 7 - Sec 1-4, 7-8 | Quiz 9 - Due Fri, Nov 11 |
+|13|Nov 16 & 18   |Mon - Groups A & B <br> Wed - Groups C & D         |Inference for categorical data | Ch 8 - Sec 1-6 | Quiz 10 - Due Fri, Nov 10 |
+|14 & 15| Nov 23 & Dec 2 |Mon - **Review** - all online <br> Wed - **Exam 3** |||Term Project Write-up - Due Fri, Dec 4|
 
