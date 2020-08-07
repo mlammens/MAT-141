@@ -16,4 +16,5 @@
 
 ## Some ideas for assignments and problems
 
-* Statistically creative project
+* For group projects, identify each persons contribution and role.
+* Make a discusion board for each lecture. Allow for bonus points for participating in the discussion.
