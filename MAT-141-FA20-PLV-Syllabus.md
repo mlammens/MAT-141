@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 ===================================================================
 
@@ -11,6 +16,22 @@ MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 **Office Location:** 102 Environmental Classroom Building\
 **Office Hours:** TBD\
 
+**Course delivery format / modality:**
+
+For Fall 2020, this course will be taught as **web-assisted**. 
+Lectures will be delivered asynchronously as pre-recorded videos.
+Each lecture will be associated with a discussion forum, where you can ask questions and discuss the content.
+Synchronous face-to-face meetings will be scheduled with smaller groups (1/4 of the class at a time). 
+These meetings can take place in-person in the Environmental Classroom or via Zoom, depending on student requests. 
+All exams will be 'take-home' format.
+Several class meetings will occur synchronously online via Zoom during the semester.
+
+**Course Learning Management System:**
+
+We will be using **Classes** instead of Blackboard for this course. 
+*Why?* The University is switching over to Classes this coming Spring, but because it provides a nicer and more functional mobile device interface (i.e., phones and tablets), I decided to move over sooner. 
+You can log-in to **Classes** at [https://classes.pace.edu](https://classes.pace.edu).
+
 
 Course description
 ------------------
@@ -21,7 +42,7 @@ environmental science, forensic science, and health care. Topics covered
 include data gathering, numerical and graphical data summaries;
 elementary probability; binomial, normal and sampling distributions;
 confidence intervals; hypothesis testing; t-tests; regression and
-correlation; analysis of variance; and nonparametric statistics. This
+correlation; analysis of variance; and non-parametric statistics. This
 course includes the use of the R programming language to analyze data
 sets.
 
@@ -38,10 +59,10 @@ Course learning objectives
 
 During this course, students will be introduced to the foundational mathematics of the basic principles of statistics and learn how to apply these principles to data analysis and communication. Specific course learning objectives are:
 
-* To become familiar with different data collection approaches and identify the uses and limitations of these approaches in context of life science applicaitons.
-* To acquire the knowledge and skills to confidently carry out exploritory data analyses, including the ability to construct effective data visualizations.
-* To develop and practice the skills of evalutating data quality. 
-* To be able to identify the most appropriate analysis techniques to use with a given dataset.
+* To become familiar with different data collection approaches and identify the uses and limitations of these approaches in context of life science applications.
+* To acquire the knowledge and skills to confidently carry out exploratory data analyses, including the ability to construct effective data visualizations.
+* To develop and practice the skills of evaluating data quality. 
+* To be able to identify the most appropriate analysis techniques to use with a given data set.
 * To acquire the knowledge and skills to confidently perform standard data analysis techniques, including T tests, linear regression, ANOVA, and $\chi^2$ tests.
 
 Assessment
@@ -50,11 +71,11 @@ Assessment
 I will assess your achievement of the course learning objectives and class learning outcomes based on your performance on the formative and summative assessments listed below. 
 In calculating your final score, I will drop the lowest quiz score and the lowest analysis review/write-up score.
 
-* Quizzes - 20%\
-* R / `learnr` modules - 20%\
-* Analysis reviews/write-ups (Group work) - 10%\
-* Term project - 15%\
-* Three exams - 30% (10% each)\
+* 20% = Quizzes - quizzes will assess your understanding of the weekly lecture material and readings. **A quiz is due nearly every Friday** (see schedule for exceptions). Quizzes will generally be multiple choice and short-answer questions, delivered through the **Classes LMS**.
+* 20% = R / `learnr` modules - **before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio. I will go over how to complete these tutorials during our first group meetings. 
+* 10% = Analysis reviews/write-ups (Group work) - our synchronous small group meetings will be dedicated to answering any questions you have and to working through applications of statistics in the life sciences. In groups of 3 - 4 students you will write-up the results of these analysis applications. You will submit your write-ups as both an Rmd file and a Word file.
+* 15% = Term project - during the course of the semester, you will carry out an independent analysis project. The project includes three distinct submissions - a proposal, an update, and the final submission. See schedule for associated due dates.
+* 30% (10% each) = Three exams - Exams will be take-home and open-book. You will be expected to carry out an analysis and answer questions related to the analysis in long-form. You will submit your exam as both an Rmd file and a Word file.
 
 The following is the **course grading scale**:
 
@@ -156,6 +177,17 @@ the University's web site.\
 To receive accommodation for any disability, students must contact the
 campus Counseling Center (Pace Plaza, 212-346-1526; Westchester,
 914-773-3710).
+
+### Pace University COVID-19 Safety
+
+CDC guidelines and University policy require proper face covering use in all classrooms, conference rooms, hallways, elevators, and other common areas. 
+Face coverings are required even if you are more than 6 feet from another individual in a common indoor area. 
+We must work together to protect others and ourselves from the transmission of COVID-19.  
+Any student entering class without a face covering will be asked to: a) don a face covering or b) go to Security to obtain a face covering if the student does not have one. 
+Students who do neither of these things will be asked to leave class and they will be marked absent for the session. 
+Students are expected to be familiar with the current COVID-19 regulations, which are posted on the [Return to Campus](https://www.pace.edu/return-to-campus) website. 
+See also [up-to-date policies and announcements](https://www.pace.edu/return-to-campus/communications-resources#recent) and more information about [Pace University’s response to COVID-19](https://www.pace.edu/coronavirus).
+
 
 Course calendar (warning -- subject to change)
 ----------------------------------------------
