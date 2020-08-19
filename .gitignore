@@ -3,4 +3,4 @@
 *.html
 *.pdf
 *.docx
-tests/*
+notrack/*

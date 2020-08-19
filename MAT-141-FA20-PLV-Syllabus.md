@@ -1,7 +1,7 @@
 ---
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 ===================================================================
