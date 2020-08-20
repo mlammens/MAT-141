@@ -1,0 +1,38 @@
+---
+title: "Week 1 - Introduction to data and statistical analysis"
+author: "Matthew E. Aiello-Lammens"
+date: "8/24/2020"
+output: html_document
+---
+
+# Getting started in RStudio
+
+Go back to your open RStudio window, and have a look at the components there.
+
+### Overall layout
+
+There are four panels in the RStudio interface (though you may only have three open when you first start it), each has valuable information.
+
+* Console / Terminal panel (lower-left)
+* Environment / History / Git (upper-right)
+* Files / Plots / Packages / Help (lower-right)
+* Source / Editor (upper-left)
+
+### File management
+
+Before we do anything in R/RStudio, let's make a new folder on our computers where our class data can reside.
+You can use your operating systems file manager (i.e., Finder on Mac and Windows Explorer on Windows) to created a new folder where ever suites you. 
+**Call this new folder `MAT-141-FA19`.**
+We'll use this folder/directory later when we are asked to set our 'working directory' and when we need a place to store `*.R` and `*.Rmd` files.
+
+See the screen shot below for an example of creating a new folder using Mac Finder.
+
+![](New-Folder.png)
+
+### Making an R Project
+
+Let's make a new R Project associated with your `MAT-141-FA19` directory. 
+It will become more clear why we are doing this later when we get to the Git lesson.
+To make a new project, got to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
+Click the little downward arrow, select "New Project", then select "Existing Directory" from the window that pops up. 
+Use the graphical user interface (GUI) to navigate to the `MAT-141-FA19` directory, then select "Create Project".
