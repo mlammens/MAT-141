@@ -36,3 +36,50 @@ It will become more clear why we are doing this later when we get to the Git les
 To make a new project, got to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
 Click the little downward arrow, select "New Project", then select "Existing Directory" from the window that pops up. 
 Use the graphical user interface (GUI) to navigate to the `MAT-141-FA19` directory, then select "Create Project".
+
+
+
+
+## R script file
+
+Use a script file for your work. It's easier to go back to and easy to document.
+
+**Important:** within an R file, you can use the # sign to add comments. Anything written after the # is *not* interpreted when you run the code.
+
+**Challenge**
+
+Create a new R script file in your `MAT-141-FA19` directory.
+
+***
+
+### Basic file managment in R (OPTIONAL)
+
+```{r}
+# What working directory am I in?
+getwd()
+
+# Move to a different director?
+setwd(".")
+```
+
+#### Things to cover
+
+* Navigating the file path
+* Tab completion of file paths
+* Tab completion of R commands
+
+**Challenge**
+
+* Try to auto-complete `fil`, what do you find?
+* Use the brief help menu that comes up to find a function that starts with `file`, and describe what you think it does.
+
+***
+
+## Rmd file
+
+Use this to integrate text and R code into the same document.
+
+Create a new Rmd file. 
+
+*Practice with Rmd file*
+
