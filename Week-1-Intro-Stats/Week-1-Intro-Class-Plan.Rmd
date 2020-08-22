@@ -1,0 +1,63 @@
+---
+title: "Week 1 - Intro - Class Plan"
+author: "Matthew Aiello-Lammens"
+date: "8/24/2020"
+output:
+  html_document: default
+---
+
+## Intro (8:00 AM to 8:10 AM)
+
+**Using "Classes" during class**
+
+* Classes / Brightspace - our Learning Management System for this course (and for the future!)
+* "In class" submissions and assignments will be through Classes
+* We'll go through the class format and more on using our LMS after our activity for the day
+
+## Activity - Make a data poster (8:10 AM to 8:50 AM)
+
+**Practice making pictures with data**
+
+This assignment is described more fully in the **Case Studies** section of the **First Class** module
+
+Briefly, you will create a poster that describes and visualizes the data you have been given, and addresses the following questions:
+
+* What is the question the research was asking?
+* What are the data provided?
+* Can you come up with a hypothesis related to these data?
+* What do you conclude based on these data?
+* What information do you wish you had?
+
+## Gallery "Walk" - A sample of posters (8:50 AM to 9:00 AM)
+
+* Four randomly selected groups will present their posters
+
+### 5 MINUTE BREAK
+
+## Go over how to review our classmates posters (9:05 AM to 9:10 AM)
+
+* Discussion board forum on Classes
+
+## Discuss some possible data visualization (9:10 AM to 9:25 AM)
+
+* Link provided after class!
+
+## Course logistics (9:25 AM to 9:45 AM)
+
+This semester will be an adventure! We're in this together, so please communicate with me!
+
+### Class meetings
+
+* Most classes will be 'small group' sessions.
+* **Group A** is online (via Zoom). We can add more online options as needed.
+* Small group sessions will focus on R, problem solving, and applications.
+* Any 'full class' sessions will be online.
+* On the days that your group is *not* meeting, you should use that time to watch posted lectures, do the reading, go over the week's checklist, etc..
+* Exams are take home - they will require you to use R.
+* Please email me about any accommodations.
+
+### Syllabus
+
+* There are a lot of categories in the 'assessment' section. Most of these are meant to be 'low-stakes' and taking into account that we will *not* be meeting for 3-hours that we would during a normal semester.
+* The textbook is freely available as a PDF, and pretty cheap on Amazon.
+* Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming helps you learn in other ways.
