@@ -1,0 +1,31 @@
+---
+title: "Presence of Lyme disease in the Hudson Valley"
+output: html_document
+---
+
+## Study Information
+
+The Dilution Effect hypothesis, as it relates to ticks that carry Lyme disease, suggests that as biodiversity (i.e., the number of the different kinds of animals/plants in an area) increases, the number of ticks that carry the bacteria that causes Lyme disease decreases. 
+There is little empirical evidence to support or refute this hypothesis. 
+So, Tracey went out to several sites in the Lower Hudson Valley and used camera traps to get a count of the number of small mammal species there. 
+She also collected ticks, doing tick-drags, to assess how many ticks were in a given area. 
+Below are her data.
+
+Note - these data are from a real study carried out by an MS in Environmental Science student for her thesis project. 
+She was interested in studying a topic at the intersection of environmental issues and public health. 
+I, her adviser, coincidentally got Lyme disease while she was doing her research, and there after did not enjoy helping out on tick-drags.
+
+## Collected data
+
+```{r, echo = FALSE, results='asis'}
+ticks <- read.csv("https://www.dropbox.com/s/lox42yvn7zu28ia/ticks.csv?dl=1")
+ticks <- ticks[c(1,2,5)]
+ticks$Site <- c("Mohonk Preserve", "Mohonk Preserve", "Mohonk Preserve", "Mohonk Preserve",
+                "Teatown Lake", "Teatown Lake", "Teatown Lake", "Teatown Lake",
+                "Vassar", "Vassar")
+ticks <- ticks[c(4, 1, 2, 3)]
+names(ticks) <- c("Site", "Camera_Station", "Richness", "Total_Ticks")
+
+pander::pandoc.table(ticks)
+```
+
