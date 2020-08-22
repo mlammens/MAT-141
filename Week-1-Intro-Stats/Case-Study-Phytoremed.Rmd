@@ -1,0 +1,25 @@
+---
+title: "Phytoremediation on a suburban college campus"
+output: html_document
+---
+
+## Study Information
+
+Marisa was interested in whether some vegetation types were ‘better’ than others at taking up excessive nutrients in storm water runoff at Pace University. 
+These excess nutrients, often the result of fertilizer use or other contaminants that get into the water cycle during rain events, can have serious negative consequences on water bodies, causing eutrophication and dead-zones.
+She measured the level of **phosphorus in the soil** five times each at five different sites on the Pace campus, comprising three different vegetation types.
+Phosphorus was measured as *pounds (lbs) of phosphorus per acre*, labeled below as `phosphorus_lbacre`.
+If some kinds of vegetation uptake nutrients more than other kinds, you would expect there to be *less* phosphorus at those locations.
+The data are below. 
+
+Note - these data are from a real study carried out by an BS in Environmental Science student for her capstone project. 
+She was very interested in the effects of run-off on our local watershed, the Pocantico River watershed, and completed this project as a first step toward understanding the role of vegetation in preventing water contamination.
+
+
+## Collected data
+
+```{r, echo = FALSE, results='asis'}
+soil_p <- read.csv("https://www.dropbox.com/s/onmcvqffnd8u3ae/soil_p_data.csv?dl=1")
+pander::pandoc.table(soil_p[c(1,3,4,6)])
+```
+
