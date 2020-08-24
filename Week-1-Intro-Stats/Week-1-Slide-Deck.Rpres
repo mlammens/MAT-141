@@ -1,0 +1,137 @@
+Introduction to MAT 141
+========================================================
+author: Matthew Aiello-Lammens
+date: 2020-08-24
+autosize: true
+
+
+Some possible visualizations of these data
+========================================================
+
+## xy scatter plot
+
+```{r, echo=FALSE, message=FALSE}
+soil_data <- read.csv("https://www.dropbox.com/s/b8vanatf6kejuba/soil_p_data.csv?dl=1")
+library(ggplot2)
+
+ggplot(data = soil_data, aes(x = site, y = phosphorus_lbacre)) +
+  geom_point() +
+  theme_bw()
+```
+
+
+Some possible visualizations of these data
+========================================================
+
+## Jitter plot
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = soil_data, aes(x = site, y = phosphorus_lbacre)) +
+  geom_jitter() +
+  theme_bw()
+
+```
+
+Some possible visualizations of these data
+========================================================
+
+## Bar plot
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = soil_data, aes(x = site, y = phosphorus_lbacre)) +
+  geom_bar(stat = "summary", fun.y = "mean") +
+  theme_bw()
+
+```
+
+Some possible visualizations of these data
+========================================================
+
+## Box plot
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = soil_data, aes(x = site, y = phosphorus_lbacre)) +
+  geom_boxplot() +
+  theme_bw()
+
+```
+
+
+Some possible visualizations of these data
+========================================================
+
+## xy scatter plot
+
+```{r, echo=FALSE, message=FALSE}
+ticks <- read.csv("https://www.dropbox.com/s/lox42yvn7zu28ia/ticks.csv?dl=1")
+ticks <- ticks[c(1,2,5)]
+ticks$Site <- c("Mohonk Preserve", "Mohonk Preserve", "Mohonk Preserve", "Mohonk Preserve",
+                "Teatown Lake", "Teatown Lake", "Teatown Lake", "Teatown Lake",
+                "Vassar", "Vassar")
+ticks <- ticks[c(4, 1, 2, 3)]
+names(ticks) <- c("Site", "Camera_Station", "Richness", "Total_Ticks")
+ggplot(data = ticks, aes(x = Richness, y = Total_Ticks)) +
+  geom_point() +
+  theme_bw()
+```
+
+Some possible visualizations of these data
+========================================================
+
+## xy scatter plot with "best fit line"
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = ticks, aes(x = Richness, y = Total_Ticks)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+```
+
+Some possible visualizations of these data
+========================================================
+
+## xy scatter plot with sites
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = ticks, aes(x = Site, y = Total_Ticks)) +
+  geom_point() +
+  theme_bw()
+```
+
+Some possible visualizations of these data
+========================================================
+
+## Bar plot
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = ticks, aes(x = Site, y = Total_Ticks)) +
+  geom_bar(stat = "summary", fun.y = "mean") +
+  theme_bw()
+```
+
+Some possible visualizations of these data
+========================================================
+
+## Box plot
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = ticks, aes(x = Site, y = Total_Ticks)) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+Some possible visualizations of these data
+========================================================
+
+## xy scatter plot with "best fit line"
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = ticks, aes(x = Richness, y = Total_Ticks,
+                         color = Site)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+```
+
+
+

@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   word_document: default
+  html_document: default
 ---
 MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 ===================================================================
@@ -46,7 +46,7 @@ correlation; analysis of variance; and non-parametric statistics. This
 course includes the use of the R programming language to analyze data
 sets.
 
-Rationale {#rationale-1}
+Rationale 
 ---------
 
 Scientists and biomedical professionals need to analyze data to get insights from their observations, determine what the best practices in a field are, and evaluate hypotheses. 
@@ -71,10 +71,11 @@ Assessment
 I will assess your achievement of the course learning objectives and class learning outcomes based on your performance on the formative and summative assessments listed below. 
 In calculating your final score, I will drop the lowest quiz score and the lowest analysis review/write-up score.
 
-* 20% = Quizzes - quizzes will assess your understanding of the weekly lecture material and readings. **A quiz is due nearly every Friday** (see schedule for exceptions). Quizzes will generally be multiple choice and short-answer questions, delivered through the **Classes LMS**.
-* 20% = R / `learnr` modules - **before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio. I will go over how to complete these tutorials during our first group meetings. 
-* 10% = Analysis reviews/write-ups (Group work) - our synchronous small group meetings will be dedicated to answering any questions you have and to working through applications of statistics in the life sciences. In groups of 3 - 4 students you will write-up the results of these analysis applications. You will submit your write-ups as both an Rmd file and a Word file.
-* 15% = Term project - during the course of the semester, you will carry out an independent analysis project. The project includes three distinct submissions - a proposal, an update, and the final submission. See schedule for associated due dates.
+* 10% = Class participation - during class meetings, either in person or virtual, there will be small, low-stakes assignments you are expected to submit. Your participation will be based on these submissions.
+* 15% = Quizzes - quizzes will assess your understanding of the weekly lecture material and readings. **A quiz is due nearly every Friday** (see schedule for exceptions). Quizzes will generally be multiple choice and short-answer questions, delivered through the **Classes LMS**.
+* 10% = R / `learnr` modules - **before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio. I will go over how to complete these tutorials during our first group meetings. 
+* 15% = Analysis reviews/write-ups (Group work) - our synchronous small group meetings will be dedicated to answering any questions you have and to working through applications of statistics in the life sciences. In groups of 3 - 4 students you will write-up the results of these analysis applications. You will submit your write-ups as both an Rmd file and a Word file.
+* 20% = Term project - during the course of the semester, you will carry out an independent analysis project. The project includes three distinct submissions - a proposal, an update, and the final submission. See schedule for associated due dates.
 * 30% (10% each) = Three exams - Exams will be take-home and open-book. You will be expected to carry out an analysis and answer questions related to the analysis in long-form. You will submit your exam as both an Rmd file and a Word file.
 
 The following is the **course grading scale**:
@@ -126,6 +127,10 @@ Use of computers, tablets, and cell phones is necessary to complete some
 in-class assignments. However, I expect you to be respectful and
 professional, and not to be "surfing the internet" or texting during
 class.
+
+### Learning Centers 
+
+The [Learning Center](https://www.pace.edu/center-academic-excellence/learning-center) uses an array of programs and a holistic approach to assist students with academic skills and content knowledge. We are dedicated to developing independent learners by creating purposeful interactions with trained, well-qualified peer and professional staff. 
 
 ### Academic integrity
 
