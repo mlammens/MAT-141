@@ -5,6 +5,7 @@
 *.docx
 notrack/*
 Week-1-Intro-Stats/Week-1-Slide-Deck-figure/*
+Week-1-Intro-Stats/Week-1-Slide-Deck.md
 .Rhistory
 .DS_Store
 */.DS_Store
