@@ -7,7 +7,7 @@ output: html_document
 
 # Getting started in RStudio
 
-Go back to your open RStudio window, and have a look at the components there.
+Let's start by opening up RStudio. Have a look at the components here.
 
 ### Overall layout
 
@@ -22,7 +22,7 @@ There are four panels in the RStudio interface (though you may only have three o
 
 Before we do anything in R/RStudio, let's make a new folder on our computers where our class data can reside.
 You can use your operating systems file manager (i.e., Finder on Mac and Windows Explorer on Windows) to created a new folder where ever suites you. 
-**Call this new folder `MAT-141-FA19`.**
+**Call this new folder `MAT-141-FA20`. I STRONGLY RECOMMEND THAT YOU DO NOT PUT THIS FOLDER ON YOUR DESKTOP.**
 We'll use this folder/directory later when we are asked to set our 'working directory' and when we need a place to store `*.R` and `*.Rmd` files.
 
 See the screen shot below for an example of creating a new folder using Mac Finder.
@@ -31,55 +31,91 @@ See the screen shot below for an example of creating a new folder using Mac Find
 
 ### Making an R Project
 
-Let's make a new R Project associated with your `MAT-141-FA19` directory. 
-It will become more clear why we are doing this later when we get to the Git lesson.
-To make a new project, got to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
+Go back to RStudio.
+Let's make a new R Project associated with your `MAT-141-FA20` directory. 
+To make a new project, go to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
 Click the little downward arrow, select "New Project", then select "Existing Directory" from the window that pops up. 
-Use the graphical user interface (GUI) to navigate to the `MAT-141-FA19` directory, then select "Create Project".
+Use the graphical user interface (GUI) to navigate to the `MAT-141-FA20` directory, then select "Create Project".
+Once you've created your project, your RStudio session will restart in this project.
 
+There is also now a file in the folder you just made that ends in *.Rproj.
+If you double click on this file, RStudio will open, openning this project at the same time.
+This is a good way to re-open RStudio for your next session.
 
+## R as calculator
+
+We can use R just like any other calculator. 
+Go to the **Console** tab and type the following and press enter:
+
+```{r}
+3 + 5
+```
+
+You should see the value of the equation "spit out" below the text you wrote.
+
+We can execute any/all of the commands and functions we will learn this semester in the console, but this is generally *not* what we will do.
 
 
 ## R script file
 
-Use a script file for your work. It's easier to go back to and easy to document.
+Best practice for using R is to store your work in an R script or an RMarkdown document.
+We use these because it's easier to go back and re-run our code and to document our analytical steps / process.
 
-**Important:** within an R file, you can use the # sign to add comments. Anything written after the # is *not* interpreted when you run the code.
+**Important:** within an R file, you can use the `#` sign to add comments. Anything written after the `#` is *not* interpreted when you run the code.
 
-**Challenge**
+**Important:** we can write commands in our R script file, then run/execute those commands by pressing `CMD` + `RETURN` (Macs) or `CNTR` + `RETURN` (Windows). We can also excute only a section of code by highlighting it and pressing these same key strokes.
 
-Create a new R script file in your `MAT-141-FA19` directory.
-
-***
-
-### Basic file managment in R (OPTIONAL)
-
-```{r}
-# What working directory am I in?
-getwd()
-
-# Move to a different director?
-setwd(".")
-```
-
-#### Things to cover
-
-* Navigating the file path
-* Tab completion of file paths
-* Tab completion of R commands
 
 **Challenge**
 
-* Try to auto-complete `fil`, what do you find?
-* Use the brief help menu that comes up to find a function that starts with `file`, and describe what you think it does.
+Create a new R script file in your `MAT-141-FA20` directory. **HINT:** Try the little green `+` sign in the upper left-hand corner of RStudio.
 
-***
 
 ## Rmd file
 
 Use this to integrate text and R code into the same document.
 
-Create a new Rmd file. 
+**Challenge**
 
-*Practice with Rmd file*
+Download the `Analysis-Writeup-1-SoilP-Example.Rmd` file from our Classes page. 
+Move this file into your `MAT-141-FA20` folder.
+In RStudio, you can now open this file using the **Files** tab (lower-right).
+Before we do anything else, `Knit` the document using the `Knit` icon.
+**NOTE:** the first time you do this, your system may prompt you to install the `knitr` package. 
+Say yes, as you will need this package for the rest of the semester.
+
+
+## Running `learnr` tutorials
+
+**Before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio.
+I am making these tutorial using tools in the package `learnr`. 
+In order for you run these tutorials you will need to take a few initial setup steps in R, detailed here.
+
+
+```{r learnr_setup, eval=FALSE}
+
+```
+
+Once this code is all set-up, we can initiate a tutorial using the following commands.
+
+First, we can see all of the `learnr` tutorials available in a package:
+
+```{r}
+learnr::run_tutorial(package = "MAT141learnrMods")
+```
+
+Next, we can select the tutorial we want to run. **Note my use of quotes!**
+
+```{r, eval=FALSE}
+learnr::run_tutorial(name = "Short_Intro_to_R", package = "MAT141learnrMods")
+```
+
+The tutorial module should start in a new web browser tab.
+
+
+In order to keep up with my updates to the package containing the `learnr` tutorials, you will need to run the following code after I post an announcement about an updated or added tutorial.
+
+```{r learnr_update}
+
+```
 
