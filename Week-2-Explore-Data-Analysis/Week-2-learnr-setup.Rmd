@@ -1,0 +1,55 @@
+---
+title: "Week 2 - Pre-meeting setup to run `learnr` tutorials"
+author: "Matthew E. Aiello-Lammens"
+date: "8/28/2020"
+output: html_document
+---
+
+## Running `learnr` tutorials
+
+**Before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio.
+I am making these tutorial using tools in the package `learnr`. 
+In order for you run these tutorials you will need to take a few initial setup steps in R, detailed here.
+In these steps, we are installing what are called `packages` for R.
+`packages` are collections of R code written to be 'add ons' to the base R application.
+
+**For Windows users**
+
+You will also need to download **RTools**. You can find this application at 
+[https://cran.rstudio.com/bin/windows/RTools/](https://cran.rstudio.com/bin/windows/RTools/).
+When you have installed this program **RESTART RStudio**.
+
+
+```{r learnr_setup, eval=FALSE}
+install.packages("learnr")
+install.packages("devtools")
+install.packages("tidyverse")
+
+devtools::install_github("rstudio-education/gradethis")
+devtools::install_github("rundel/learnrhash")
+devtools::install_github("mlammens/MAT141learnrMods")
+
+```
+
+Once this code is all set-up, we can initiate a tutorial using the following commands.
+
+First, we can see all of the `learnr` tutorials available in a package:
+
+```{r}
+learnr::run_tutorial(package = "MAT141learnrMods")
+```
+
+Next, we can select the tutorial we want to run. **Note my use of quotes!**
+
+```{r, eval=FALSE}
+learnr::run_tutorial(name = "Short_Intro_to_R", package = "MAT141learnrMods")
+```
+
+The tutorial module should start in a new web browser tab.
+
+
+In order to keep up with my updates to the package containing the `learnr` tutorials, you will need to run the following code after I post an announcement about an updated or added tutorial.
+
+```{r learnr_update, eval=FALSE}
+devtools::install_github("mlammens/MAT141learnrMods")
+```

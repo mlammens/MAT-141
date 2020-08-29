@@ -1,0 +1,57 @@
+---
+title: "Analysis Write-up 1 - Working with Rmd files to anlayze soil phosphorus data"
+output:
+  html_document: default
+  word_document: default
+---
+
+## Assignment Authors
+
+<!--- 
+Write each group members name below next to one of the * signs.
+--->
+
+* 
+* 
+* 
+
+## Introduction
+
+In this assignment, you will write and knit an Rmd file to show an analysis of the soil phosphorus data we worked with on the first day of class.
+
+## R Markdown
+
+**REMOVE THE "R Markdown" SECTION FROM THE FINAL COPY THAT YOU SUBMIT. THIS INFORMATION IS JUST MEANT TO HELP YOU LEARN ABOUT THE RMD FORMAT.**
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk as we do below, to read in the soil P data set.
+
+You can execute the R code below by either using one of the "Run" functions (look in the upper-right corner of the editor pane), or by pressing CMD + ENTR (Mac) or CNTR + ENTR (Windows) while your cursor is on the line you wish to execute.
+
+
+## Read in soil P data set
+
+```{r soil_data}
+soil_data <- read.csv("https://www.dropbox.com/s/b8vanatf6kejuba/soil_p_data.csv?dl=1")
+summary(soil_data)
+```
+
+## Study details
+
+*Replace this text with text describing the study. Specifically, address whether this study is a **observational** or **experimental** study, what the variables are, and what types of variables they are.*
+
+
+## Calculating mean and standard deviation
+
+Using what you have learned in today's class, write code below in the R chunk to calculate the mean (function `mean`) and standard deviation (function `sd`) for the pound of phosphorus per acre (phosphorus_lbacre) values **for each site**. 
+At the end of this chunk, you should have calculated **five** different mean and standard deviation values.
+
+```{r}
+
+```
+
+
+### Interpretation
+
+*Replace this text with your interpretations of what any observed differences and/or similarities in the means and standard deviations tells us about phosphorus levels in the soil at these five sites.*
