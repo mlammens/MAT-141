@@ -11,12 +11,12 @@ type: prompt
 incremental: false
 
 <small>
-Most slides were originally developed by Mine Çetinkaya-Rundel of OpenIntro and
+These slides were originally developed by Mine Çetinkaya-Rundel of OpenIntro and
 Translated from LaTeX to Google Slides by Curry W. Hilton of OpenIntro.
 
-Slides XXX are derived from OpenIntro - Introduction to Statistics for Life and Biomedical Science textbook materials.
+These slides were modified by the OpenIntro Biostats group to accomany the OpenIntro - Introduction to Statistics for Life and Biomedical Science textbook materials.
 
-These were modified by Matthew Aiello-Lammens for use in Pace University course MAT 141 on the PLV campus, following and shared by the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) 
+These were further modified by Matthew Aiello-Lammens for use in Pace University course MAT 141 on the PLV campus, following and shared by the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) 
 </small>
 
 What is exploratory data analysis?
@@ -215,7 +215,7 @@ famuss$height
 Histograms
 ========================================================
 
-```{r hist_weight}
+```{r hist_weight, echo = FALSE}
 hist(famuss$weight)
 ```
 
@@ -405,7 +405,34 @@ Correlation is a numerical summary that measures the strength of a linear relati
  
  - The closer $r$ is to $\pm 1$, the stronger the linear association.
 
-In this case, the correlation between `height` and `weight` is `r cor(famuss$height, famuss$weight)` - positive and moderately strong
+In this case, the correlation between `height` and `weight` is `r cor(famuss$height, famuss$weight)` - positive and moderately strong.
 
+Two categorical variables - Stacked Bar plots
+========================================================
+
+```{r stackedbar, echo = FALSE}
+ggplot(data = famuss, aes(x = actn3.r577x, fill = race)) + geom_bar(stat = "count") 
+```
+
+Two categorical variables - Stacked Bar plots
+========================================================
+
+```{r stackedbar_perc, echo = FALSE}
+ggplot(data = famuss, aes(x = actn3.r577x, fill = race)) + geom_bar(position = "fill", stat = "count") 
+```
+
+Numerical and categorical variables - Box plots
+========================================================
+incremental: false
+
+```{r boxplot2, echo = FALSE}
+ggplot(data = famuss, aes(x = sex, y = height)) + geom_boxplot()
+```
+
+***
+
+```{r boxplot3, echo = FALSE}
+ggplot(data = famuss, aes(x = race, y = height)) + geom_boxplot()
+```
 
 
