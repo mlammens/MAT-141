@@ -127,7 +127,7 @@ $$
 using the summation notation:
 
 $$
-s = \sqrt{\sum_{i=1}^n\frac{(x-\bar{x})^2}{n-1}}
+s = \sqrt{\sum_{i=1}^n\frac{(x_i-\bar{x})^2}{n-1}}
 $$
 
 Sample Standard Deviation vs. Population Standard Deviation
@@ -149,7 +149,7 @@ Quartiles - where **quarters** of the data are
 
 * The 25th percentile is also called the first quartile, $Q_1$.
 * The 50th percentile is also called the median.
-* The 75th percentile is also called the third quartile, $Q_2$~.
+* The 75th percentile is also called the third quartile, $Q_3$.
 
 Between Q1 and Q3 is the middle 50% of the data. The range these data span is called the interquartile range, or the **IQR**.
 
