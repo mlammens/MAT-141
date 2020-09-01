@@ -1,0 +1,411 @@
+Week 2 - Exploratory Data Analysis
+========================================================
+author: MAT 141 - PLV
+date: 2020-08-31
+autosize: true
+incremental: true
+
+Slide attribution
+========================================================
+type: prompt
+incremental: false
+
+<small>
+Most slides were originally developed by Mine Çetinkaya-Rundel of OpenIntro and
+Translated from LaTeX to Google Slides by Curry W. Hilton of OpenIntro.
+
+Slides XXX are derived from OpenIntro - Introduction to Statistics for Life and Biomedical Science textbook materials.
+
+These were modified by Matthew Aiello-Lammens for use in Pace University course MAT 141 on the PLV campus, following and shared by the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) 
+</small>
+
+What is exploratory data analysis?
+========================================================
+
+Wikipedia says it pretty well - 
+
+> "... an approach to analyzing data sets to summarize their main characteristics, often with visual methods ("Exploratory data analysis", accessed on 2020-08-29)"
+
+* Summarize main characteristics
+    - Where is the center of our data? -> **average** or **mean**
+    - How spread out are our data? -> **variance** and **standard deviation**
+* Visual methods
+    - When done well, we can 'see' trends and patterns in data very well
+
+Measure of center - Mean
+========================================================
+
+The *mean* (commonly called the *average*) is probably to best known measure of the *center* of a data set. 
+
+$$
+\overline{x} = \frac{x_1+x_2+\cdots+x_n}{n}
+$$  
+
+
+where $x_1, x_2, \ldots, x_n$ represent the $n$ observed values in a sample.
+
+Measure of center - Mean
+========================================================
+incremental: false
+
+The *mean* (commonly called the *average*) is probably to best known measure of the *center* of a data set. 
+
+$$
+\overline{x} = \frac{x_1+x_2+\cdots+x_n}{n} = \sum_{i=1}^{n}\frac{x_i}{n}
+$$  
+
+
+where $x_1, x_2, \ldots, x_n$ represent the $n$ observed values in a sample.
+
+Sample Mean vs. Population Mean
+========================================================
+type:prompt
+
+Technically $\bar{x}$ is the **sample mean**. This is the mean of $n$ observations (our sample) taken from a population.
+
+The **population mean** is also computed the same way but is denoted with the symbol $\mu$. It is often not possible to calculate $\mu$ since population data are rarely available.
+
+The sample mean is a **sample statistic**, and serves as a **point estimate** of the population mean. This estimate may not be perfect, but if the sample is good (representative of the population), it is usually a pretty good estimate. 
+
+
+Measure of center - Median
+========================================================
+
+The **median** is the value of the *middle* observation in a sample.  
+
+If the number of observations is 
+
+- Odd, the median is the middle observation
+- Even, the median is the average of the two middle observations
+
+*Note: The median is the $50^{th}$ percentile; 50% of observations lie below/above the median.*
+
+
+Measure of center - Median
+========================================================
+
+Consider these data
+
+```{r, echo = FALSE}
+x = sample(1:100, size = 11)
+print(x)
+```
+
+Now order them
+
+```{r, echo = FALSE}
+sort(x)
+```
+
+Median is: `r median(x)`
+
+
+Measure of spread - Variance and Standard Deviation
+========================================================
+
+The **standard deviation** measures (approximately) the distance between a typical observation and the mean. 
+
+* An observation's *deviation* is the distance between its value $x$ and the sample mean $\overline{x}$ - i.e., $(x - \overline{x})$
+
+* The **sample variance** $s^2$ is the sum of squared deviations divided by the number of observations minus 1
+
+$$
+s^2 = \frac{({x_1 - \overline{x})}^{2}+({x_2 - \overline{x})}^{2}+\cdots+({x_n - \overline{x})}^{2}}{n-1} 
+$$
+
+where $x_1, x_2, \dots, x_n$ represent the $n$ observed values.
+
+Measure of spread - Variance and Standard Deviation
+========================================================
+
+The **standard deviation** $s$ is the square root of the variance.
+
+$$
+s = \sqrt{\frac{({x_1 - \overline{x})}^{2}+({x_2 - \overline{x})}^{2}+\cdots+({x_n - \overline{x})}^{2}}{n-1}}
+$$
+
+using the summation notation:
+
+$$
+s = \sqrt{\sum_{i=1}^n\frac{(x-\bar{x})^2}{n-1}}
+$$
+
+Sample Standard Deviation vs. Population Standard Deviation
+========================================================
+type:prompt
+
+Like sample mean and population mean, we differentiate between 
+**sample standard deviation** and **population standard deviation**.
+
+While there are subtle mathematical differences between these two values,
+for our purposes, know that:
+
+* Population SD,  $\sigma$, is the standard deviation of a set of data for an entire population
+* Sample SD,  $s$, is the standard deviation of a set of data for a *sample* of values from a population
+
+Measure of spread - Quartiles and IQR
+========================================================
+
+Quartiles - where **quarters** of the data are
+
+* The 25th percentile is also called the first quartile, $Q_1$.
+* The 50th percentile is also called the median.
+* The 75th percentile is also called the third quartile, $Q_2$~.
+
+Between Q1 and Q3 is the middle 50% of the data. The range these data span is called the interquartile range, or the **IQR**.
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+Robust estimates
+========================================================
+
+The **median** and **IQR** are called robust estimates because they are less likely to be affected by extreme values than the mean and standard deviation.
+
+For distributions containing extreme observations, the median and IQR provide a more accurate sense of center and spread.
+
+Case study: the FAMuSS study
+========================================================
+
+*The Functional polymorphisms Associated with human Muscle Size and Strength* (FAMuSS)
+study and data are introduced in the 'Introductory Statistics for Life and Biomedical Sciences' textbook, Section 1.2.2.
+
+One goal of the study was to examine the association of demographic, physiological, and genetic characteristics with muscle strength.
+
+- In simpler terms, study the "sports gene" **ACTN3**.
+
+*We'll use these data to demonstrate data visualizations.*
+
+Four rows from FAMuSS data matrix
+========================================================
+
+```{r echo=FALSE}
+library(oibiostat)
+data(famuss) 
+```  
+
+```{r kable, echo=FALSE}
+library(knitr)
+kable(famuss[c(1,2,3,595),c( "sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")], digits = 1, caption = "*Introductory Statistics for Life and Biomedical Sciences* Table 1.6", row.names=FALSE)
+```  
+
+FAMuSS Variables and their descriptions
+========================================================
+
+|Variable|Description|
+|:-------|:----------:
+|sex|  Sex of the participant |
+|age|  Age in years   |
+|race|  Recorded as African Am (African American), Caucasian, Asian, Hispanic, Other |
+|height|  Height in inches    |
+|weight|  Weight in pounds  |
+|actn3.r577x|  Genotype at the location r577x in the ACTN3 gene. |
+|ndrm.ch|  Percent change in strength in the non-dominant arm, comparing strength after to before training|
+
+Viewing a long list of numbers
+========================================================
+
+These are the values for `height`. What do you see here?
+
+```{r, echo = FALSE}
+famuss$height
+```
+
+Histograms
+========================================================
+
+```{r hist_weight}
+hist(famuss$weight)
+```
+
+Histograms
+========================================================
+
+* Histograms provide a view of the *data density*. We often refer to this as the ***distribution*** of the data.
+    * Higher bars represent where the data are relatively more common.
+    * Lower bars represent where the data are relatively less common.
+* Histograms are especially convenient for describing the *shape* of the data distribution.
+* The chosen *bin width* can alter the story the histogram is telling.
+
+Histograms - changing bin width
+========================================================
+
+```{r hist_weight_binwidth, echo = FALSE}
+library(ggplot2)
+library(cowplot)
+
+theme_set(
+    theme_classic(base_size = 18)
+)
+
+b50 <- ggplot(data = famuss, aes(x = weight)) + geom_histogram(binwidth = 50)
+b30 <- ggplot(data = famuss, aes(x = weight)) + geom_histogram(binwidth = 30)
+b10 <- ggplot(data = famuss, aes(x = weight)) + geom_histogram(binwidth = 10)
+b1 <- ggplot(data = famuss, aes(x = weight)) + geom_histogram(binwidth = 1)
+plot_grid(b50, b30, b10, b1, labels = c("50", "30", "10", "1"), nrow = 2)
+
+```
+
+Shape of a distribution: Modality
+========================================================
+
+Does the histogram have a single prominent peak (unimodal), several prominent peaks (bimodal/multimodal), or no apparent peaks (uniform)?
+
+![Modality](modality.png)
+
+*Note: In order to determine modality, step back and imagine a smooth curve over the histogram - imagine that the bars are wooden blocks and you drop a limp spaghetti over them, the shape the spaghetti would take could be viewed as a smooth curve.*
+
+Shape of a distribution: Modality
+========================================================
+
+```{r, echo = FALSE}
+one_mode <- ggplot(data = famuss, aes(x = weight, y = ..density..)) + geom_histogram() + geom_density(lwd = 2)
+bimode_data <- c(rnorm(n = 250), rnorm(n = 250, mean = 5))
+bimode <- ggplot(data = NULL, aes(x = bimode_data, y = ..density..)) + geom_histogram() + geom_density(lwd = 2)
+multimode_data <- c(rnorm(n = 100), rnorm(n = 100, mean = 3, sd = 0.5), rnorm(100, mean = 6))
+multimode <- ggplot(data = NULL, aes(x = multimode_data, y = ..density..)) + geom_histogram() + geom_density(lwd = 2)
+uniform <- ggplot(data = NULL, aes(x = runif(50000), y = ..density..)) + geom_histogram() + geom_density(lwd = 2)
+
+plot_grid(one_mode, bimode, multimode, uniform, nrow = 2)
+```
+
+Shape of a distribution: Skewness
+========================================================
+left:70%
+
+Is the histogram **right skewed**, **left skewed**, or **symmetric**?
+
+```{r skew, echo = FALSE}
+right_skew <- ggplot(data = famuss, aes(x = bmi, y = ..density..)) + geom_histogram() + geom_density(lwd = 2)
+sym_data <- ggplot(data = famuss, aes(x = height, y = ..density..)) + geom_histogram(binwidth = 1.5) + geom_density(lwd = 2)
+
+covid_deaths <- read.csv("https://www.dropbox.com/s/qsvc2uf6u2d52pt/deaths_by_age_group.csv?dl=1")
+left_skew <- ggplot(data = covid_deaths, aes(x = Age.Group, y = Count)) + geom_bar(stat = "identity") + theme(axis.text.x  = element_text(angle=90))
+
+plot_grid(right_skew, sym_data, left_skew)
+```
+
+***
+
+*Note: Histograms are said to be skewed to the side of the long tail.*
+
+
+Boxplots
+========================================================
+
+A boxplot indicates the positions of the first, second, and third quartiles of a distribution in addition to potential **outliers**, observations that are far from the center of a distribution.
+
+- Large outliers: values > $Q_3 + (1.5\times IQR)$ 
+
+- Small outliers: values < $Q_1 - (1.5 \times IQR)$
+
+Boxplots
+========================================================
+
+```{r boxplot, echo = FALSE}
+ggplot(data = famuss, aes(x = sex, y = weight)) + geom_boxplot()
+```
+
+***
+
+* The rectangle extends from the first quartile to the third quartile, with a line at the second quartile (median).
+
+* Whiskers capture data between $Q_1 - (1.5 \times IQR)$ and $Q_3 + (1.5\times IQR)$ ; whiskers must end at data points.
+
+* Potential outliers shown with dots.
+
+
+Data visualization
+========================================================
+type:alert
+
+Numbers are great, but ...
+
+Always visualize your data!
+
+Data visualization
+========================================================
+
+All of these images have $\bar{x} = 54.26$, $\bar{y} = 47.83$, $s_x = 16.76$, $s_y = 29.93$, and $corr = -0.06$!
+
+![Datasaurus](datasaurus.png)
+
+Data visualization
+========================================================
+incremental: false
+
+All of these images have $\bar{x} = 54.26$, $\bar{y} = 47.83$, $s_x = 16.76$, $s_y = 29.93$, and $corr = -0.06$!
+
+![Dino](datasaurus2.png)
+
+[https://www.autodeskresearch.com/publications/samestats](https://www.autodeskresearch.com/publications/samestats)
+
+Categorical data - Tables
+========================================================
+incremental: false
+left: 80%
+
+A table for a single variable, a **frequency table** or **one-way table**, summarizes the distribution of observations among categories.
+
+Considering the data from the *FAMuSS* study, we can use this table to describe the distribution of the genotype at the location *actn3.r577x* among the study participants.
+
+***
+
+```{r, echo=FALSE}
+knitr::kable(table(famuss$actn3.r577x))
+```
+
+Categorical data - Bar plots
+========================================================
+
+A bar plot is a common way to display a single categorical variable.
+
+```{r barplot, echo=FALSE}
+ggplot(data = famuss, aes(x = actn3.r577x)) + geom_bar(stat = "count") 
+```
+
+Examining relationships between two variables
+========================================================
+
+Approaches for summarizing relationships between two variables vary depending on variable types...
+
+- Two numerical variables
+- Two categorical variables
+- One numerical variable and one categorical variable
+
+Here we will focus on visual methods to assess these relationships.
+We will address mathematical methods to assess these relationships in more depth later in the semester.
+
+Two numerical variables - Scatter plots
+========================================================
+
+Two variables $x$ and $y$ are 
+
+- **positively associated** if $y$ increases as $x$ increases. 
+- **negatively associated** if $y$ decreases as $x$ increases.
+
+Height and weight are positively associated.
+
+***
+
+```{r scatterplot, echo=FALSE}
+ggplot(data = famuss, aes(x = height, y = weight, color = sex)) +
+  geom_point()
+```
+
+Two numerical variables - Correlation
+========================================================
+
+Correlation is a numerical summary that measures the strength of a linear relationship between two variables.
+
+ - Introduced in Section 1.6.1 of the text (details in Ch. 6).
+ 
+ - The correlation coefficient $r$ takes on values between -1 and 1.
+ 
+ - The closer $r$ is to $\pm 1$, the stronger the linear association.
+
+In this case, the correlation between `height` and `weight` is `r cor(famuss$height, famuss$weight)` - positive and moderately strong
+
+
+
