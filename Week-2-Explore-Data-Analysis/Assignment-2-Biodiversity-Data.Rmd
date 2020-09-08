@@ -17,7 +17,7 @@ Write each group members name below next to one of the * signs.
 
 ## Learning Outcomes
 
-Students completing this assigment will be able to:
+Students completing this assignment will be able to:
 
 * Access data from biodiversity digital data repositories
 * Evaluate the research utility of occurrence data derived from different sources
@@ -54,6 +54,7 @@ install.packages("maptools")
 install.packages("ridigbio")
 install.packages("rgbif")
 install.packages("raster")
+install.packages("ggplot2")
 ```
 
 ### Load packages
@@ -372,7 +373,8 @@ d. Calculate the mean, median, min, and max values for both BIO 1 and BIO 12, us
 e. Make a **scatter plot** showing the relationship between BIO 1 and BIO 12 at the occurrence locations for your species.
 
 ```{r}
-# Put your code to make your scatter plot here
+ggplot(data = gbif_env, aes(x = bio1, y = bio12)) +
+  geom_point()
 ```
 
 f. Based on the scatter plot, describe the relationship between BIO 1 and BIO 12.
