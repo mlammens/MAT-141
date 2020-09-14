@@ -1,0 +1,211 @@
+---
+title: "Week 4 - Small group sessions - probability and distributions"
+author: "Matthew E. Aiello-Lammens"
+date: "9/14/2020"
+output: html_document
+---
+
+## Learning Objectives
+
+* Identify and practice the uses of **marginal**, **joint**, and **conditional** probabilities in understanding issues of public health and health care coverage.
+* Apply the principles of probability and conditional probability to calculate positive predictive rate for COVID-19 testing.
+
+## Review of some Quiz 3 questions
+
+### Based on question 2.10 in textbook
+
+Consider the following data on health coverage and health status, as reported by the Behavioral Risk Factor Surveillance System. 
+
+
+|                       | Excellent health| Very good health| Good health| Fair health| Poor health| Total |
+|:----------------------|:---------:|:---------:|:----:|:----:|:----:|:-----:|
+|**No health coverage** |459        |727        |854   |385   |99    |2524   |
+|**Yes health coverage**|4198       |6245       |4821  |1634  |578   |17476  |
+|**Total**              |4657       |6972       |5675  |2019  |677   |20000  |
+
+1. If we draw a survey participant at random, what is the probability that they have excellent health **and** do not have health coverage?
+
+This is an example of calculating a **joint probability**. Look for the cell that corresponds to the number of individuals who have **both** excellent health and no health coverage, then divide this number by the total number of survey participants.
+
+```{r}
+# define total number of survey participants
+total_participants = 20000
+
+# define number of participants that are in excellent health and do not have health coverage
+exhealth_nocoverage = 459
+
+# calculate percentage of participants with excellent health but no coverage
+prob_exhealth_nocoverage = exhealth_nocoverage/total_participants
+
+# print this value to screen
+prob_exhealth_nocoverage
+```
+
+2. If we draw a survey participant at random, what is the probability that they do not have health coverage?
+
+This is an example of calculating a **marginal probability**. Look for the *marginal cell* that corresponds to the *total number of participants with no health coverage*, then divide this number by the total number of survey participants.
+
+```{r}
+# define total number of survey participants reporting no health coverage
+tot_nocoverage = 2524
+
+# calculate percentage of participants reporting no health coverage
+prob_nocoverage = tot_nocoverage / total_participants
+
+# print this value to the screen
+prob_nocoverage
+```
+
+
+3. TRUE or FALSE - The probability that a survey participant has poor health and has health coverage is greater than a participant has poor health and does not have health coverage.
+
+To answer this question, we need to calculate two different conditional probabilities: P(poor health | health coverage)  and P(poor health | no health coverage). To do this, we'll need to focus on each of the health coverage rows separately.
+
+```{r}
+# define total number of survey participants reporting no health coverage
+tot_nocoverage = 2524
+
+# define the number of participants with poor health and no health coverage
+poorhealth_nocoverage = 99
+
+# define total number of participants reporting poor health
+tot_yescoverage = 17476
+
+# define the number of participants with poor health and health coverage
+poorhealth_yescoverage = 578
+
+# Calculate the percentages (probabilities) for poor health values within each row separately
+
+# P(poor health | health coverage) 
+poorhealth_yescoverage / tot_yescoverage
+
+# P(poor health | no health coverage) 
+poorhealth_nocoverage / tot_nocoverage
+
+```
+
+
+4. If we draw a survey participant at random and determine they have poor health, what is the probability that they do not have health coverage? 
+
+This is another conditional probability question. In this case, we are *given* the fact that the survey participant has poor health. So, let's only focus on the poor health column. Considering these numbers, what is the probability that the participant does not have health coverage?
+
+```{r}
+# define the total number of participants in poor health
+tot_poorhealth = 677
+
+# define the number of participants with poor health and no health coverage
+poorhealth_nocoverage = 99
+
+# define the number of participants with poor health and health coverage
+poorhealth_yescoverage = 578
+
+# calculate the percentages (probabilities) of each of the health coverage categories, given poor health
+
+# P(no health coverage | poor health)
+poorhealth_nocoverage / tot_poorhealth
+
+# P(yes health coverage | poor health)
+poorhealth_yescoverage / tot_poorhealth
+
+```
+
+We could have also applied the equation for conditional probability to the last two problems. 
+
+Recall:
+
+$$
+P(A|B) = P(A \cap B) P(B)
+$$
+
+Applying this to the above we would have:
+
+$$
+P(\text{no health coverage} | \text{poor health}) = P(\text{no health coverage AND poor health}) P(\text{poor health})
+$$
+
+Calculate probability of poor health
+
+```{r}
+# define the total participants with poor health
+tot_poorhealth = 677
+
+# P(poor health)
+prob_poorhealth = tot_poorhealth / total_participants
+```
+
+Calculate probability of poor health AND no health coverage
+
+```{r}
+prob_poorhealth_nocoverage = poorhealth_nocoverage / total_participants
+```
+
+Then we can calculate $P(\text{no health coverage} | \text{poor health})$ as:
+
+```{r}
+prob_poorhealth_nocoverage / prob_poorhealth
+```
+
+
+
+
+## COVID-19 testing comes to campus
+
+Beginning this week, 25% of the University community will be randomly selected to be tested for SARS-CoV-2, the virus that causes COVID-19. Because this virus is so new to humans, our tests are not perfect. (In fact, very few, if any tests for any disease are perfect!) A recent review finds that the **False Negative Rate (FNR)** for the RT-PCR test is between 2% and 29%. Recall that a false negative means the patient *does* have COVID-19, but their test is negative. We can write this mathematically as $P(\text{negative test}|\text{has COVID-19})$. This FNR equates to a **sensitivity** of 71% to 98%. 
+
+The RT-PCR test also has a **False Positive Rate (FPR)** of approximately 5%. That is, about 5% of patients who *do not* have COVID-19 will return a positive test result. We can write this mathematically as $P(\text{positive test}|\text{does not have COVID-19})$. This FPR equates to a **specificity** of approximately 95%.
+
+In the lecture, we worked through an example of calculating the **Positive Predictive Value** for a diagnostic test for Trisomy 21, or Downs syndrome. Let's apply what we learned there to determine the probability that you *actually* have COVID-19, given that you get a positive test result.
+
+In the lecture (review it as needed), we worked out that:
+
+$$
+P(D|T^+) = \frac{\text{sensitivity} \times \text{prevalence}}{[\text{sens.} \times \text{prev.}] + [(\text{1 - specificity}) \times (\text{1 - prev.})]}
+$$
+where
+
+$$
+D = \text{has COVID-19} \\
+T^+ = \text{has positive test} \\
+\text{sensitivity} = P(\text{positive test}|\text{has COVID-19}) = 1 - P(\text{negative test}|\text{has COVID-19}) \\
+\text{specificity} = P(\text{negative test}|\text{does not have COVID-19}) = 1 - P(\text{positive test}|\text{does not have COVID-19})
+$$
+
+and **prevalence** is the proportion of the population that has the disease (as we treated it in the lecture). ***HOWEVER***, the prevalence values can be replaced by the **pre-test probability** that you have COVID-19. The important distinction between these two values is that the latter might be influenced by personal behavior. For example, if you follow the guidelines for minimizing the spread of COVID-19, then the prevalence of the virus may be a good representation of your chances of contracting the disease. However, if you are in a more exposed situation (e.g., front-lines worker) or you engage in risky behavior (e.g., no mask wearing), then your probability of contracting the disease are greater. 
+
+1. Let's assume you are being very careful, but after being randomly selected for testing, your test comes back positive. What is the probability you have COVID-19?
+
+**Assumptions:**
+
+* sensitivity = 70% - this is being very conservative, since it is at the lower end of the reported sensitivity values
+* specificity = 95% 
+* prevalence = 1% - this is the current positive test rate in NY
+
+
+```{r}
+p_covid_given_postest = (0.7 * 0.01) / ((0.7 * 0.01) + ((1-0.95) * (1-0.1)))
+p_covid_given_postest
+```
+
+2. Having had a positive test, you are asked to take a second test. Assuming you **do not** have COVID-19, what is the probability that your second test is positive?
+
+
+```{r}
+# Your second test is independent from the first, so the probability of having a positive test even if you don't have covid is the same as the FPR, which is 0.05
+```
+
+
+3. As noted above, in any given week, 25% of the University community will be **randomly** selected to be tested. What's the probability that this week is your week?
+
+```{r}
+prob_selection = 0.25
+```
+
+
+
+4. What is the probability that you will make it to Thanksgiving without ever having been selected for testing? (Note - there are 10 weeks of in-person classes remaining.)
+
+```{r}
+# you need to *not* be selected 10 times in a row
+(1-prob_selection)^10
+```
+

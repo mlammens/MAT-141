@@ -1,0 +1,17 @@
+---
+title: "Untitled"
+author: "Matthew E. Aiello-Lammens"
+date: "9/13/2020"
+output: html_document
+---
+
+### Using the binomial distribution, how many members of your small group session do you expect will be selected for testing next week?
+
+### Have students use BMJ tool to calculate positive predictive value for several different values of pre-test probability. Then make an x-y scatter plot. Then have them interpret the results of the figure.
+
+### Repeat this with prevelance values in the different states.
+
+
+
+* Assuming a test specificity of 95%, we will have a false positive rate of 5% (that is, the probability of testing positive for COVID-19 when you don't actually have it is 5%). What is the probability that at least 1 person in a class of 6 tests positive, but does not have COVID-19?
+
