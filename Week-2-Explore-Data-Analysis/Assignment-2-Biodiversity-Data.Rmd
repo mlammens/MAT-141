@@ -50,11 +50,11 @@ In this assignment you will need several new R packages. **Execute the `install.
 ### Install new packages
 
 ```{r, eval=FALSE}
-install.packages("maptools")
-install.packages("ridigbio")
-install.packages("rgbif")
-install.packages("raster")
-install.packages("ggplot2")
+install.packages("maptools", source = "binary")
+install.packages("ridigbio", source = "binary")
+install.packages("rgbif", source = "binary")
+install.packages("raster", source = "binary")
+install.packages("ggplot2", source = "binary")
 ```
 
 ### Load packages
@@ -316,9 +316,11 @@ c. Describe the shape of the two histograms.
 
     *Replace this text with your answer*
 
-d. Calculate the mean, median, min, and max values for both BIO 1 and BIO 12, using R functions. 
+d. Calculate the mean, median, min, and max values for both BIO 1 and BIO 12, using R functions. Note you will likely need to use the `na.rm = TRUE` argument when doing this, as shown below.
 
 ```{r}
+mean(idigbio_env$bio1, na.rm = TRUE)
+
 # Put your code to calculate mean, median, min, max values here.
 ```
 
@@ -326,7 +328,8 @@ d. Calculate the mean, median, min, and max values for both BIO 1 and BIO 12, us
 e. Make a **scatter plot** showing the relationship between BIO 1 and BIO 12 at the occurrence locations for your species.
 
 ```{r}
-# Put your code to make your scatter plot here
+ggplot(data = idigbio_env, aes(x = bio1, y = bio12)) +
+  geom_point()
 ```
 
 f. Based on the scatter plot, describe the relationship between BIO 1 and BIO 12.
