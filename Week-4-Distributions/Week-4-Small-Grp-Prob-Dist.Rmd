@@ -59,6 +59,20 @@ prob_nocoverage
 
 3. TRUE or FALSE - The probability that a survey participant has poor health and has health coverage is greater than a participant has poor health and does not have health coverage.
 
+To answer this question, we need to calculate two different joint probability: P(poor health AND health coverage) and P(poor health AND no health coverage). We actually already calculated the second value above.
+
+```{r}
+prob_poorhealth_nocoverage
+
+prob_poorhealth_yescoverage = poorhealth_yescoverage / total_participants
+prob_poorhealth_yescoverage
+```
+
+
+**Alternative question**
+
+TRUE or FALSE - The probability that a survey participant has poor health **given** they have health coverage is greater than the probability a participant has poor health **given** they do not have health coverage.
+
 To answer this question, we need to calculate two different conditional probabilities: P(poor health | health coverage)  and P(poor health | no health coverage). To do this, we'll need to focus on each of the health coverage rows separately.
 
 ```{r}
@@ -114,13 +128,13 @@ We could have also applied the equation for conditional probability to the last 
 Recall:
 
 $$
-P(A|B) = P(A \cap B) P(B)
+P(A|B) = \frac{P(A \cap B)}{P(B)}
 $$
 
 Applying this to the above we would have:
 
 $$
-P(\text{no health coverage} | \text{poor health}) = P(\text{no health coverage AND poor health}) P(\text{poor health})
+P(\text{no health coverage} | \text{poor health}) = \frac{P(\text{no health coverage AND poor health})} {P(\text{poor health})}
 $$
 
 Calculate probability of poor health
@@ -182,7 +196,7 @@ and **prevalence** is the proportion of the population that has the disease (as 
 
 
 ```{r}
-p_covid_given_postest = (0.7 * 0.01) / ((0.7 * 0.01) + ((1-0.95) * (1-0.1)))
+p_covid_given_postest = (0.7 * 0.01) / ((0.7 * 0.01) + ((1-0.95) * (1-0.01)))
 p_covid_given_postest
 ```
 

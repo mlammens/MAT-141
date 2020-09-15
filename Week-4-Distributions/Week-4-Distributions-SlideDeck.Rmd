@@ -1,23 +1,33 @@
 ---
-title: "Unit 3: Distributions"
-author: "Statistics 102 Teaching Team"
-date: "February 17, 2020"
+title: "Week 4 - Distribtions of Random Variables"
+author: "Matthew E. Aiello-Lammens"
+date: "9/14/2020"
 output: 
   beamer_presentation:
-     includes:
-       in_header: ../slides_header.tex
-     fig_width: 3.25
-     fig_height: 3
-     fig_caption: false
-     toc: true
-     keep_tex: true
-classoption: "aspectratio=169"
-slide_level: 3
+    slide_level: 3
+    toc: true
+    fig_caption: false
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+### Slide attribution
+
+<small>
+These slides were originally developed by Mine Çetinkaya-Rundel of OpenIntro and
+Translated from LaTeX to Google Slides by Curry W. Hilton of OpenIntro.
+
+These slides were modified by the OpenIntro Biostats group to accomany the OpenIntro - Introduction to Statistics for Life and Biomedical Science textbook materials.
+
+These were further modified by Matthew Aiello-Lammens for use in Pace University course MAT 141 on the PLV campus, following and shared by the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) 
+</small>
+
 
 # Random Variables
 
-### Main ideas this section
+### Overview
 
 - Definition of random variables
 
@@ -62,16 +72,15 @@ The probability distribution for $X$ is as follows:
 
 Distributions of random variables that arise in science can be more complex.
 
-In lab, we will run a simulation to view the distribution of good responses in a clinical trial with 8 participants, under the assumption that the probability of a good response is 0.15.
+In a future small group session, we will run simulations to produce biologically relevant distribution.
 
 
 ### Expectation of a Random Variable
 
 If $X$ has outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$, the expected value of $X$ is the sum of each outcome multiplied by its corresponding probability:
 \[E(X) 	= x_1 P(X=x_1) + \cdots + x_k P(X=x_k) = \sum_{i=1}^{k}x_iP(X=x_i)\]
-The Greek letter $\mu$ may be used in place of the notation $E(X)$ and is sometimes written $\mu_X$.
 
-### Expectation...
+### Expectation
 
 In the coin tossing example, 
 
@@ -84,23 +93,27 @@ E(X) &= 0P(X=0) + 1P(X=1) + 2P(X=2) + 3P(X = 3)  \\
 
 ### Variance and SD of a Random Variable
 
-If $X$ takes on outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or $\sigma^2$, is
+If $X$ takes on outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or $\sigma^2$, is
 \begin{align*}
-\text{Var}(X) &= (x_1-\mu)^2 P(X=x_1) + \cdots+ (x_k-\mu)^2 P(X=x_k) \\
-	&= \sum_{j=1}^{k} (x_j - \mu)^2 P(X=x_j)
+\text{Var}(X) &= (x_1-E(X))^2 P(X=x_1) + \cdots+ (x_k-E(X))^2 P(X=x_k) \\
+	&= \sum_{j=1}^{k} (x_j - E(X))^2 P(X=x_j)
 \end{align*}
 The standard deviation of $X$, written as $\text{SD}(X)$ or $\sigma$, is the square root of the variance.  It is sometimes written $\sigma_X$.
 
-### Variance and SD...
+### Variance and SD
 
 In the coin tossing example,
 
-\begin{align}
-    \sigma_X^2 &= (x_1-\mu_X)^2P(X=x_1) + \cdots+ (x_4-\mu)^2 P(X=x_4) \notag \\
-    	&= (0- 1.5)^2(1/8) + (1 - 1.5)^2 (3/8) + (2 -1.5)^2 (3/8) + (3-1.5)^2 (1/8) \notag  \\
-        &= 3/4 \notag
-    \end{align}
-    
+$$
+\sigma_X^2 = (x_1-E(X))^2P(X=x_1) + \cdots+ (x_4-E(X))^2 P(X=x_4)
+$$
+$$
+= (0- 1.5)^2(1/8) + (1 - 1.5)^2 (3/8) + (2 -1.5)^2 (3/8) + (3-1.5)^2 (1/8)
+$$
+$$
+= 3/4 
+$$
+
 The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.  
 
 # The Binomial distribution
@@ -176,8 +189,7 @@ The function \texttt{pbinom()} is used to calculate $P(X \leq k)$ or $P(X > k)$.
 - \texttt{pbinom(k, n, p)}: $P(X \leq k)$
 
 - \texttt{pbinom(k, n, p, lower.tail = FALSE)}: $P(X > k)$
-   
-
+ 
 # The Normal distribution
 
 
@@ -231,16 +243,22 @@ According to the Empirical Rule, for any normal distribution,
 \centering
 ![68-95-99.7](./figures/6895997.pdf){ width=75% }
 
+
 ### A Normal Example
 
 The distribution of test scores on the SAT and the ACT are both nearly normal. 
 
 Suppose that one student scores an 1800 on the SAT (Student A) and another student scores a 24 on the ACT (Student B). Which student performed better?
 
+\centering
+![](./figures/satActNormals.pdf){width=40%}
+
+<!---
 \begin{figure}[]
 \includegraphics[width=0.4\textwidth]
 {./figures/satActNormals.pdf}
 \end{figure}
+---->
 
 ### Standard Normal Distribution
 
@@ -275,13 +293,13 @@ is a standard normal random variable ($\mu = 0$, $\sigma =1$).
 
     - \texttt{pnorm(z)} calculates the area (i.e., probability) to the left of $z$
     
-    ```{r}
+```{r, echo = TRUE}
 pnorm(1)
 ```
 
 3. Alternatively, let \textsf{R} do the work ...
 
-    ```{r}
+```{r, echo = TRUE}
 pnorm(1800, 1500, 300)
 ```
 
@@ -295,7 +313,7 @@ What score on the SAT would put a student in the 99$^{th}$ percentile?
 
 1. Identify the $Z$-value. \texttt{qnorm(p)} calculates the value $z$ such that for a standard normal variable $Z$, $p = P(Z \leq z)$.
 
-    ```{r}
+```{r, echo = TRUE}
 qnorm(0.99)
 ```
 
@@ -307,10 +325,9 @@ is Normal with mean $\mu$ and standard deviation $\sigma$.
 
 3. Alternatively, let \textsf{R} do the work ...
 
-    ```{r}
+```{r, echo = TRUE}
 qnorm(0.99, 1500, 300)
 ```
-    
 
 #  The Poisson distribution
 
@@ -351,13 +368,12 @@ P(X = x) = \frac{e^{-\lambda}\lambda^{x}}{x!}, \,\, x = 0, 1, 2,
 \ldots
 $$
 
-The probability of exactly $x$ events $t$ units of time is 
+The probability of exactly $x$ events in $t$ units of time is 
 $$
 P(X = x) = \frac{e^{-\lambda t}(\lambda t)^{x}}{x!}, \,\, x = 0, 1,
 2, \ldots
 $$
 
-Derivation given in more theoretical courses, such as Stat 110.
 
 
 ### Poisson distribution with $\lambda = 2.25$
@@ -389,7 +405,7 @@ The incidence rate over a 5-year period is (5)(30) per 1,000,000 children:
 
 ### What about a city of size 75,000?
   
-In a city of 75,000 people, approximately $(75,000)(0.20) = 15,000$ children will be age 0 - 14 (from slide 31).
+In a city of 75,000 people, approximately $(75,000)(0.20) = 15,000$ children will be age 0 - 14 (from earlier slide).
 
  The five-year rate of new cases for the city would be:
  
@@ -406,7 +422,7 @@ Suppose $X$ has a Poisson distribution with parameter $\lambda$.
 
 - \texttt{dpois(k, lambda)}: $P(X = k)$
 
-```{r}
+```{r, echo = TRUE}
 dpois(8, lambda = 2.25)
 ```
 

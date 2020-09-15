@@ -62,13 +62,13 @@ We could have also applied the equation for conditional probability to the last 
 Recall:
 
 $$
-P(A|B) = P(A \cap B) P(B)
+P(A|B) = \frac{P(A \cap B)}{P(B)}
 $$
 
 Applying this to the above we would have:
 
 $$
-P(\text{no health coverage} | \text{poor health}) = P(\text{no health coverage AND poor health}) P(\text{poor health})
+P(\text{no health coverage} | \text{poor health}) = \frac{P(\text{no health coverage AND poor health})} {P(\text{poor health})}
 $$
 
 Calculate probability of poor health

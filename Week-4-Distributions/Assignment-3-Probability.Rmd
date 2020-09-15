@@ -1,17 +1,127 @@
 ---
-title: "Untitled"
-author: "Matthew E. Aiello-Lammens"
-date: "9/13/2020"
-output: html_document
+title: "Assignment 3 - Probability"
+output:
+  word_document: default
+  html_document: default
 ---
 
-### Using the binomial distribution, how many members of your small group session do you expect will be selected for testing next week?
+## Assignment Author(s)
 
-### Have students use BMJ tool to calculate positive predictive value for several different values of pre-test probability. Then make an x-y scatter plot. Then have them interpret the results of the figure.
+<!--- 
+Write each group members name below next to one of the * signs.
+--->
 
-### Repeat this with prevelance values in the different states.
+*
+*
+*
+
+## COVID-19 testing comes to campus - continued
+
+During our small group sessions, we worked on calculating the **Positive Predictive Value (PPV)** for the SARS-CoV-2 virus. That is, the probability that you have COVID-19, given that you have tested positive for it. In class, we used a **pre-test probability** of having COVID-19 of 1%, which is a rough *estimate* of the prevalence of the disease in NY (or at least at Pace). Personal behavior can also influence your **pre-test probability** of having covid. In this exercise, we will examine how much of an effect the pre-test probability can have on the PPV.
+
+### User defined functions in R
+
+Let's begin by defining our own R function to calculate PPV. Recall that the equation is:
+
+$$
+P(D|T^+) = \frac{\text{sensitivity} \times \text{prevalence}}{[\text{sens.} \times \text{prev.}] + [(\text{1 - specificity}) \times (\text{1 - prev.})]}
+$$
+Thus, there are **three input** values need to calculate PPV.
+
+We can write our own custom function that takes these input values, and returns the PPV. Note that to make our own function we have to use the R function called `function`. We also have to explicitly `return` the calculated value for PPV.
+
+```{r}
+ppv_function = function(sens, spec, prev){
+  ppv = (sens * prev) / ((sens * prev) + ((1-spec) * (1-prev)))
+  return(ppv)
+}
+```
+
+We can now re-calculate the PPV we calculated in class.
+
+```{r}
+ppv_function(sens = 0.7, spec = 0.95, prev = 0.01)
+
+```
+
+We can now calculate the PPV for a vector of different `prev`, or pre-test probability, values using the following code:
+
+```{r}
+# Define our vector of `prev` values
+prev_vector <- c(0.01, 0.02, 0.03, 0.04, 0.05)
+
+# Use the sapply function to apply the ppv_function to each element of our prev_vector
+ppv_vector <- sapply(prev_vector, ppv_function, sens = 0.7, spec = 0.95)
+```
+
+Now we have two vectors that are equal in length, which we can plot using a scatter plot.
+
+```{r}
+library(ggplot2)
+
+qplot(x = prev_vector, y = ppv_vector)
+
+```
+
+Note that the PPV, that is, the probability that you **do** have COVID-19, given that you have tested positive, goes up quickly as the prevalence value goes up.
+
+
+### Your turn!
+
+Using the code above as a guide, **make a new `prev_vector` with 10 different prevalence / pre-testing probability values**. Remember that these values *must be* between 0 and 1 (they are probabilities after all!). 
+
+Explain why you are using the 10 values you chose. How did you decide on them? They can be based on prevalence values that are important. For example, in NYS universities must close for in-person classes if more than 5% of the university population tests positive for COVID-19. This guideline was revised down from 10% before the outbreak at SUNY Oneonta. Another example you might consider is calculating prevalence values for different states, using data available at the NY Times. (Go to [here](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html?action=click&module=Top%20Stories&pgtype=Homepage#states) and look for the Cases Per 100,000. Dividing this number by 100,000 will give you an approximate prevalence value in that state.)
+
+Once you have decided on your `prev_vector` values, calculate the `ppv_vector` values, and plot them in a scatter plot.
+
+*Describe your `prev_vector` values here.*
+
+```{r}
+# You can put your code here!
+
+
+```
+
+#### Interpretation
+
+In 3-4 sentences, describe the relationships between prevalence and PPV you observe here, and interpret what it means for your risk of getting COVID-19
+
+*Put your text response here.*
+
+### Behavioral impacts
+
+Do the same thing as above, except this time change the `prev_vector` values based on the influence personal behavior or circumstance might have on the outcome. For example, if you are living with someone who develops COVID-19, your pre-test probability may be much closer to 0.8. Or, if you are an EMT, treating potential COVID patients, your pre-test probability maybe closer to 0.6 (assuming you are properly wearing your PPE). ***NOTE** - you do not need to be correct about your probability assignments here, just provide a reasonable guess and explanation for each of the 10 values you choose.*
+
+*Describe your `prev_vector` values here.*
+
+
+```{r}
+# You can put your code here!
+
+
+```
+
+#### Interpretation
+
+As above, in 3-4 sentences, describe the relationships between prevalence and PPV you observe here, and interpret what it means for your risk of getting COVID-19. How much of an effect do you think personal decisions can influence your probability of having covid, given that you get a positive test result?
+
+*Put your text response here.*
 
 
 
-* Assuming a test specificity of 95%, we will have a false positive rate of 5% (that is, the probability of testing positive for COVID-19 when you don't actually have it is 5%). What is the probability that at least 1 person in a class of 6 tests positive, but does not have COVID-19?
 
+## References
+
+Much of the information used in developing this assignment were gathered from the following cites:
+
+* [https://www.bmj.com/content/369/bmj.m1808.long](https://www.bmj.com/content/369/bmj.m1808.long)
+* [https://www.nejm.org/doi/full/10.1056/NEJMp2015897](https://www.nejm.org/doi/full/10.1056/NEJMp2015897)
+
+These sites offer excellent data visualization of COVID data:
+
+* [https://ourworldindata.org/coronavirus](https://ourworldindata.org/coronavirus)
+* [https://ourworldindata.org/coronavirus-testing](https://ourworldindata.org/coronavirus-testing)
+
+This Wikipedia article is a useful and comprehensive description of positive and negative predictive values, as well as several other diagnostic metrics.
+
+* [https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values](https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values)
