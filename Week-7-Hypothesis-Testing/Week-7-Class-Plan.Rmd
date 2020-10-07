@@ -9,6 +9,14 @@ output:
     toc: yes
 ---
 
+# Lecture on Hypothesis Testing
+
+First half of class will be dedicated to hypothesis testing introduction lecture.
+
+# Worked example
+
+Second half of lecture will be dedicated to a worked example of a hypothesis test.
+
 ## *More* work with the Youth Risk Behavior Surveillance System (YRBSS) data
 
 This week, we are again going to use the Youth Risk Behavior Surveillance System (YRBSS) data set.
