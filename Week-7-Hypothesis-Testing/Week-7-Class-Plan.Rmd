@@ -1,0 +1,98 @@
+---
+title: "Week 7 - Class Plan - Hypothesis Testing"
+author: "Matthew Aiello-Lammens"
+date: "10/07/2020"
+output:
+  word_document:
+    toc: yes
+  html_document:
+    toc: yes
+---
+
+## *More* work with the Youth Risk Behavior Surveillance System (YRBSS) data
+
+This week, we are again going to use the Youth Risk Behavior Surveillance System (YRBSS) data set.
+Let's begin by loading the data into our environment.
+
+```{r}
+library(openintro)
+data(yrbss)
+```
+
+Next, draw a random sample of these data, with sample size equal to 100.
+
+```{r}
+set.seed(1981)
+yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+```
+
+
+## Confidence Intervals
+
+Calculate the **sample mean** and the **95% Confidence Interval** for **height** based on your sample. Recall that the **Confidence Interval** is:
+
+$$
+\bar{x} \pm 1.96\times SE \\
+$$
+
+or, otherwise written as:
+
+$$
+\bar{x} \pm 1.96\times \frac{s}{\sqrt{n}}
+$$
+
+
+```{r}
+mean(yrbss_samp$height, na.rm = TRUE)
+
+mean(yrbss_samp$height, na.rm = TRUE) + 1.96*(sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100))
+mean(yrbss_samp$height, na.rm = TRUE) - 1.96*(sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100))
+
+```
+
+## Compare to population mean
+
+Calculate the **population mean** for **height** for the `yrbss` data set. 
+Does our **95% confidence interval** calculated in above *include* the true population mean?
+
+
+```{r}
+mean(yrbss$height, na.rm = TRUE)
+```
+
+> In my case, my 95% **DOES** include the population mean. For the most part, we should expect this to be the case, though we could get a set of data in our sample that happens to be extreme, and therefore, the CI does not include the mean.
+
+
+## Z-stat
+
+Using the **population mean** calculated above, and the sample mean calculated even further above, calculate the $z$ statistic associated with your sample mean. Is your sample mean significantly different from the population mean?
+
+
+```{r}
+# Get the sample mean (again)
+yrbss_samp_mean <- mean(yrbss_samp$height, na.rm = TRUE)
+
+# Get the population mean (again)
+yrbss_pop_mean <- mean(yrbss$height, na.rm = TRUE)
+
+# Get the Standard Error of the Mean for the sample (again)
+yrbss_samp_SE <- sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100)
+
+## Calcualte the Z statistic
+z_stat <- (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
+print("my z_stat value")
+z_stat
+
+## Calculate the probability of this Z-stat - assume a **TWO TAILED** test
+## Below, I'm using the absolute value of the z_stat value, then
+## looking at the upper tail only.
+print("probability of my z_stat value, assuming two-tailed test")
+2 * pnorm(abs(z_stat), lower.tail = FALSE)
+
+```
+
+
+> Looking at the probability value for my Z-stat value, assuming an $\alpha = 0.05$ significane value, we DO NOT reject the null hypothesis. Thus, we support the hypothesis that my sample mean is NOT significantly different than the population mean.
+
+
+
