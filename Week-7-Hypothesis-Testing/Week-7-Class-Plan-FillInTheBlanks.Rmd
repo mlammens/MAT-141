@@ -1,0 +1,82 @@
+---
+title: "Week 7 - Class Plan - Hypothesis Testing - Fill in the Blanks"
+author: "Matthew Aiello-Lammens"
+date: "10/07/2020"
+output:
+  word_document:
+    toc: yes
+  html_document:
+    toc: yes
+---
+
+# Lecture on Hypothesis Testing
+
+First half of class will be dedicated to hypothesis testing introduction lecture.
+
+# Worked example
+
+Second half of lecture will be dedicated to a worked example of a hypothesis test.
+
+## *More* work with the Youth Risk Behavior Surveillance System (YRBSS) data
+
+This week, we are again going to use the Youth Risk Behavior Surveillance System (YRBSS) data set.
+Let's begin by loading the data into our environment.
+
+```{r}
+library(openintro)
+data(yrbss)
+```
+
+Next, draw a random sample of these data, with sample size equal to 100.
+
+```{r}
+set.seed(1981)
+yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+```
+
+
+## Confidence Intervals
+
+Calculate the **sample mean** and the **95% Confidence Interval** for **height** based on your sample. Recall that the **Confidence Interval** is:
+
+$$
+\bar{x} \pm 1.96\times SE \\
+$$
+
+or, otherwise written as:
+
+$$
+\bar{x} \pm 1.96\times \frac{s}{\sqrt{n}}
+$$
+
+
+```{r}
+
+```
+
+## Compare to population mean
+
+Calculate the **population mean** for **height** for the `yrbss` data set. 
+Does our **95% confidence interval** calculated in above *include* the true population mean?
+
+
+```{r}
+
+```
+
+
+
+## Z-stat
+
+Using the **population mean** calculated above, and the sample mean calculated even further above, calculate the $z$ statistic associated with your sample mean. Is your sample mean significantly different from the population mean?
+
+
+```{r}
+
+
+```
+
+
+
+
+
