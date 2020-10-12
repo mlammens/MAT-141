@@ -1,0 +1,315 @@
+---
+title: "Week 8 - Inference for Numerical Data - t-tests"
+author: "Matthew E. Aiello-Lammens"
+date: "10/12/2020"
+output: 
+  beamer_presentation:
+    slide_level: 3
+    toc: true
+    fig_caption: false
+---
+
+### Slide attribution
+
+<small>
+These slides were originally developed by the OpenIntro Biostats group to accompany the OpenIntro - Introduction to Statistics for Life and Biomedical Science textbook materials.
+
+These were further modified by Matthew Aiello-Lammens for use in Pace University course MAT 141 on the PLV campus, following and shared by the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) 
+</small>
+
+# Introduction
+
+### Recap: Hypothesis testing for a population mean
+
+1. Set the hypotheses
+    * $H_0 : \mu =$ null value
+    * $H_A : \mu <  \text{ or } > \text{ or } \ne \text{null value}$
+2. Calculate the point estimate
+3. Check assumptions and conditions
+    * Independence: random sample/assignment, 10% condition when sampling without replacement
+    * Normality: nearly normal population or n $\ge$ 30, no extreme skew -- or use the t distribution (Ch 5)
+4. Calculate a test statistic and a p-value (draw a picture!)
+
+
+$$
+Z = \frac{\bar{x}-\mu}{SE} \text{, where } SE = \frac{s}{\sqrt{n}}
+$$
+
+5. Make a decision, and interpret it in context
+    * If p-value $< \alpha$, reject $H_0$, data provide evidence for $H_A$
+    * If p-value $> \alpha$, do not reject $H_0$, data do not provide evidence for $H_A$
+
+### The $t$ distribution
+
+* When the population standard deviation is unknown (almost
+always), the uncertainty of the standard error estimate is
+addressed by using a new distribution: the $t$ distribution.
+* This distribution also has a bell shape, but its tails are thicker than the normal model's
+* Therefore observations are more likely to fall beyond two SDs from the mean than under the normal distribution
+* These extra thick tails are helpful for resolving our problem
+with a less reliable estimate the standard error (since $n$ is
+small)
+    
+
+
+### The $t$ distribution
+
+* Always centered at zero, like the standard normal distribution
+* Has a single parameter: degrees of freedom ($df$).
+* **OVERLY SIMPLISTIC DEFINITION**: $df = n - 1$
+* Below, solid line = Standard Normal, dotted = $t$ with $df = 1$, dashed = $t$ with $df = 9$, and long dash = $t$ with $df = 49$
+
+```{r, echo=FALSE, fig.height = 4, message=FALSE}
+library(ggplot2)
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + ylab("") +
+  stat_function(fun = dt, n = 101, args = list(df = 1), linetype = "dotted") + ylab("") +
+  stat_function(fun = dt, n = 101, args = list(df = 9), linetype = "dashed") + ylab("") +
+  stat_function(fun = dt, n = 101, args = list(df = 49), linetype = "longdash") + ylab("") +
+  scale_y_continuous(breaks = NULL) + 
+  theme_bw()
+```
+
+
+### Comparing two population means
+
+\small
+    
+Two-sample data can be paired or unpaired (independent). 
+
+- Paired measurements for each `participant' or study unit
+  
+    - each observation can be logically matched to one other observation in the data
+  
+    - e.g., scores on a standardized test before taking a prep course versus scores after the prep course
+        
+- Two independent sets of measurements
+    
+    - observations cannot be matched on a one-to-one basis
+    
+    - e.g., scores on a standardized test of students who did take a prep course versus scores of students who did not
+    
+The nature of the data dictate which two-sample testing procedure is appropriate: the two-sample test for paired data, or the two-sample test for independent group data.
+
+
+    
+#  Two-sample test for paired data
+
+### wetsuits and swimming velocity
+
+Did a new wetsuit design allow for increased swim velocities during the 2000 Olympics?
+
+A study was conducted to assess the effects of wetsuits on swim velocity.
+
+  - 12 competitive swimmers were asked to swim 1500m at maximal velocity, once wearing a wetsuit and once wearing a standard swimsuit.
+  
+  - Order of wetsuit versus swimsuit randomized.
+  
+  - Investigators recorded mean velocity (m/sec) for each trial.
+
+### Viewing swim velocities  
+
+\scriptsize   
+```{r, message = FALSE}
+library(oibiostat)
+data("swim")
+swim
+```
+   
+\normalsize   
+
+### Idea behind the paired $t$-test
+
+\small
+
+The velocities are paired by swimmer: each swimmer has two velocity measurements. 
+
+Suppose that for each swimmer $i$, we have observations $x_{i, WS}$ and $x_{i, SS}$.
+
+- Let $d_i$ be the difference between the measurements:
+\[d_i = x_{i, WS} - x_{i, SS}\]
+
+    - $x_{i, WS}$ is the wetsuit velocity measurement for swimmer $i$
+    
+    - $x_{i, SS}$ is the swimsuit velocity measurement for swimmer $i$
+
+- Base inference on $\overline{d}$, the sample mean of the $d_i$:
+
+\[\overline{d} = \frac{\sum d_i}{n}\]
+
+### The paired $t$-test    
+
+\small
+
+Let $\delta$ be the population mean of the difference in velocities during a 1500m swim if all competitive swimmers recorded swim velocities with each suit type.
+
+The null and alternative hypotheses are 
+
+- $H_0: \delta= 0$, there is no difference in mean swim velocities between swimming with a wetsuit versus a swimsuit
+    - i.e., wetsuits do not change mean swim velocities
+
+- $H_A: \delta \neq 0$, there is a difference in mean swim velocities between swimming with a wetsuit versus a swimsuit
+    - i.e., wetsuits do change mean swim velocities
+
+### The paired $t$-test \ldots
+
+\small
+
+The formula for the test statistic is
+\[ t = \dfrac{\overline{d} -\delta_0}{s_d /\sqrt{n}},\]
+
+where $\overline{d}$ is the mean of the differences, $s_d$ is the standard deviation of the differenes, and $n$ is the number of differences (i.e., number of pairs).
+
+Note how the formula is identical to the one introduced in Chapter  4 of the text, and very similar to our z-statistic formula.
+
+- A paired $t$-test is essentially a one-sample test of difference values.
+
+The $p$-value is calculated from a $t$ distribution with $df = n - 1$.
+
+### Confidence intervals for paired data
+
+A 95\% confidence interval for paired data has the form 
+
+\[\overline{d} \pm \left( t^{\star} \times \dfrac{s_d}{\sqrt{n}} \right) ,\]
+
+where $t^{\star}$ is the point on a *t* distribution with $df = n - 1$ that has area 0.025 to its right.   
+
+### Letting \textsf{R} do the work
+
+\scriptsize
+
+```{r}
+#two-sample syntax
+t.test(swim$wet.suit.velocity, swim$swim.suit.velocity, 
+       alternative = "two.sided", paired = TRUE)
+```
+
+Note: \texttt{t.test(x, y, paired = TRUE)} returns results based on the differences \texttt{x - y}.
+
+
+### Letting \textsf{R} do the work...
+
+\scriptsize
+
+```{r}
+#one-sample syntax
+t.test(swim$velocity.diff, mu = 0, alternative = "two.sided")
+```
+
+   
+# Two-sample test for independent group data
+
+### FAMuSS: comparing ndrm.ch by sex
+
+\small
+
+Does change in non-dominant arm strength after resistance training differ between men and women?
+
+The *FAMuSS* study introduced in Chapter 1 examined the change in non-dominant arm strength after resistance training.
+
+\scriptsize
+
+```{r}
+data("famuss")
+famuss[c(1, 2, 3, 595), c("sex", "age", "race", "height", "weight", 
+                          "actn3.r577x", "ndrm.ch")]
+```
+
+
+
+### FAMuSS: comparing ndrm.ch by sex...
+
+\scriptsize
+
+```{r fig.height = 2.75, fig.width = 4.0, fig.align = 'center'}
+library(ggplot2)
+ggplot(data = famuss, aes(x = sex, y = ndrm.ch)) +
+  geom_boxplot()
+```
+
+
+
+### The independent two-group $t$-test
+
+\small
+
+The null and alternative hypotheses are
+
+  - $H_0: \mu_F = \mu_M$, the population mean change in arm strength for women is the same as the population mean change in arm strength for men
+
+    - Equivalently, $H_0: \Delta = \mu_F - \mu_M = 0$
+
+  - $H_A: \mu_F \neq \mu_M$, the population mean change in arm strength for women is different from the population mean change in arm strength for men
+  
+In general, the hypotheses are written in terms of $\mu_1$ and $\mu_2$.\footnote{The numerical labels are arbitrary, so it is best to explicitly specify which group is considered group 1 versus group 2.}
+
+  - The parameter of interest is $\mu_1 - \mu_2$.
+  
+  - The point estimate is $\overline{x}_1 - \overline{x}_2$.
+
+### The independent two-group $t$-test...
+
+The $t$-statistic is:
+
+\[t =\dfrac{ (\overline{x}_{1} - \overline{x}_{2})- (\mu_1 - \mu_2)}
+  {\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}} \]
+
+The $p$-value is calculated as usual, but the degrees of freedom for the distribution are different than for the paired data setting...
+
+### Degrees of freedom for the independent two-group $t$-test
+
+\small
+
+When doing the test by hand, use the following approximation:
+\[df = \text{min}(n_1 - 1, n_2 - 1) \]
+
+\textsf{R} uses a better approximation, known as the Satterthwaite approximation:
+
+\[df = \dfrac{\left[(s_1^2/n_1) + (s_2^2/n_2)\right]^2}{\left[(s_1^2/n_1)^2/(n_1 - 1) + (s_2^2/n_2)^2/(n_2 - 1)\right]}\]
+
+  
+
+### Confidence intervals for independent two-group data
+
+The 95% confidence interval for the difference in population means has the form
+\[( \overline{x}_{1} - \overline{x}_{2}) \pm \left( t^{\star} \times  \sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}} \right), \]
+     
+where $t^{\star}$ is the point on a $t$ distribution that has area 0.025 to the right, with the same $df$ as used for calculating the $p$-value of the associated test. 
+
+### Letting R do the work
+
+\scriptsize
+
+```{r}
+#define categories for sorting ndrm.ch
+female = (famuss$sex == "Female"); male = (famuss$sex == "Male")
+
+#comma syntax
+t.test(famuss$ndrm.ch[female], famuss$ndrm.ch[male], mu = 0,
+       alternative = "two.sided", paired = FALSE)
+```
+
+### Letting R do the work...
+
+Alternatively, take advantage of the way the data are structured and use the tilde (\texttt{$\sim$}) syntax.
+
+\scriptsize
+
+```{r}
+#tilde syntax
+t.test(famuss$ndrm.ch ~ famuss$sex, mu = 0,
+       alternative = "two.sided", paired = FALSE)
+```
+
+    
+### Paired vs. independent data
+
+What if the swimsuit data had been incorrectly analyzed with an independent two-group test?
+
+\scriptsize   
+
+```{r}
+t.test(swim$wet.suit.velocity, swim$swim.suit.velocity, 
+       mu = 0, alternative = "two.sided", paired = FALSE)
+```   
+
