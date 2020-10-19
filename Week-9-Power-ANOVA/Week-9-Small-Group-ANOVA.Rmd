@@ -1,0 +1,112 @@
+---
+title: "Week 9 - t tests and ANOVA - Class Plan"
+author: "Matthew Aiello-Lammens"
+date: "10/19/2019"
+output:
+  word_document:
+    toc: yes
+---
+
+# Class plan
+
+* Demonstration of two-sample *t* test in R
+* Demonstration of ANOVA in R
+
+# Demonstration of two-sample *t* test in R
+
+In these demonstrations we will be using the a data set on **aldrin** concentration values at three different depths in the Wolf River.
+This case study is further described in the ANOVA lecture.
+
+```{r}
+aldrin <- read.csv("https://www.dropbox.com/s/sfstj4p8beajir5/aldrin.csv?dl=1")
+summary(aldrin)
+
+```
+
+Let's make a box plot of these data
+
+```{r}
+library(ggplot2)
+
+ggplot(data = aldrin, aes(x = depth, y = aldrin)) +
+  geom_boxplot()
+```
+
+Just looking at the box plot, it does appear as though there are differences in the levels of aldrin at the different depths.
+
+## Compare concentrations of aldrin at different depths with *t* test
+
+There are three possible **pair-wise comparisons** we can do here:
+
+* bottom - middle
+* bottom - surface
+* middle - surface
+
+
+We will carry out a 2-sample *t* test for each of these comparisons by following these procedures:
+
+1. Subset the data to include only the two depths of interest
+2. Perform a *t* test using the R function `t.test` with the **formulat** notation (i.e., using the ~ sign).
+
+### bottom - middle comparison
+
+Subset our data set
+
+```{r}
+aldrin_bot_mid = subset(aldrin, depth %in% c("bottom", "middepth"))
+```
+
+Perform *t* test
+
+```{r}
+t.test(data = aldrin_bot_mid, aldrin ~ depth)
+```
+
+### bottom - surface
+
+
+```{r}
+aldrin_bot_surf = subset(aldrin, depth %in% c("bottom", "surface"))
+t.test(data = aldrin_bot_surf, aldrin ~ depth)
+```
+
+
+### middle - surface
+
+```{r}
+aldrin_mid_surf = subset(aldrin, depth %in% c("middepth", "surface"))
+t.test(data = aldrin_mid_surf, aldrin ~ depth)
+```
+
+# Demonstration of ANOVA in R
+
+## Carry out an ANOVA
+
+ANOVA is a kind of linear model (we'll talk more about this soon), so we use the `lm` function in R first.
+
+```{r}
+aldrin_lm <- lm(data = aldrin, aldrin~depth)
+```
+
+Next, we use a special summary command called `anova` to show the results of our linear model.
+
+```{r}
+anova(aldrin_lm)
+```
+
+You could do something similar with the `aov` function. 
+
+```{r}
+aldrin_aov <- aov(data = aldrin, aldrin~depth)
+summary(aldrin_aov)
+```
+
+
+
+In lecture, I mention the possibility of doing multiple comparisons to test for which groups are different from each other.
+In practice, we would normally use a method like Tukey's Honset Significant Differences test, which I implement below. Note that I use the `aov` command here, instead of the `anova(lm())` syntax. 
+
+```{r}
+TukeyHSD(aov(data = aldrin, aldrin~depth))
+```
+
