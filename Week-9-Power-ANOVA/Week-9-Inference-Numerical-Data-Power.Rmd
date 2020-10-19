@@ -59,7 +59,7 @@ $H_A$ is true &  probability = $1 - \beta$ & probability = $\beta$\\
   
       - As sample size increases, power increases.
       
-      - As standard deviation decreases, power decreases.
+      - As standard deviation decreases, power increases.
       
       - As effect size increases, power increases. 
 

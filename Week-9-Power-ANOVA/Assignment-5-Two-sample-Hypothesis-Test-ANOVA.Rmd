@@ -1,0 +1,77 @@
+---
+title: "Assignment 5 - Two-sample Hypothesis Testing and ANOVA"
+output:
+  word_document: default
+  html_document: default
+---
+
+## Assignment Author
+
+<!--- 
+Write your name below next to the * sign.
+--->
+
+*
+* 
+* 
+
+# Overview
+
+In this problem set, you are going to work on comparing groups of data, to see if there are significant differences between groups.
+We will be using data on Phosphorus levels in the soil at Pace University.
+
+First, let's get the data.
+
+
+```{r soil_data}
+soil_data <- read.csv("https://www.dropbox.com/s/b8vanatf6kejuba/soil_p_data.csv?dl=1")
+summary(soil_data)
+```
+
+## Visualize the data (5 points)
+
+Use a boxplot to visualize the differences between the three different **vegetation types**. 
+
+
+```{r}
+
+
+
+```
+
+## $t$ test assumptions (5 points)
+
+Based on the information given and this visualization, do you think these data meet the assumptions for a $t$ test? Address each of the three assumptions in your answer.
+
+**Write your answer below this line.**
+
+
+## $t$ test (10 points)
+
+Regardless of your answer to the question above, assume you can use a $t$ test to compare the different `vegetation_types`. 
+Because the $t$ test is only appropriate for comparing at most two groups of data, **you will have to run three different tests to compare each group to each other**. 
+
+
+```{r}
+
+```
+
+Based on the $t$ test results, can you conclude any of the groups are different from each other?
+
+**Write your answer below this line.**
+
+
+# ANOVA with R (5 points)
+
+Use either `summary(aov())` or `anova(lm())` to perform an ANOVA for this data set.
+
+**Put your R code below.**
+
+```{r}
+
+
+
+```
+
+Do your conclusions about the means of the different vegetation types based on the ANOVA match your conclusions based on the three *t* tests?
+
