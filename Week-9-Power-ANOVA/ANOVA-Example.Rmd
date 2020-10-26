@@ -1,0 +1,29 @@
+---
+title: "ANOVA Visual"
+output: html_document
+---
+
+
+```{r, echo=FALSE}
+aldrin <- read.csv("https://www.dropbox.com/s/sfstj4p8beajir5/aldrin.csv?dl=1")
+library(ggplot2)
+
+ggplot() +
+  geom_hline(yintercept = mean(aldrin$aldrin), size = 1) +
+  geom_point(aes(x = "bottom", y = 6.04), data = NULL, shape = 24, size = 4, fill = "#F8766D" ) +
+  geom_point(aes(x = "middepth", y = 5.05), data = NULL, shape = 24, size = 4, fill = "#00BA38" ) +
+  geom_point(aes(x = "surface", y = 4.2), data = NULL, shape = 24, size = 4, fill = "#619CFF" ) +
+  geom_jitter(data = aldrin, aes(x = depth, y = aldrin, color = depth), height = 0, width = 0.25) +
+  guides(color = FALSE) +
+  xlab("Depth") +
+  ylab("Aldrin Concentration") +
+  theme_bw()
+```
+
+# Identify the following:
+
+1. The grand mean
+2. The group means
+3. $(\bar{x}_{bottom} - \bar{x})$
+4. $(x_{30} - \bar{x})$
+5. $(x_{30} - \bar{x}_{surface})$
