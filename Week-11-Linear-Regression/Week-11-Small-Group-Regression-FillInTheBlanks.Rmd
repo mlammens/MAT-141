@@ -1,0 +1,164 @@
+---
+title: "Week 11 - Correlation and Regression - Class Plan"
+author: "Matthew Aiello-Lammens"
+date: "11/02/2020"
+output:
+  word_document:
+    toc: yes
+---
+
+# Correlation
+
+## Co-variation
+
+Calculate co-variation between sepal length and sepal width, using the `iris` data set.
+
+Formula for co-variation:
+
+$$
+covar = \frac{\sum_{i=1}^n{[(x_i-\bar{x}) \times (y_i-\bar{y})]}}{n-1}
+$$
+First, look at these data.
+
+```{r}
+data(iris)
+head(iris)
+
+library(ggplot2)
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + 
+  geom_point()
+
+```
+
+Next, calculate co-variation
+
+```{r}
+
+```
+
+
+## Correlation
+
+Calculate the correlation between sepal length and sepal width, and calculate whether $r$ is significantly different from 0 or not.
+
+$$
+cor = \frac{covar}{s_x \times s_y}
+$$
+
+
+```{r}
+
+```
+
+We can also test to see if the correlation value is significantly different from 0 or not.
+
+```{r}
+
+```
+
+
+## Robust correlation
+
+For Pearson's correlation coefficient to be appropriate, the data should have:
+
+1. A linear relationship
+2. A bivariate normal distribution
+
+* Spearman's Rank Correlation - calculates correlation on ranks of observed values
+* Kendall's Rank Correlation
+
+
+# Linear regression
+
+Now we assume that any change in *y* is **due** to a change in *x*.
+
+## Example of linear regression
+
+Effects of starvation and humidity on water loss in the confused flour beetle.
+Here, looking at the relationship between humidity and weight loss
+
+```{r}
+flr_beetle <- read.csv(file = "https://goo.gl/AiuemL")
+flr_beetle
+```
+
+Plot these data
+
+```{r}
+ggplot(data = flr_beetle, aes(x = HUMIDITY, y = WEIGHTLOSS)) +
+  geom_point()
+```
+
+Run a linear regression
+
+```{r}
+
+```
+
+Plot these data, with `lm` fit
+
+```{r}
+
+```
+
+
+### Linear regression assumptions
+
+#### The big three:
+
+1. **Normality:** The $y_i$ **AND** error values ($\epsilon_i$) are normally distributed. If normality is violated, *p*-values and confidence intervals may be inaccurate and unreliable.
+2. **Homogeneity of variance:** The $y_i$ **AND** error values ($\epsilon_i$) have the same variance for each $x_i$. 
+3. **Independence:** The $y_i$ **AND** error values are independent of *each other*.
+
+#### Other assumptions:
+
+* **Linearity:** The relationship between $x_i$ and $y_i$ is linear (only important when using simple linear regression).
+* **Fixed X values:** The $x_i$ values are measured without error. In practice this means the error in the $x_i$ values is much smaller than that in the $y_i$ values.
+
+### Linear regression diagnostics
+
+* **Leverage:** a measure of how extreme a value in **x-space** is (i.e., along the x-axis) and how much of an influence each $x_i$ has on $\hat{y}_i$. High leverage values indicate that model is unduly influenced by an outlying value.
+
+* **Residuals:** the differences between the observed $y_i$ values and the predicted $\hat{y}_i$ values. Looking at the pattern between residuals and $\hat{y}_i$ values can yield important information regarding violation of model assumptions (e.g., homogeneity of variance).
+
+* **Cook's D:** a statistics that offers a measure of the influence of each data point on the fitted model that incorporates both leverage and residuals. Values $\ge 1$ are considered "suspect".
+
+
+
+```{r}
+
+```
+
+## Standard error of regression coefficients, the regression line, and $\hat{y}_i$ predictions (OPTIONAL)
+
+Regression coefficients are statistics and thus we can determine the standard error of these statistics.
+From there, we can use these values and the *t*-distribution to determine confidence intervals.
+For example, the confidence interval for $b_1$ is:
+
+$$
+b_1 \pm t_{0.05, n-2}s_{b_{1}}
+$$
+
+### $\beta_1$ standard error
+
+$$
+s_{b_{1}} = \sqrt{ \frac{MS_{Residual}}{\sum^n_{i=1}(x_i-\bar{x})^2} }
+$$
+
+### $\beta_0$ standard error
+
+$$
+s_{b_{0}} = \sqrt{ MS_{Residual} [\frac{1}{n} + \frac{\bar{x}^2}{\sum^n_{i=1}(x_i-\bar{x})^2}] }
+$$
+
+
+
+## My model looks good, but is it meaningful?
+
+In order to determine if your linear regression model is meaningful (or *significant*) you must compare the **variance explained** by your model versus the **variance unexplained**.
+
+![Logan - Figure 8.3](/Users/maiellolammens/Dropbox/Pace/Teaching/ENS-623-Research-Stats/ENS-623-Research-Stats-Web/lectures/logan-fig-8-3.png)
+
+Note that there is a typo in this figure in panel (c). Instead of "Explained variability", the arrow tag should be "Unexplained variability".
+
+
