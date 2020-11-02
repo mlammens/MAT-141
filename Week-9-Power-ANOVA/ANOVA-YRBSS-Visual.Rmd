@@ -1,0 +1,40 @@
+---
+title: "ANOVA YRBSS Visual"
+output: html_document
+---
+
+
+```{r, echo=FALSE}
+library(openintro)
+library(ggplot2)
+library(dplyr)
+data("yrbss")
+
+yrbss_height_race =
+  yrbss %>% 
+  group_by(race) %>%
+  summarise(height = mean(height, na.rm = TRUE))
+
+ggplot() +
+  # geom_point(aes(x = "bottom", y = 6.04), data = NULL, shape = 24, size = 4, fill = "#F8766D" ) +
+  # geom_point(aes(x = "middepth", y = 5.05), data = NULL, shape = 24, size = 4, fill = "#00BA38" ) +
+  # geom_point(aes(x = "surface", y = 4.2), data = NULL, shape = 24, size = 4, fill = "#619CFF" ) +
+  geom_jitter(data = yrbss, aes(x = race, y = height, color = race), height = 0, width = 0.25) +
+  geom_point(data = yrbss_height_race, aes(x = race, y = height, fill = race), shape = 24, size = 3) +
+  geom_hline(yintercept = mean(yrbss$height, na.rm = TRUE), size = 1) +
+  guides(color = FALSE, fill = FALSE) +
+  xlab("Race") +
+  ylab("Height") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45))
+
+ggsave("ANOVA-Visual.png")
+```
+
+# Identify the following:
+
+1. The grand mean
+2. The group means
+3. $(\bar{x}_{bottom} - \bar{x})$
+4. $(x_{30} - \bar{x})$
+5. $(x_{30} - \bar{x}_{surface})$
