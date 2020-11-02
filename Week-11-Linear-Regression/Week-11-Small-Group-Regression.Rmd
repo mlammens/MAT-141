@@ -40,6 +40,11 @@ var(x = iris$Sepal.Length, y = iris$Sepal.Width)
 
 Calculate the correlation between sepal length and sepal width, and calculate whether $r$ is significantly different from 0 or not.
 
+$$
+cor = \frac{covar}{s_x \times s_y}
+$$
+
+
 ```{r}
 cor_iris <- covar / (sd(iris$Sepal.Length)*sd(iris$Sepal.Width))
 print(cor_iris)
