@@ -1,0 +1,57 @@
+---
+title: "MAT 141 - FA20 - PLV Term Project - Update Activity"
+author: "PUT YOUR NAME HERE"
+output: word_document
+---
+
+*This activity is meant to act as the template for your Term Project Update, which you should complete before meeting with Prof. Aiello-Lammens. If you do not recall the goals of the term project, I recommend you look over the* **Term Project Description** *file that is on Classes*
+
+***Instructions***
+
+*There are several sections below. These are the sections I am expecting to see in your final report. You can/ should use this is a template for your report. For the purposes of the Term Project Update, you only need to complete the sections that have questions and tasks. Remove all of my text, which is italicized in the Word doc version of this document. I expect you to be able to `knit` this documents and submit both the Rmd and docx versions on Classes.*
+
+# Introduction
+
+*Here is where you should describe your research question. You can start by copying your first Term Project Proposal assignment here.*
+
+# Data
+
+*Describe the data set you will be using here. You should give citations to the data set, and make sure to include the citation in the References Cited section below.*
+
+*Aspects of your data set that you should describe - what are the data? What kind of variables is the data set made up of, continuous, categorical, etc.? How big is the data set? Does it cover some extended period of time, space, etc.?*
+
+*Are the data normally distributed? If not, what distributional form do you think they take?*
+
+*In this section, I want you to read in the data set into R and perform some functions you would use to summarize your data.*
+
+```{r}
+## Put code to input data here
+```
+
+## No data set yet?
+
+*If you have not found a data set yet, then you must describe in detail the steps you have taken to try to find data to analyze. What sources have you searched? What journal articles or other academic sources have you found related to your topic?*
+
+## Figures and Tables
+
+*Make figures that **visualize** your data here. Also, include any tables that you think might be important.*
+
+# Hypotheses
+
+*You are required to do a hypothesis test for your analysis project. Describe the null and alternative hypotheses you have here.*
+
+# Analysis Method
+
+*Based on what we've learned in class so far, identify whether what we have learned is applicable to your analysis. Describe why it is or isn't?*
+
+## Meeting Analysis Assumptions
+
+*Describe if your data meet the assumptions of parametric analyses, as we have learned them so far.*
+
+# Results and Discussion
+
+# Conclusion
+
+# References Cited
+
+*Use APA citation format.*
