@@ -1,0 +1,40 @@
+---
+title: "Assignment 7 - Comparing Proportions"
+output:
+  word_document: default
+---
+
+## Assignment Author
+
+<!--- 
+Write your name below next to the * sign.
+--->
+
+* 
+
+
+# Overview
+
+This homework comes from problems 6.28 and 6.30 in the OpenIntro 3rd ed. textbook. **You can complete this assignment using R as a calculator.**
+
+## Comparing proportion of the population suffering from sleep deprivation in two states
+
+The following is an excerpt from the OpenIntro textbook:
+
+> According to a report on sleep deprivation by the Centers for Disease Control and Prevention, the proportion of Califoria residents who reported insufficient rest of sleep during each of the preceeding 30 days is 8.0%, while the proportion is 8.8% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+1. Calculate a 95% confidence interval for a difference between the proportions of Californians and Oregonians who are sleep deprived and interpret it in context of the data.
+
+```{r}
+# If using R for calculations, put code here
+```
+
+*Put text response here*
+
+2. Conduct a hypothesis test to determine if these data provide strong evidence that the rate of sleep deprivation *is different* for the two states. **Make sure to check the conditions for the test.** Interpret your results in context of the data.
+
+```{r}
+# If using R for calculations, put code here
+```
+
+*Put text response here*
