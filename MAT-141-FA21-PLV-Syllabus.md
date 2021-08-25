@@ -8,7 +8,7 @@ MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 
 **Credits:** 4\
 **Meeting day and time:** Monday and Wednesday, 7:55 AM to 9:55 AM\
-**Term:** Fall 2020\
+**Term:** Fall 2021\
 **Location:** Environmental Classroom\
 **Professor:** Dr. Matthew Aiello-Lammens\
 **Email:** <maiellolammens@pace.edu>\
@@ -18,18 +18,12 @@ MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 
 **Course delivery format / modality:**
 
-For Fall 2020, this course will be taught as **web-assisted**. 
-Lectures will be delivered asynchronously as pre-recorded videos.
-Each lecture will be associated with a discussion forum, where you can ask questions and discuss the content.
-Synchronous face-to-face meetings will be scheduled with smaller groups (1/4 of the class at a time). 
-These meetings can take place in-person in the Environmental Classroom or via Zoom, depending on student requests. 
-All exams will be 'take-home' format.
-Several class meetings will occur synchronously online via Zoom during the semester.
+For Fall 2021, this course will be taught **fully in-person**.
+Some class sessions may be held remotely (synchronously via Zoom) to accommodate bad weather, pre-existing conflicts, or other unforeseen circumstances. 
 
 **Course Learning Management System:**
 
-We will be using **Classes** instead of Blackboard for this course. 
-*Why?* The University is switching over to Classes this coming Spring, but because it provides a nicer and more functional mobile device interface (i.e., phones and tablets), I decided to move over sooner. 
+All course material will be shared via our **Classes** page.
 You can log-in to **Classes** at [https://classes.pace.edu](https://classes.pace.edu).
 
 
@@ -51,7 +45,7 @@ Rationale
 
 Scientists and biomedical professionals need to analyze data to get insights from their observations, determine what the best practices in a field are, and evaluate hypotheses. 
 Further, the ability to analyze data is a key part of effective science communication. 
-This course will provide students with these techniques. 
+This course will provide students basic analysis techniques. 
 Additionally, the methods of biostatistical analysis are applicable in all fields relating to science, whether they are applied directly when analyzing data or indirectly by providing a structure to interpret scientific findings.
 
 Course learning objectives
@@ -64,28 +58,6 @@ During this course, students will be introduced to the foundational mathematics 
 * To develop and practice the skills of evaluating data quality. 
 * To be able to identify the most appropriate analysis techniques to use with a given data set.
 * To acquire the knowledge and skills to confidently perform standard data analysis techniques, including T tests, linear regression, ANOVA, and $\chi^2$ tests.
-
-Assessment
-----------
-
-I will assess your achievement of the course learning objectives and class learning outcomes based on your performance on the formative and summative assessments listed below. 
-In calculating your final score, I will drop the lowest quiz score and the lowest analysis review/write-up score.
-
-* 10% = Class participation - during class meetings, either in person or virtual, there will be small, low-stakes assignments you are expected to submit. Your participation will be based on these submissions.
-* 15% = Quizzes - quizzes will assess your understanding of the weekly lecture material and readings. **A quiz is due nearly every Friday** (see schedule for exceptions). Quizzes will generally be multiple choice and short-answer questions, delivered through the **Classes LMS**.
-* 10% = R / `learnr` modules - **before each synchronous small group meeting** you are expected to complete a self-paced tutorial in R/RStudio. I will go over how to complete these tutorials during our first group meetings. 
-* 15% = Analysis reviews/write-ups (Group work) - our synchronous small group meetings will be dedicated to answering any questions you have and to working through applications of statistics in the life sciences. In groups of 3 - 4 students you will write-up the results of these analysis applications. You will submit your write-ups as both an Rmd file and a Word file.
-* 20% = Term project - during the course of the semester, you will carry out an independent analysis project. The project includes three distinct submissions - a proposal, an update, and the final submission. See schedule for associated due dates.
-* 30% (10% each) = Three exams - Exams will be take-home and open-book. You will be expected to carry out an analysis and answer questions related to the analysis in long-form. You will submit your exam as both an Rmd file and a Word file.
-
-The following is the **course grading scale**:
-
-A 100%-94%; A- 93%-90%\
-B+ 89%-87%; B 86%-83%; B- 82%-80%\
-C+ 79%-75%; C 74%-70%; C- 69%-67%\
-D+ 66%-63%; D 62%-60%\
-F below 60%\
-
 
 Required Text
 -------------
@@ -106,6 +78,29 @@ have 'bugs'.
 
 -   RStudio can be found at
     <https://www.rstudio.com/products/rstudio/download/>.
+
+
+Assessment
+----------
+
+I will assess your achievement of the course learning objectives and class learning outcomes based on your performance on the formative and summative assessments listed below. 
+In calculating your final score, I will drop the lowest quiz score and the lowest analysis review/write-up score.
+
+* 10% = Class participation - during class meetings there will be small, low-stakes assignments you are expected to submit. Your participation will be based on these submissions.
+* 20% = Quizzes - quizzes will assess your understanding of the weekly lecture material and readings. Quizzes will generally be multiple choice and short-answer questions, delivered through the **Classes LMS**.
+* 20% = Analysis reviews/write-ups - ~~our synchronous small group meetings will be dedicated to answering any questions you have and to working through applications of statistics in the life sciences. In groups of 3 - 4 students you will write-up the results of these analysis applications.~~ You will submit your write-ups as both an Rmd file and a Word file.
+* 20% = Term project - during the course of the semester, you will carry out an independent analysis project. The project includes three distinct submissions - a proposal, an update, and the final submission. See schedule for associated due dates.
+* 30% (10% each) = Three exams - Exams will be take-home and open-book. You will be expected to carry out an analysis and answer questions related to the analysis in long-form. You will submit your exam as both an Rmd file and a Word file.
+
+The following is the **course grading scale**:
+
+A 100%-94%; A- 93%-90%\
+B+ 89%-87%; B 86%-83%; B- 82%-80%\
+C+ 79%-75%; C 74%-70%; C- 69%-67%\
+D+ 66%-63%; D 62%-60%\
+F below 60%\
+
+
 
 Course Policies
 ---------------
