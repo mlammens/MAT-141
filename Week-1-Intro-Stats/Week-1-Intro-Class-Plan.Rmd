@@ -1,7 +1,7 @@
 ---
 title: "Week 1 - Intro - Class Plan"
 author: "Matthew Aiello-Lammens"
-date: "8/24/2020"
+date: "9/8/2021"
 output:
   html_document: default
 ---
@@ -44,20 +44,17 @@ Briefly, you will create a poster that describes and visualizes the data you hav
 
 ## Course logistics (9:25 AM to 9:45 AM)
 
-This semester will be an adventure! We're in this together, so please communicate with me!
+This semester will be an(other) adventure! We're in this together, so please communicate with me!
 
 ### Class meetings
 
-* Most classes will be 'small group' sessions.
-* **Group A** is online (via Zoom). We can add more online options as needed.
-* Small group sessions will focus on R, problem solving, and applications.
-* Any 'full class' sessions will be online.
-* On the days that your group is *not* meeting, you should use that time to watch posted lectures, do the reading, go over the week's checklist, etc..
-* Exams are take home - they will require you to use R.
+* Classes will be a mixture of lecture, problem solving, and activities (some in groups and some solo)
+* I expect you to come to class having done assignments ahead of time, which will often include watching pre-recorded lectures and completing an associated problem set. **This is very important for you to be able to complete in class assignments in the allotted time.**
+* Exams will be in class. I will provide a formula sheet and you can bring a single page of notes. **No calculators are allowed.**
 * Please email me about any accommodations.
 
 ### Syllabus
 
 * There are a lot of categories in the 'assessment' section. Most of these are meant to be 'low-stakes' and taking into account that we will *not* be meeting for 3-hours that we would during a normal semester.
 * The textbook is freely available as a PDF, and pretty cheap on Amazon.
-* Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming helps you learn in other ways.
+* Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming facilitates learning.
