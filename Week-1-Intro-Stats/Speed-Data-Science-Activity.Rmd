@@ -1,0 +1,64 @@
+---
+title: "Phytoremediation on a suburban college campus"
+output: html_document
+---
+
+Marisa was interested in whether some vegetation types were 'better' than others at taking up excessive nutrients in storm water runoff at Pace University. 
+These excess nutrients, often the result of fertilizer use or other contaminants that get into the water cycle during rain events, can have serious negative consequences on water bodies, causing eutrophication and dead-zones. 
+She measured pH, Nitrate, and Phosphorus at five different sites on the Pace campus (each with different vegetation types). 
+The data are below.
+
+| date    | condition | site        | replicate | pH  | nitrate_lbacre | phosphorus_lbacre |
+| ------- | --------- | ----------- | --------- | --- | -------------- | ----------------- |
+| 3/29/18 | wet       | townhouse   | 1         | 6.5 | 10             | 10                |
+| 3/29/18 | wet       | townhouse   | 2         | 7   | 10             | 10                |
+| 3/29/18 | wet       | townhouse   | 3         | 6.2 | 10             | 17.5              |
+| 3/29/18 | wet       | townhouse   | 4         | 7.1 | 10             | 25                |
+| 3/29/18 | wet       | townhouse   | 5         | 6.6 | 10             | 25                |
+| 3/29/18 | wet       | osa_top     | 1         | 7   | 10             | 25                |
+| 3/29/18 | wet       | osa_top     | 2         | 6.8 | 5              | 25                |
+| 3/29/18 | wet       | osa_top     | 3         | 6.8 | 5              | 25                |
+| 3/29/18 | wet       | osa_top     | 4         | 6.2 | 10             | 25                |
+| 3/29/18 | wet       | osa_top     | 5         | 6.6 | 5              | 10                |
+| 3/29/18 | wet       | osa_bot     | 1         | 6.2 | 5              | 5                 |
+| 3/29/18 | wet       | osa_bot     | 2         | 6.6 | 15             | 5                 |
+| 3/29/18 | wet       | osa_bot     | 3         | 6.5 | 10             | 5                 |
+| 3/29/18 | wet       | osa_bot     | 4         | 7   | 10             | 5                 |
+| 3/29/18 | wet       | osa_bot     | 5         | 7.2 | 20             | 5                 |
+| 3/29/18 | wet       | wetland_top | 1         | 6   | 5              | 5                 |
+| 3/29/18 | wet       | wetland_top | 2         | 6.8 | 10             | 10                |
+| 3/29/18 | wet       | wetland_top | 3         | 6   | 5              | 5                 |
+| 3/29/18 | wet       | wetland_top | 4         | 6.2 | 10             | 10                |
+| 3/29/18 | wet       | wetland_top | 5         | 6.2 | 10             | 10                |
+| 3/29/18 | wet       | wetland_bot | 1         | 6.8 | 15             | 10                |
+| 3/29/18 | wet       | wetland_bot | 2         | 6.3 | 10             | 10                |
+| 3/29/18 | wet       | wetland_bot | 3         | 6.4 | 5              | 10                |
+| 3/29/18 | wet       | wetland_bot | 4         | 6.4 | 10             | 10                |
+| 3/29/18 | wet       | wetland_bot | 5         | 6.7 | 10             | 5                 |
+
+**With the limited information you have been given, come up with three different plots to visualize relationships in these data, and speculate as to how they may be useful to Marisa in answering her overall question.**
+
+***
+
+## Instructor's Notes
+
+This activity can be used to get students to start thinking about how data can be **visualized**. 
+Ideally, the instructor would give fairly vague advise, perhaps sketching very simplistic plots and figures, so the students can explore visualization *naively*.
+
+After each group has worked on a set of visualizations and assessment of their potential utility, individual group discussions, a whole class discussion, or group presentations can follow. After this discussion, the instructor could offer some visualizations that were not presented (e.g., box plots), going over the information they convey.
+
+### Learning Outcomes
+
+* Students should be introduced to different ways to convey quantitative and categorical data. These could include bar plots, scatter plots, histograms, and box plots.
+* Students practice summarizing and conveying information in a visual way.
+
+### Assessment
+
+* Did each group come up with visualizations that were useful at summarizing and conveying information?
+* Did students evaluate their peers work in a way that conveys understanding of different ways to visualize data? (Use [peer-eval.docx](https://mlammens.github.io/ESA-2021-BEDE-Network/docs/peer-eval.docx) tool.)
+
+### Learning Activities
+
+* Group data visualizations / posters
+* Individual peer evaluations of other groups posters
+* Group / class discussion

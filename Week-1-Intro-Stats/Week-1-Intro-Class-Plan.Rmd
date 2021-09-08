@@ -8,6 +8,16 @@ output:
 
 ## Intro (8:00 AM to 8:10 AM)
 
+**Background information**
+
+Using the index card I've given you, tell me:
+
+* Your name - full name, if there is a different name I should use, phonetic hints about pronouncing your name, pronouns
+* Why are you in this class?
+* What are you hoping you will get out of this class?
+* Career aspirations?
+
+
 **Using "Classes" during class**
 
 * Classes / Brightspace - our Learning Management System for this course (and for the future!)
@@ -16,7 +26,17 @@ output:
 
 ## Activity - Make a data poster (8:10 AM to 8:50 AM)
 
-**Practice making pictures with data**
+### Learning outcomes
+
+This activity addresses the 'exploratory data analysis and visualization' course learning objective.
+Specific learning outcomes include:
+
+* You will practice summarizing and conveying information in a visual way.
+* You will evaluate other students approaches to data visualization.
+* You will be introduced to different ways to convey quantitative and categorical data. These could include bar plots, scatter plots, histograms, and box plots.
+
+
+### Practice making pictures with data
 
 This assignment is described more fully in the **Case Studies** section of the **First Class** module
 
@@ -30,26 +50,26 @@ Briefly, you will create a poster that describes and visualizes the data you hav
 
 ## Gallery "Walk" - A sample of posters (8:50 AM to 9:00 AM)
 
-* Four randomly selected groups will present their posters
+* Each group will present their posters
 
 ### 5 MINUTE BREAK
 
-## Go over how to review our classmates posters (9:05 AM to 9:10 AM)
+## Peer review our classmates posters (9:05 AM to 9:20 AM)
 
-* Discussion board forum on Classes
+* Complete peer-review form
 
-## Discuss some possible data visualization (9:10 AM to 9:25 AM)
+## Discuss some possible data visualization (9:20 AM to 9:35 AM)
 
-* Link provided after class!
+* Introduce some different data visualization techniques for these data
 
-## Course logistics (9:25 AM to 9:45 AM)
+## Course logistics (9:35 AM to 9:55 AM)
 
 This semester will be an(other) adventure! We're in this together, so please communicate with me!
 
 ### Class meetings
 
 * Classes will be a mixture of lecture, problem solving, and activities (some in groups and some solo)
-* I expect you to come to class having done assignments ahead of time, which will often include watching pre-recorded lectures and completing an associated problem set. **This is very important for you to be able to complete in class assignments in the allotted time.**
+* I expect you to come to class having done assignments ahead of time, which will often include watching pre-recorded lectures and completing an associated quiz. **Completing the quiz in a timely matter is very important for you to be able to complete in-class assignments in the allotted time.**
 * Exams will be in class. I will provide a formula sheet and you can bring a single page of notes. **No calculators are allowed.**
 * Please email me about any accommodations.
 
@@ -57,4 +77,4 @@ This semester will be an(other) adventure! We're in this together, so please com
 
 * There are a lot of categories in the 'assessment' section. Most of these are meant to be 'low-stakes' and taking into account that we will *not* be meeting for 3-hours that we would during a normal semester.
 * The textbook is freely available as a PDF, and pretty cheap on Amazon.
-* Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming facilitates learning.
+* In addition to a spreadsheet program, we will be using R/RStudio. Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming facilitates learning.

@@ -1,6 +1,8 @@
 ---
 title: "Phytoremediation on a suburban college campus"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ## Study Information

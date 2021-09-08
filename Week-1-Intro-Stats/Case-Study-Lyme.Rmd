@@ -1,6 +1,8 @@
 ---
 title: "Presence of Lyme disease in the Hudson Valley"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ## Study Information
