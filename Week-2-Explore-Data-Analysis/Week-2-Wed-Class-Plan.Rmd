@@ -19,7 +19,7 @@ We need to put these data into an electronic format for further analysis.
 ### EXERCISE - Storing data electronically
 
 With a partner, put the data from these linked data sheets into a Google Sheets file.
-https://drive.google.com/file/d/19wPQRCT-5EpMAC0QDKlxsNVbBzgVe1pl/view?usp=sharing 
+[https://www.dropbox.com/s/hy1eu9wv8n1adtm/soil_p_data_collection.pdf?dl=0](https://www.dropbox.com/s/hy1eu9wv8n1adtm/soil_p_data_collection.pdf?dl=0) 
 
 ### “Long” format
 
