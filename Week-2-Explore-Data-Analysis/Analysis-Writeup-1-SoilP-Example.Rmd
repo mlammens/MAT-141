@@ -1,0 +1,65 @@
+---
+title: "Analysis Write-up 1 - Anlayzing soil phosphorus data"
+output:
+  html_document: default
+---
+
+## Introduction
+
+In this assignment, you will show an analysis of the soil phosphorus data we worked with on the first day of class.
+We will be using Google Sheets to complete the calculations required for this assignment, but will complete the write-up using Google Docs or MS Word (or another word processing program).
+Your write-up must have the following sections:
+
+* Analysis write-up authors
+* Study Details
+* Analysis Methods
+* Results
+* Interpretation
+
+What I expect for the content of each of these sections is detailed below.
+
+## Soil phosphorous data set
+
+As a reminder, here is what the data are. 
+You can also find the original description of the study in the 'Week 1' module on Classes.
+
+```{r soil_data, echo=FALSE}
+soil_data <- read.csv("https://www.dropbox.com/s/b8vanatf6kejuba/soil_p_data.csv?dl=1")
+print(dplyr::select(soil_data, -condition, -replicate))
+```
+
+## Analysis write-up authors
+
+List each author (group member) and ***very briefly*** describe their contributions.
+For example:
+
+> Matt Aiello-Lammens - completed pivot table calculations and helped with data analysis results interpretation
+
+## Study Details
+
+In your own words, briefly describe the study. 
+Your description should include whether this study is a **observational** or **experimental** study, what the variables are, what types of variables they are as they would be classified according to Figure 1.8 in the text book, and what the response and explanotory variables are.
+
+
+## Analysis Methods
+
+You will be using what we learn about Google Sheets (i.e., Pivot Tables) to calculate the mean and standard deviation P levels for each site.
+You will also do some other calculation of your choosing, again using Pivot Tables.
+Briefly describe how you performed these calcutions - e.g., what tool did you use, did you have to follow any specific steps, etc..
+
+## Results
+
+Describe general patterns related to the mean and SD values for the P levels at the different sites. E.g., which site had the highest P levles, which had the lowest, how did SD compare across sites, etc..
+
+Include a **nicely formatted** table that shows all of the mean and standard deviation values for phosphorus at each site.
+
+Describe the patterns related to the second calculation(s) you did using Pivot Tables. 
+
+Include a *second* **nicely formatted** table showing the results from your second calculation. 
+
+## Interpretation
+
+Describe your interpretations of what any observed differences and/or similarities in the means and standard deviations tells us about phosphorus levels in the soil at these five sites.
+Also desribe your interpretation of any other differences (or lack there of) observed for your second set of calculations.
+**Note -** there are no specific correct answers to this question, but there are wrong answers. 
+Make sure your interpretations are supported by the data you are analyzing.

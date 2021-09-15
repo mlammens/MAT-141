@@ -1,0 +1,20 @@
+---
+title: "Week 2 - Wednesday - Intro to Analysis - Class Plan"
+author: "Matthew Aiello-Lammens"
+date: "9/15/2021"
+output:
+  html_document: default
+---
+
+
+
+Data storage
+How are you going to record your measurements?
+You will likely have hard copies (handwritten) of your data from the field
+Need to put these data into an electronic format for further analysis
+EXERCISE - With a partner, put the data from the data sheets I’ve handed out into a Google Sheets file.
+https://drive.google.com/file/d/19wPQRCT-5EpMAC0QDKlxsNVbBzgVe1pl/view?usp=sharing 
+Demonstrate “Long” format
+Emphasize that each row corresponds to one individual that was measured
+Show that some information is redundant (e.g., Site, Location, Plot, etc.), but that this is necessary so that each row has all the important information about that individual!
+The long format makes sorting easier, and all sorts of analyses later on.
