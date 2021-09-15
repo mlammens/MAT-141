@@ -14,7 +14,8 @@ MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 **Email:** <maiellolammens@pace.edu>\
 **Phone:** (914) 773-3110\
 **Office Location:** 102 Environmental Classroom Building\
-**Office Hours:** TBD\
+**Office hours:** Monday & Wednesday 10:00 AM - 12:00 PM\
+Tuesday 4:00 PM - 5:00 PM\
 
 **Course delivery format / modality:**
 
