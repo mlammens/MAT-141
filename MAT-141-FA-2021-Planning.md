@@ -16,7 +16,7 @@ FA21 starting plans are to return to fully in-person with no occupancy restricti
 
 * Data vis - dissect a visualization on COVID from a news source, such as NYT or FiveThirtyEight, and from CDC (or Johns Hopkins site)
 * Conditional probability - COVID testing specificity and sensitivity (could also do this with Lyme pretty easily) 
-
+* Later in the semester - use **Introduction to Ecological Forecasting** [https://serc.carleton.edu/eddie/teaching_materials/modules/module5.html](https://serc.carleton.edu/eddie/teaching_materials/modules/module5.html)
 
 ## Some ideas for assignments and problems
 
