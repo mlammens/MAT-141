@@ -1,0 +1,23 @@
+---
+title: "Week 3 - Monday - Exploratory Data Analysis - Class Plan"
+author: "Matthew Aiello-Lammens"
+date: "9/20/2021"
+output:
+  html_document: default
+---
+
+## Review of lecture materials (8:00 AM - 8:05 AM minimum)
+
+Take 5 minutes to review the slides from the recorded lecture and identify any questions.
+
+## Practice Problems (8:05 AM - 9:00 AM)
+
+Break up into groups and work through practice problems as a class. No work collected during this section.
+
+## EDA Exercise (9:00 AM to 10:00 AM max)
+
+In groups, work on EDA Exercise assignment. Each individual submits their assignment by the end of the class period.
+
+## Additional EDA examples
+
+If there is additional time, we will explore additional EDA examples
