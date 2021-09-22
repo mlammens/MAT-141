@@ -1,15 +1,25 @@
 ---
 title: "Week 3 - Wednesday - Introduction to R/RStudio - Class Plan"
 author: "Matthew E. Aiello-Lammens"
-date: "9/21/2020"
+date: "9/22/2021"
 output: html_document
 ---
+
+# Today's Learning Outcomes
+
+At the end of this session you should be able to:
+
+* Perform basic arithmetic using R/RStudio
+* Identify the major components of the RStudio interface
+* Create an R script file and use it to document a sequence of R functions
+* Read in a data set and perform basic data summary procedures in R
+
 
 # Getting started in RStudio
 
 Let's start by opening up RStudio. Have a look at the components here.
 
-### Overall layout
+## Overall layout
 
 There are four panels in the RStudio interface (though you may only have three open when you first start it), each has valuable information.
 
@@ -22,7 +32,7 @@ There are four panels in the RStudio interface (though you may only have three o
 
 Before we do anything in R/RStudio, let's make a new folder on our computers where our class data can reside.
 You can use your operating systems file manager (i.e., Finder on Mac and Windows Explorer on Windows) to created a new folder where ever suites you. 
-**Call this new folder `MAT-141-FA20`. I STRONGLY RECOMMEND THAT YOU DO NOT PUT THIS FOLDER ON YOUR DESKTOP.**
+**Call this new folder `MAT-141-FA21`. I STRONGLY RECOMMEND THAT YOU DO NOT PUT THIS FOLDER ON YOUR DESKTOP.**
 We'll use this folder/directory later when we are asked to set our 'working directory' and when we need a place to store `*.R` and `*.Rmd` files.
 
 See the screen shot below for an example of creating a new folder using Mac Finder.
@@ -32,17 +42,33 @@ See the screen shot below for an example of creating a new folder using Mac Find
 ### Making an R Project
 
 Go back to RStudio.
-Let's make a new R Project associated with your `MAT-141-FA20` directory. 
+Let's make a new R Project associated with your `MAT-141-FA21` directory. 
 To make a new project, go to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
 Click the little downward arrow, select "New Project", then select "Existing Directory" from the window that pops up. 
-Use the graphical user interface (GUI) to navigate to the `MAT-141-FA20` directory, then select "Create Project".
+Use the graphical user interface (GUI) to navigate to the `MAT-141-FA21` directory, then select "Create Project".
 Once you've created your project, your RStudio session will restart in this project.
 
 There is also now a file in the folder you just made that ends in *.Rproj.
-If you double click on this file, RStudio will open, openning this project at the same time.
+If you double click on this file, RStudio will open, opening this project at the same time.
 This is a good way to re-open RStudio for your next session.
 
-## R as calculator
+### Getting help
+
+* **Help** panel (lower right corner)
+* `help.search`
+
+```{r}
+help.search("bar plot")
+```
+
+#### Challenge
+
+Use the `help.search` function to search for something in statistics that you think should be in R? Did you find anything?
+
+* I know my function - just give me the details - `?barplot`
+
+
+# R as calculator
 
 We can use R just like any other calculator. 
 Go to the **Console** tab and type the following and press enter:
@@ -53,36 +79,364 @@ Go to the **Console** tab and type the following and press enter:
 
 You should see the value of the equation "spit out" below the text you wrote.
 
+There's internal control for order of operations (Please Excuse My Dear Aunt Sally)
+
+```{r}
+(3 * 5) + 7
+```
+
+```{r}
+3 * 5 + 7
+```
+
+```{r}
+3 * (5 + 7)
+```
+
+## Internal functions
+
+There are a ton of internal functions, and a lot of add-ons.
+
+```{r}
+sqrt(4)
+abs(-5)
+```
+
+## Documenting your work
+
+### R script file
+
 We can execute any/all of the commands and functions we will learn this semester in the console, but this is generally *not* what we will do.
-
-
-## R script file
-
 Best practice for using R is to store your work in an R script or an RMarkdown document.
 We use these because it's easier to go back and re-run our code and to document our analytical steps / process.
+We won't be working with R script files this semester, but you should be aware of their existence.
+
+### Rmd file
+
+Use this to integrate text and R code into the same document.
+
+Using [R Markdown](https://rmarkdown.rstudio.com/), we can integrate descriptive text, R code, and the output from that code, into a seamless document that can be easily **reproduced**.
+Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. 
+While some of the details of using Markdown (and thus R Markdown) can get tricky, the basics are very easy to pickup.
+RStudio even comes with two very useful tools to learn and use Markdown. 
+First, go to the `Help` tab and select `Markdown Quick Reference`.
+Second, a more detailed reference can be found in the `Help` -> `Cheatsheets` section.
+
+### Markdown vs R Markdown
+
+R Markdown is a tool that allows you to make a simple text document using the Markdown formatting syntax **with** R code and associated output embedded. 
+
+### Starting with R Markdown
+
+Go to the new file button (upper left corner of the RStudio interface, or `File` -> `New File`) and choose the R Markdown option. 
+A screen will pop-up requesting information such as Title, Author, and Output Format. 
+Give your new doc a title and select **HTML** as the output format.
+A new file that is pre-populated with a bunch of text will open in the `Source` panel.
+
+We will go over each section briefly:
+
+* Header
+* Sections
+* Code Chunks (The code chunk syntax is *very* specific and important. As a beginner, you may choose to use the GUI button to make empty chunks - it's the little green box with a **C** in it and a plus sign.)
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Click **Knit** now to see what happens.
+
 
 **Important:** within an R file, you can use the `#` sign to add comments. Anything written after the `#` is *not* interpreted when you run the code.
 
 **Important:** we can write commands in our R script file, then run/execute those commands by pressing `CMD` + `RETURN` (Macs) or `CNTR` + `RETURN` (Windows). We can also excute only a section of code by highlighting it and pressing these same key strokes.
 
+# Variables and objects
 
-**Challenge**
+There are several basic types of data structures in R.
 
-Create a new R script file in your `MAT-141-FA20` directory. **HINT:** Try the little green `+` sign in the upper left-hand corner of RStudio.
+* **VECTORS**: One-dimensional arrays of numbers, character strings, or logical values (T/F)
+* **FACTORS**: One-dimensional arrays of factors (Stop - Let's discuss factors)
+* **DATA FRAMES**: Data tables in which the various columns may be of different type
+* **MATRICES**: In R, matrices can only be 2-dimensional, anything higher dimension is called an array (see below). Matrix elements are numerical; some functions, like the transpose function t(), only work on matrices
+* **ARRAYS**: higher dimensional matrices are called arrays in R
+* **LISTS**: lists can contain any type of object as list elements. You can have a list of numbers, a list of matrices, a list of characters, etc., or any combination of the above.
+
+## Functions that are useful for understanding the different types of data structures
+
+These functions will tell you what *kind* of variable you are dealing with, as well as some additional information which may be useful as you advance in your use of R.
+
+```
+str()
+class()
+```
+
+## Practice with variables
+
+Let's define a variable.
+
+```{r}
+my_var <- 8
+```
+
+And another
+
+```{r}
+my_var2 <- 10
+```
+
+Work with vars
+
+```{r}
+my_var + my_var2
+```
+
+Make a new variable
+
+```{r}
+my_var_tot <- my_var + my_var2
+```
+
+***
+
+#### Challenge
+
+Change the value of my_var2
+
+```{r}
+my_var2 <- 3
+```
+
+What is the value of `my_var_tot` now?
+
+***
+
+## Make a vector
+
+Let's combine multiple values into a vector of length greater than 1.
+
+```{r}
+# Vector of variables
+my_vect <- c(my_var, my_var2)
+
+# Numeric vector
+v1 <- c(10, 2, 8, 7, 11, 15)
+
+# Char vector
+pets <- c("cat", "dog", "rabbit", "pig")
+```
+
+Making a vector of numbers in sequence
+
+```{r}
+v2 <- 1:10
+v3 <- seq(from = 1, to = 10)
+```
+
+***
+
+# Data frames
+
+## Reading in your own data
+
+One of the most basic things you will need to do in R is read in your own data set. 
+You can read in Excel files, simple text files, and even files from Google Sheets.
+But the easiest type of file to read in is a comma separated values (CSV) file. 
+You can save an Excel workbook (or Numbers workbook or Google Sheet) as a CSV file by using the "Save as ..." menu item. 
+
+Let's read in the soil data from past activities using the function `read.csv`.
+Note that in this example, we are reading this file using a URL that points to it, but you can just as easily read in a file on your local system (in fact, this is much more common!).
+
+```{r soil_data}
+soil_data <- read.csv("https://mlammens.github.io/ESA-2021-BEDE-Network/docs/soil_nutrient_data.csv")
+```
 
 
-## Rmd file
+Let's have a brief look at these data.
 
-Use this to integrate text and R code into the same document.
+```{r}
+head(soil_data)
+tail(soil_data)
+```
 
-**Challenge**
+As we saw in our previous activity, these data include nutrient measurements at multiple different sites on a suburban campus. 
+The data set also includes information about where the data samples were collected and the conditions of the site during collection.
 
-Download the `Analysis-Writeup-1-SoilP-Example.Rmd` file from our Classes page. 
-Move this file into your `MAT-141-FA20` folder.
-In RStudio, you can now open this file using the **Files** tab (lower-right).
-Before we do anything else, `Knit` the document using the `Knit` icon.
-**NOTE:** the first time you do this, your system may prompt you to install the `knitr` package. 
-Say yes, as you will need this package for the rest of the semester.
+#### `summary` function
+
+Let's begin by using the `summary` function to examine this data set.
+`summary` returns many of the standard statistics.
+When doing data exploration, a few things you want to look at are:
+
+* How do the mean and median values within a variable compare?
+* Do the min and max values suggest there are outliers?
+* Which variables (i.e., columns) are quantitative (numeric) versus categorical (factors or characters)
+
+```{r}
+summary(soil_data)
+```
+
+#### A (very) brief introduction to navigating a `data.frame`
+
+We will be very brief here. 
+Check out 
+[this Data Carpentry lesson](http://www.datacarpentry.org/R-ecology/03-data-frames.html) for more information.
+
+* Looking at specific `data.frame` elements. Use *row* and *column* notation.
+
+Here is the 5th row, 3rd column (Site).
+**Note: We are using square brackets to index the `data.frame` and we *always* use [row, column] notation.**
+
+```{r}
+soil_data[5, 3]
+```
+
+* Looking at an entire column.
+
+Here are two ways to get the `pH` column.
+
+First, **note: we leave the row part blank, but still add the comma.**
+
+```{r}
+soil_data[ ,5]
+```
+
+Second, **use only the variable (column) name. Note the use of the `$` operator**
+
+```{r}
+soil_data$pH
+```
+
+* Looking at specific column entry
+
+This is another way to look at the 5th entry in the `pH` column.
+
+```{r}
+soil_data$pH[5]
+```
+
+* Looking at all entries for a given row.
+
+Here's all the entries for the 5th row.
+**Note: here we leave the column part blank, but still add the comma.**
+
+```{r}
+soil_data[5, ]
+```
+
+* Looking at a set of rows and/or columns.
+
+Here's all the entries in the 5th through 10th rows, 5th through 7th columns.
+**Note: we use the `:` operator to look at a range of value.**
+
+```{r}
+soil_data[5:10, 5:7]
+```
+
+* For `data.frame`s, if you do not use row, column notation, you will get only the columns back.
+
+```{r}
+head(soil_data[5:7])
+```
+
+***
+
+#### Challenge
+
+What am I going to get if I execute the command below?
+
+```{r, results='hide'}
+head(soil_data[c("site","phosphorus_lbacre")])
+```
+
+***
+
+
+## Basic data visualization
+
+There are many data visualization tools in R, and a very rich ecosystem of add-on [packages](https://cran.r-project.org/web/packages/index.html) that make it easy to create publication ready figures.
+Here we will learn a few basic visualization tools.
+
+### Visualization using the `ggplot2` package
+
+We are going to introduce a data visualization package called **ggplot2**.
+This package is great for producing publication quality graphics, but the syntax
+used to create a plot is a little more involved than base R (i.e., the `graphics` package).
+
+### Aside: Installing and loading packages
+
+First, we need to install the `ggplot2` package.
+
+**STOP** did you install the `tidyverse` package?
+
+```{r installggplot2, eval=FALSE}
+# Only need to do this once
+install.packages("ggplot2")
+```
+
+Then load it:
+
+```{r loadggplot2, message=FALSE}
+library(ggplot2)
+```
+
+**NOTE: You will only have to install a new package once, but you will need to call the `library` function at the beginning of every new R session.**
+
+### Historgrams
+
+Let's make a histogram of some of the nutrient data
+
+```{r}
+ggplot(data = soil_data, aes(x = pH)) +
+  geom_histogram()
+```
+
+Let's break down this call to introduce a few key things about ggplot
+
+* ggplot: the initial canvas we're working on
+* geom: geometric objects (i.e. the type of plot - histogram, points, line, etc) 
+* aes: aesthetic mapping 
+
+***
+
+#### Challenge - use `?geom_histogram` to determine how to change the number of bins used
+
+```{r, echo=FALSE, eval=FALSE}
+ggplot(data = soil_data, aes(x = pH)) +
+  geom_histogram(bins = 15)
+```
+
+***
+
+### Scatter plots
+
+Next let's make a scatter plot, showing pH versus phosphorus.
+
+```{r}
+ggplot(data = soil_data, aes(x = pH, y = phosphorus_lbacre)) +
+  geom_point()
+```
+
+**THAT SEEMS SO COMPLICATED!**
+
+It's true. The syntax for ggplot can seem pretty complicated. 
+But the power of ggplot lies in the ability to lay several geometries (geoms) over each other.
+Also, each geometry has a rich set of options. 
+For example, let's say I want to create the plot we just made, but I want to jitter the points (so they aren't overlapping) and add a trend line.
+
+```{r}
+ggplot(data = soil_data, aes(x = pH, y = phosphorus_lbacre)) +
+  geom_point(position = "jitter") +
+  geom_smooth(method = "lm")
+```
+
+### Boxplots
+
+Lastly, let's make a box plot. 
+
+```{r}
+ggplot(data = soil_data, aes(x = site, y = phosphorus_lbacre)) +
+  geom_boxplot()
+
+ggplot(data = soil_data, aes(x = site, y = pH)) +
+  geom_boxplot()
+```
+
 
 
 
