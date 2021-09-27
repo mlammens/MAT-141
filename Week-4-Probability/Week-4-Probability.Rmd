@@ -1,14 +1,13 @@
 ---
-title: "Week 4 - Small group sessions - probability and distributions"
+title: "Week 4 - Probability"
 author: "Matthew E. Aiello-Lammens"
-date: "9/14/2020"
+date: "9/27/2021"
 output: html_document
 ---
 
 ## Learning Objectives
 
 * Identify and practice the uses of **marginal**, **joint**, and **conditional** probabilities in understanding issues of public health and health care coverage.
-* Apply the principles of probability and conditional probability to calculate positive predictive rate for COVID-19 testing.
 
 ## Review of some Quiz 3 questions
 
@@ -163,65 +162,4 @@ prob_poorhealth_nocoverage / prob_poorhealth
 
 
 
-
-## COVID-19 testing comes to campus
-
-Beginning this week, 25% of the University community will be randomly selected to be tested for SARS-CoV-2, the virus that causes COVID-19. Because this virus is so new to humans, our tests are not perfect. (In fact, very few, if any tests for any disease are perfect!) A recent review finds that the **False Negative Rate (FNR)** for the RT-PCR test is between 2% and 29%. Recall that a false negative means the patient *does* have COVID-19, but their test is negative. We can write this mathematically as $P(\text{negative test}|\text{has COVID-19})$. This FNR equates to a **sensitivity** of 71% to 98%. 
-
-The RT-PCR test also has a **False Positive Rate (FPR)** of approximately 5%. That is, about 5% of patients who *do not* have COVID-19 will return a positive test result. We can write this mathematically as $P(\text{positive test}|\text{does not have COVID-19})$. This FPR equates to a **specificity** of approximately 95%.
-
-In the lecture, we worked through an example of calculating the **Positive Predictive Value** for a diagnostic test for Trisomy 21, or Downs syndrome. Let's apply what we learned there to determine the probability that you *actually* have COVID-19, given that you get a positive test result.
-
-In the lecture (review it as needed), we worked out that:
-
-$$
-P(D|T^+) = \frac{\text{sensitivity} \times \text{prevalence}}{[\text{sens.} \times \text{prev.}] + [(\text{1 - specificity}) \times (\text{1 - prev.})]}
-$$
-where
-
-$$
-D = \text{has COVID-19} \\
-T^+ = \text{has positive test} \\
-\text{sensitivity} = P(\text{positive test}|\text{has COVID-19}) = 1 - P(\text{negative test}|\text{has COVID-19}) \\
-\text{specificity} = P(\text{negative test}|\text{does not have COVID-19}) = 1 - P(\text{positive test}|\text{does not have COVID-19})
-$$
-
-and **prevalence** is the proportion of the population that has the disease (as we treated it in the lecture). ***HOWEVER***, the prevalence values can be replaced by the **pre-test probability** that you have COVID-19. The important distinction between these two values is that the latter might be influenced by personal behavior. For example, if you follow the guidelines for minimizing the spread of COVID-19, then the prevalence of the virus may be a good representation of your chances of contracting the disease. However, if you are in a more exposed situation (e.g., front-lines worker) or you engage in risky behavior (e.g., no mask wearing), then your probability of contracting the disease are greater. 
-
-1. Let's assume you are being very careful, but after being randomly selected for testing, your test comes back positive. What is the probability you have COVID-19?
-
-**Assumptions:**
-
-* sensitivity = 70% - this is being very conservative, since it is at the lower end of the reported sensitivity values
-* specificity = 95% 
-* prevalence = 1% - this is the current positive test rate in NY
-
-
-```{r}
-p_covid_given_postest = (0.7 * 0.01) / ((0.7 * 0.01) + ((1-0.95) * (1-0.01)))
-p_covid_given_postest
-```
-
-2. Having had a positive test, you are asked to take a second test. Assuming you **do not** have COVID-19, what is the probability that your second test is positive?
-
-
-```{r}
-# Your second test is independent from the first, so the probability of having a positive test even if you don't have covid is the same as the FPR, which is 0.05
-```
-
-
-3. As noted above, in any given week, 25% of the University community will be **randomly** selected to be tested. What's the probability that this week is your week?
-
-```{r}
-prob_selection = 0.25
-```
-
-
-
-4. What is the probability that you will make it to Thanksgiving without ever having been selected for testing? (Note - there are 10 weeks of in-person classes remaining.)
-
-```{r}
-# you need to *not* be selected 10 times in a row
-(1-prob_selection)^10
-```
 
