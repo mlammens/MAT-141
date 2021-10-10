@@ -18,11 +18,10 @@ output:
 ## Working with the Youth Risk Behavior Surveillance System (YRBSS) data
 
 In this lesson, we're going to explore variation in point estimates and Confidence Intervals.
-We will largely be following content that can be found in the textbook OpenIntro Statistics by Diez, Barr, and Çetinkaya-Rundel.
-
-As in Chapter 4 of the textbook, we'll be working with the Youth Risk
+We'll be working with the Youth Risk
 Behavior Surveillance System (YRBSS).
 Here, we will start be examining the **full** data set.
+(NOTE: We will largely be following content that can be found in the textbook chapter 4 of OpenIntro Statistics, 3rd Edition, by Diez, Barr, and Çetinkaya-Rundel).
 
 ### Population Parameters
 
