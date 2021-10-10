@@ -336,7 +336,7 @@ qnorm(0.99, 1500, 300)
 
 The Poisson distribution is used to calculate probabilities for rare events that accumulate over time. 
 
-It used most often in settings where events happen at a rate $\lambda$ per unit of population and per unit time, such as the annual incidence of a disease in a population.
+It is used most often in settings where events happen at a rate $\lambda$ per unit of population and per unit time, such as the annual incidence of a disease in a population.
 
   - Typical example: for children ages 0 - 14, the incidence rate of acute lymphocytic leukemia (ALL) was approximately 30 diagnosed cases per million children per year in 2010. 
 
