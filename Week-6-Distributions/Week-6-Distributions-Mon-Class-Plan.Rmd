@@ -14,8 +14,9 @@ output:
 * Use the parameters of a probability distribution to calculate the mean and standard deviation of a random variable.
 
 
-## Review of some Quiz 4 questions
+## Review of lecture material and/or quiz questions
 
+Take at least 5 minutes to review the lecture slides, quiz results, and your notes. Ask any questions / clarifications.
 
 ## Generate a binomial distribution through coin flips
 
