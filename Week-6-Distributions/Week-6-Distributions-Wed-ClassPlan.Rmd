@@ -1,0 +1,248 @@
+---
+title: "Week 6 - Class Plan - Confidence Intervals"
+author: "Matthew Aiello-Lammens"
+date: "9/30/2020"
+output:
+  html_document:
+    toc: yes
+---
+
+## Learning Objectives
+
+* Identify the relationships between population statistics and sample statistics
+* Calculate probabilities associated with getting certain sets of values for normally distributed data using both empirical approximation and analytical calculations
+
+## Working with the Youth Risk Behavior Surveillance System (YRBSS) data
+
+In this lesson, we're going to explore variation in point estimates and Confidence Intervals.
+We'll be working with the Youth Risk
+Behavior Surveillance System (YRBSS).
+Here, we will start be examining the **full** data set.
+(NOTE: We will largely be following content that can be found in the textbook chapter 4 of OpenIntro Statistics, 3rd Edition, by Diez, Barr, and Çetinkaya-Rundel).
+
+### Population parameters
+
+Let's begin by loading the data into our environment.
+
+You may need to first install the `openintro` R package
+
+```{r, eval=FALSE}
+install.packages("openintro")
+```
+
+After that, we can load in the data.
+
+```{r}
+library(openintro)
+data(yrbss)
+```
+
+
+As with any data set, let's have a quick look at the data using `summary`.
+
+```{r}
+summary(yrbss)
+```
+
+
+For now, let's focus on the variable `height`. 
+First, let's calculate the **population mean** for `height`.
+Remember, that the population mean is going to be the mean value for the *full* data set.
+
+```{r}
+mean(yrbss$height)
+```
+
+That's probably not the answer you were expecting. 
+There must have been students whose data was collected, but their heights weren't recorded, so a value of *NA* was assigned.
+In order to ignore these data, we need to add the argument `na.rm = TRUE` to our `mean` call.
+
+```{r}
+mean(yrbss$height, na.rm = TRUE)
+```
+
+
+### Sample parameter estimates
+
+OK, let's assume that we could only collect data from a subset of the high school students whose data are in this data set. 
+We can use the data in this subset to **estimate** population level parameters.
+This subset would be called our **sample**.
+
+We'll choose a subset at random, but we'll make it so that everyone in the class gets the same random subset.
+
+```{r}
+set.seed(1981)
+yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 10), ]
+```
+
+**Challenge:** Breakdown each piece of the command that we are using to get our sample.
+To do this, you should make sure to look at the help for `sample`.
+
+Let's calculate the mean height based on our sample.
+
+```{r}
+mean(yrbss_samp$height, na.rm = TRUE)
+```
+
+How does it compare to the true mean?
+
+Let's try increasing our sample size, and see if that makes a difference?
+
+#### Sample size = 100
+
+```{r}
+set.seed(1981)
+yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+mean(yrbss_samp$height, na.rm = TRUE)
+```
+
+#### Sample size = 1000
+
+```{r}
+set.seed(1981)
+yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 1000), ]
+mean(yrbss_samp$height, na.rm = TRUE)
+```
+
+
+In general, though not always, as you increase sample size, you get closer to the *true* population values for an estimated parameter.
+
+
+## Working with normally distributed data
+
+Let's use some of the plotting techniques we learned earlier in this course to examine the distribution of the height data.
+
+```{r}
+library(ggplot2)
+
+ggplot(data = yrbss, aes(x = height)) + 
+  geom_histogram()
+```
+
+We could also plot these data with an approximate density curve.
+
+```{r}
+ggplot(data = yrbss, aes(x = height, y = ..density..)) + 
+  geom_histogram() +
+  geom_density()
+```
+
+### Data transformations
+
+These data are not quite normally distributed (a little bit right skewed). 
+In order to make the data appear normal, we could apply a transformation to each data observation.
+The `log10` transformation is fairly standard in statistics.
+
+```{r}
+yrbss$log_height = log10(yrbss$height)
+
+ggplot(data = yrbss, aes(x = log_height)) + 
+  geom_histogram()
+```
+
+
+And that's about as good as we're going to get!
+
+### Distribution of a sample of the data
+
+Let's have a look at what the distribution of our data looks like if we take only a sample?
+
+```{r}
+set.seed(1981)
+yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 10), ]
+
+ggplot(data = yrbss_samp, aes(x = log_height)) + 
+  geom_histogram()
+```
+
+**Challenge:** What happens as you increase the sample size?
+
+#### Aside: Simulating normally distributed data
+
+The **Normal Distribution** is defined by two parameters -- the **mean** and the **standard deviation**.
+We can *simulate* normally distributed data using the `rnorm` function, with a mean and standard deviation.
+
+Here we are simulating 100 data points that are 'random normally' distributed: 
+
+```{r}
+rand_data = rnorm(n = 100, mean = 0, sd = 1)
+
+ggplot(data = NULL, aes(x = rand_data)) +
+  geom_histogram()
+```
+
+
+**Challenge:** Change the `mean` value. Describe what happens.
+
+**Challenge:** Change the `sd` value. Describe what happens.
+
+**Challenge:** Change the sample size (`n`) value. Describe what happens.
+
+
+### Parameterizing a normal with emprical data
+
+We can simulate data that is similar to the YRBSS height data if we parameterize a normal distribution with `mean` and `sd` values (population or sample values) calculated from the data set.
+
+```{r}
+yrbss_log_height_mean = mean(yrbss$log_height, na.rm = TRUE)
+yrbss_log_height_sd = sd(yrbss$log_height, na.rm = TRUE)
+```
+
+Now, draw 10,000 random values from this distribution. Construct a histogram and compare to the histogram above.
+
+```{r}
+rand_yrbss_data = rnorm(n = 10000, mean = yrbss_log_height_mean, sd = yrbss_log_height_sd)
+
+ggplot(data = NULL, aes(x = rand_yrbss_data)) +
+  geom_histogram()
+```
+
+### Probability of certain values of heights
+
+Let's calculate the probability of randomly selecting a study participant who is taller than the mean height. 
+
+**Challenge:** What should this probability be, if the data are perfectly normally distributed?
+
+
+#### Emperical probability calculations
+
+Here are the steps for an empirical calculation.
+
+* Determine how many values in your data set fit the desired criteria (so here, how many values are greater than the average)
+* Divide the number from the first step by the total number of values
+
+```{r}
+tot_greater_mean = sum(yrbss$log_height >= yrbss_log_height_mean, na.rm = TRUE)
+tot_values = sum(!is.na(yrbss$log_height))
+
+tot_greater_mean / tot_values
+```
+
+
+#### Analytical probability calculations
+
+We can use Rs internal `pnorm` function to calcualte the probability of getting a value greater than the mean.
+(NOTE: for *greater* we need to include the `lower.tail = FALSE` argument)
+
+```{r}
+pnorm(q = yrbss_log_height_mean, mean = yrbss_log_height_mean, sd = yrbss_log_height_sd, lower.tail = FALSE)
+```
+
+#### Example - probability of youth taller than 6 feet
+
+6 feet = 1.8288 meters
+
+```{r}
+# log10(1.8288)
+
+# empirical calculation
+tot_greater_sixft = sum(yrbss$log_height >= log10(1.8288), na.rm = TRUE)
+tot_greater_sixft/tot_values
+
+# analytical calculation
+pnorm(q = log10(1.8288), mean = yrbss_log_height_mean, sd = yrbss_log_height_sd, lower.tail = FALSE)
+
+```
+
+
+

@@ -1,0 +1,101 @@
+---
+title: "Assignment 3 - Working with the Normal Distribution"
+output:
+  word_document: default
+  html_document: default
+---
+
+## Assignment Author
+
+<!--- 
+Write your name below next to the * sign.
+--->
+
+* 
+
+## Working with the YRBSS data set
+
+For this assignment, we are going to use the Youth Risk Behavior Surveillance System (YRBSS) data set.
+Let's begin by loading the data into our environment.
+
+```{r}
+library(openintro)
+data(yrbss)
+```
+
+We are going to work with the height data again, so we'll have to perform the `log10` transformation to *normalize* the data.
+
+```{r}
+yrbss$log_height = log10(yrbss$height)
+```
+
+Let's also remove all of the rows where `height` is NA.
+
+```{r}
+yrbss = yrbss[!is.na(yrbss$height), ]
+```
+
+
+Next, let's separate the males and females into two separate data sets.
+
+```{r}
+yrbss_female = subset(yrbss, gender == "female")
+yrbss_male = subset(yrbss, gender == "male")
+```
+
+## Problem 1 
+
+**Calculate the mean and standard deviation values for both the male and female heights.**
+
+```{r}
+# put code to calculate mean and sd values here
+```
+
+
+**Describe how these values differ between the males and females. Are these differences expected? Explain your answer.**
+
+
+## Problem 2
+
+Let's make two histograms of the separated data.
+
+```{r}
+library(ggplot2)
+ggplot(data = yrbss, aes(x = log_height, fill = gender)) + 
+  geom_histogram(position = "dodge")
+```
+
+**Make at least three observations regarding what this figure is showing you. What do these combined histograms show you about the differences in heights between males and females?**
+
+
+## Problem 3
+
+Using **both** an empirical and an analytical approach, calculate the two probabilities below:
+
+* the probability that a randomly chosen male is taller than an average female (i.e., the female mean height). 
+* the probability that a randomly chosen female is shorter than an average male (i.e., the male mean height). 
+
+
+### Code for empirical probability calculations
+
+```{r}
+# Put empirical probability calculations here
+```
+
+
+### Code for qnqlytical probability calculations
+
+```{r}
+# Put analytical probability calculations here
+```
+
+**Explain why there are differences between the probability values calculated using these two methods.**
+
+
+**Considering the four probability values you just calculated, what does these values say about the differences in height for males versus females? Explain your answer.**
+
+
+
+
+
+
