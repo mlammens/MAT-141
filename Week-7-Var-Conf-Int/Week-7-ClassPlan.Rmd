@@ -1,10 +1,8 @@
 ---
-title: "Week 6 - Class Plan - Confidence Intervals"
+title: "Week 7 - Class Plan - Confidence Intervals"
 author: "Matthew Aiello-Lammens"
-date: "9/30/2020"
+date: "10/20/2021"
 output:
-  word_document:
-    toc: yes
   html_document:
     toc: yes
 ---
@@ -15,51 +13,25 @@ output:
 * Be able to calculate a margin of error and confidence interval
 * Define the use of confidence intervals in hypothesis testing
 
-## Working with the Youth Risk Behavior Surveillance System (YRBSS) data
+## Working with the Youth Risk Behavior Surveillance System (YRBSS) data ... again
 
 In this lesson, we're going to explore variation in point estimates and Confidence Intervals.
 We will largely be following content that can be found in the textbook OpenIntro Statistics by Diez, Barr, and Çetinkaya-Rundel.
 
-As in Chapter 4 of the textbook, we'll be working with the Youth Risk
-Behavior Surveillance System (YRBSS).
-Here, we will start be examining the **full** data set.
+Let's start where we did last week.
 
 ### Population Parameters
 
 Let's begin by loading the data into our environment.
-
-You may need to first install the `openintro` R package
-
-```{r, eval=FALSE}
-install.packages("openintro")
-```
-
-After that, we can load in the data.
 
 ```{r}
 library(openintro)
 data(yrbss)
 ```
 
-
-As with any data set, let's have a quick look at the data using `summary`.
-
-```{r}
-summary(yrbss)
-```
-
-
 For now, let's focus on the variable `height`. 
 First, let's calculate the **population mean** for `height`.
 Remember, that the population mean is going to be the mean value for the *full* data set.
-
-```{r}
-mean(yrbss$height)
-```
-
-That's probably not the answer you were expecting. 
-There must have been students whose data was collected, but their heights weren't recorded, so a value of *NA* was assigned.
-In order to ignore these data, we need to add the argument `na.rm = TRUE` to our `mean` call.
 
 ```{r}
 mean(yrbss$height, na.rm = TRUE)
@@ -76,15 +48,8 @@ We'll choose a subset at random, but we'll make it so that everyone in the class
 
 ```{r}
 set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 10), ]
+yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
 ```
-
-***
-
-**Challenge:** Breakdown each piece of the command that we are using to get our sample.
-To do this, you should make sure to look at the help for `sample`.
-
-***
 
 Let's calculate the mean height based on our sample.
 
@@ -94,31 +59,10 @@ mean(yrbss_samp$height, na.rm = TRUE)
 
 How does it compare to the true mean?
 
-Let's try increasing our sample size, and see if that makes a difference?
-
-#### Sample size = 100
-
-```{r}
-set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
-mean(yrbss_samp$height, na.rm = TRUE)
-```
-
-#### Sample size = 1000
-
-```{r}
-set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 1000), ]
-mean(yrbss_samp$height, na.rm = TRUE)
-```
-
-
-In general, though not always, as you increase sample size, you get closer to the *true* population values for an estimated parameter.
-
 
 ## Standard Error of the Mean
 
-Let's imagine the we took 100 different subsets from these data, then calculated the mean for each of these subsets, and then examined the histogram of these means.
+Let's imagine the we took 100 different samples from the full YRBSS data, then calculated the mean for each of these samples, and then examined the histogram of these means.
 The shape of the histogram should prove to be that of a normal distribution.
 
 In order to demonstrate this, we'll need to use `for` loops. 
@@ -134,7 +78,7 @@ for(x in 1:100){
   # get a sample of the data of size 100
   yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
   
-  # calulate the mean of this sample
+  # calculate the mean of this sample
   mean_samp <- mean(yrbss_samp$height, na.rm = TRUE)
   
   # add this mean to the vector of sample means
@@ -147,7 +91,9 @@ We should now have 100 values in the vector `samp_means`.
 Let's look at a histogram of these values.
 
 ```{r}
-hist(samp_means, breaks = 20)
+library(ggplot2)
+ggplot(data = NULL, aes(x = samp_means)) +
+  geom_histogram(bins = 25)
 ```
 
 
