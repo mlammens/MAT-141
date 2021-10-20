@@ -1,5 +1,5 @@
 ---
-title: "Assignment 5 - Confidence Intervals and Hypothesis Testing"
+title: "Assignment 4 - Confidence Intervals and Hypothesis Testing"
 output:
   word_document: default
   html_document: default
