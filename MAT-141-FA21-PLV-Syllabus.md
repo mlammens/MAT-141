@@ -3,7 +3,7 @@ output:
   word_document: default
   html_document: default
 ---
-MAT 141 -- CRN 71034: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
+MAT 141 -- CRN 74423: INTRODUCTORY STATISTICS FOR THE LIFE SCIENCES
 ===================================================================
 
 **Credits:** 4\
@@ -144,21 +144,21 @@ This schedule is subject to change.
 
 | **Week** | **Dates** | **Topic** | **Textbook<br>Readings ** | 
 |-----|-----------|----------------------|-------------|---------------------|
-|1|Sep 8    |Introduction to data and statistical analysis & scientific studies|Ch 1 - Sec 1-3|
-|2|Sep 13 & 15 |Exploratory data analysis and descriptive statistics|Ch 1 - Sec 4-7|
-|3|Sep 20 & 22 |Probability |Ch 2 - Sec 1-4| 
-|4|Sep 27 & 29 |Distributions of random variables | Ch 3 - Sec 1-4 | 
+|1|Sep 8    |Introduction to data and statistics |Ch 1 - Sec 1-3|
+|2|Sep 13 & 15 |Intro to data analysis & scientific studies |Ch 1 - Sec 1-3|
+|3|Sep 20 & 22 |Exploratory data analysis and descriptive statistics|Ch 1 - Sec 4-7|
+|4|Sep 27 & 29 |Probability |Ch 2 - Sec 1-4| 
 |5|Oct 4 & 6   |Mon - **Review** <br> Wed - **Exam 1**| |
-|6|Oct 11 & 13 |Variability and confidence intervals | Ch 4 - Sec 1-2 <br> Term Project Proposal |
-|7|Oct 18 & 20 |Hypothesis testing | Ch 4 - Sec 3-4 |
-|8|Oct 25 & 27 |Inference for numerical data: *t* tests | Ch 5 - Sec 1-3 |
-|9|Nov 1 |Inference for numerical data: power and ANOVA | Ch 5 - Sec 4-6 |
-|10|Nov 8 & 10 |Mon - **Review** <br> Wed - **Exam 2**| Term Project Update - Due Fri, Oct 30|
-|11|Nov 15 & 17 <br> **Wed asynchronous** |Simple linear regression | Ch 6 - Sec 1-6 |
-|12|Nov 22  |Multiple linear regression | Ch 7 - Sec 1-4, 7-8 |
-|13|Nov 29 & Dec 1 | Multiple linear regression | Ch 7 - Sec 1-4, 7-8 |
-|14|Dec 6 & 8 |Inference for categorical data | Ch 8 - Sec 1-6 | 
-|15|Dec 13 & 15 |Inference for categorical data | Ch 8 - Sec 1-6 | 
+|6|Oct 11 & 13 |Distributions of random variables | Ch 3 - Sec 1-4 | 
+|7|Oct 18 & 20 |Variability and confidence intervals | Ch 4 - Sec 1-2 |
+|8|Oct 25 & 27 |Hypothesis testing | Ch 4 - Sec 3-4 |
+|9|Nov 1 |Inference for numerical data: *t* tests | Ch 5 - Sec 1-3 <br> Term Project Proposal |
+|10|Nov 8 & 10 |Mon - **Review** <br> Wed - **Exam 2**| |
+|11|Nov 15 & 17 <br> **Wed asynchronous** |Inference for numerical data: power and ANOVA | Ch 5 - Sec 4-6 |
+|12|Nov 22  |Simple linear regression | Ch 6 - Sec 1-6 |
+|13|Nov 29 & Dec 1 |Multiple linear regression | Ch 7 - Sec 1-4, 7-8 |
+|14|Dec 6 & 8 |Inference for categorical data | Ch 8 - Sec 1-6 <br> Term Project Update - Due Wed| 
+|15|Dec 15 |Wrap-up and Catch-up|  | 
 |16|Dec 20 & 22 |Mon - **Review** <br> Wed - **Exam 3** |Term Project Write-up|
 
 ***
