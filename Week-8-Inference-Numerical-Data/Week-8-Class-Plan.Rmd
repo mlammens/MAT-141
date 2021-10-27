@@ -1,13 +1,21 @@
 ---
-title: "Week 8 - Class Plan - Hypothesis Testing"
+title: "Week 8 - Wed - Class Plan - Hypothesis Testing"
 author: "Matthew Aiello-Lammens"
-date: "10/12/2020"
+date: "10/27/2021"
 output:
-  word_document:
-    toc: yes
   html_document:
     toc: yes
 ---
+
+# Learning Objectives
+
+* Compare and contrast Confidence Intervals and Hypothesis Tests
+* Apply a hypothesis test on normally distributed (or assumed normally distributed) data
+* Simulate the effects of setting your Type I error rate (i.e., $\alpha$) value equal to 0.05
+
+# Complete Monday Lecture
+
+[Hypothesis testing lecture](https://docs.google.com/presentation/d/1KyEPsVpfnhfuFg2ee_P8hgrLO-WB1_xUBXqEemdt-uA/edit?usp=sharing)
 
 # Worked example on 1-sample hypothesis test
 
@@ -25,7 +33,7 @@ Next, draw a random sample of these data, with sample size equal to 100.
 
 ```{r}
 set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
 ```
 
 
@@ -72,16 +80,16 @@ Using the **population mean** calculated above, and the sample mean calculated e
 
 ```{r}
 # Get the sample mean (again)
-yrbss_samp_mean <- mean(yrbss_samp$height, na.rm = TRUE)
+yrbss_samp_mean = mean(yrbss_samp$height, na.rm = TRUE)
 
 # Get the population mean (again)
-yrbss_pop_mean <- mean(yrbss$height, na.rm = TRUE)
+yrbss_pop_mean = mean(yrbss$height, na.rm = TRUE)
 
 # Get the Standard Error of the Mean for the sample (again)
-yrbss_samp_SE <- sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100)
+yrbss_samp_SE = sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100)
 
 ## Calcualte the Z statistic
-z_stat <- (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
+z_stat = (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
 print("my z_stat value")
 z_stat
 
@@ -94,7 +102,42 @@ print("probability of my z_stat value, assuming two-tailed test")
 ```
 
 
-> Looking at the probability value for my Z-stat value, assuming an $\alpha = 0.05$ significane value, we DO NOT reject the null hypothesis. Thus, we support the hypothesis that my sample mean is NOT significantly different than the population mean.
+> Looking at the probability value for my Z-stat value, assuming an $\alpha = 0.05$ significane value, we DO NOT reject the null hypothesis. Thus, we support, but do not prove, the hypothesis that my sample mean is NOT significantly different than the population mean.
 
 
+Let's repeat this process 100 times. 
+
+```{r}
+p_vals = c()
+
+# start a for loop the does 100 iterations
+for(x in 1:100){
+  # get a sample of the data of size 100
+  yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+  
+  # calculate the new sample mean
+  yrbss_samp_mean = mean(yrbss_samp$height, na.rm = TRUE)
+
+  # calculate the new SE
+  yrbss_samp_SE = sd(yrbss_samp$height, na.rm = TRUE)/sqrt(nrow(yrbss_samp))
+
+  # calcualte the Z statistic
+  z_stat = (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
+  
+  # calculate the p-value
+  p_val = 2 * pnorm(abs(z_stat), lower.tail = FALSE)
+  
+  # add this p-val to the list
+  p_vals = c(p_vals, p_val)
+}
+
+```
+
+How many of the sampled data sets are significantly different from the population mean?
+
+```{r}
+sum(p_vals < 0.05)
+```
+
+That's pretty close to a 5% type I error rate!
 
