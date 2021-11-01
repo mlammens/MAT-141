@@ -1,0 +1,129 @@
+---
+title: "Week 9 - MON - Hypothesis Testing using the t-test - 2 samples - Class Plan "
+author: "Matthew Aiello-Lammens"
+date: "11/01/2021"
+output: 
+  html_document: 
+    toc: yes
+---
+
+# Learning Objectives
+
+* Practice the basic principles of hypothesis testing
+* Become familiar with the **one-sample t-test**
+* Identify when to apply the **one-sample t-test** versus the **z-test**
+* Become familiar with the **two-sample *t*-test**
+
+# Comparing groups
+
+```{r}
+s1 <- rnorm(n = 1000, mean = 2, sd = 0.9)
+s2 <- rnorm(n = 1000, mean = 5, sd = 0.9)
+
+samp_data <- data.frame(group = rep(c("s1","s2"), each = 1000), value = c(s1, s2))
+
+library(ggplot2)
+
+ggplot(data = samp_data, aes(x = value)) +
+  geom_density(aes(color = group)) +
+  xlim(-15, 25) +
+  theme_bw()
+
+```
+
+
+```{r}
+s1 <- rnorm(n = 1000, mean = 2, sd = 5)
+s2 <- rnorm(n = 1000, mean = 5, sd = 5)
+
+samp_data <- data.frame(group = rep(c("s1","s2"), each = 1000), value = c(s1, s2))
+
+library(ggplot2)
+
+ggplot(data = samp_data, aes(x = value)) +
+  geom_density(aes(color = group)) +
+  xlim(-15, 25) +
+  theme_bw()
+
+```
+
+
+## Embyonic Stem Cell Research
+
+Read in data. Note use of `read.table` for the .txt file.
+
+```{r}
+library(openintro)
+data("stem_cell")
+```
+
+View data.
+
+```{r}
+stem_cell
+```
+
+Calculate differences
+
+```{r}
+stem_cell$diff <- stem_cell$after - stem_cell$before
+```
+
+Calculate summary stats
+
+```{r}
+library(dplyr)
+
+stem_cell %>%
+  group_by(trmt) %>%
+  summarise(mean = mean(diff),
+            sd = sd(diff))
+
+```
+
+### Visualize the data
+
+```{r}
+library(ggplot2)
+
+ggplot(stem_cell, aes(x = trmt, y = diff)) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+Alternatively
+
+```{r}
+ggplot(stem_cell, aes(x = diff, color = trmt)) +
+  geom_histogram(position = "dodge", aes(fill = trmt, y = ..density..)) +
+  geom_density() +
+  theme_bw()
+```
+
+### Calculate T-statistic
+
+```{r}
+mean_diff <- 3.5 - -4.333333
+
+se_diff <- sqrt((2.764168^2/8) + (5.172040^2/8))
+
+T_diff <- mean_diff / se_diff
+```
+
+Now calculate the probability associated with this T-statistic
+
+```{r}
+2*pt(-T_diff, df = 8)
+```
+
+### Using `t.test`
+
+As with the one-sample t-test we saw on Wednesday, we can do a two-sample t-test using R's built in `t.test` function
+
+In this case, we will be introduced to R's `~` operator.
+
+```{r}
+t.test(stem_cell$diff~stem_cell$trmt)
+```
+
+
