@@ -1,7 +1,6 @@
 ---
-title: "Week 9 - t tests and ANOVA - Class Plan"
+title: "Week 13 - t tests and ANOVA - Class Plan"
 author: "Matthew Aiello-Lammens"
-date: "10/19/2019"
 output:
   word_document:
     toc: yes
@@ -103,7 +102,7 @@ summary(aldrin_aov)
 
 
 
-In lecture, I mention the possibility of doing multiple comparisons to test for which groups are different from each other.
+In lecture, I mentioned the possibility of doing multiple comparisons to test for which groups are different from each other.
 In practice, we would normally use a method like Tukey's Honset Significant Differences test, which I implement below. Note that I use the `aov` command here, instead of the `anova(lm())` syntax. 
 
 ```{r}
