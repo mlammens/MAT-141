@@ -1,0 +1,221 @@
+---
+title: "Week 13 - Tuesday - more ANOVA - Class Plan"
+author: "Matthew Aiello-Lammens"
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+---
+
+# Class plan
+
+* Review of ANOVA
+* Demonstration of ANOVA in R
+* Begin assignment 5
+
+
+# Demonstration of ANOVA in R
+
+This is a review of materials from our Wednesday 11/13 class. 
+However, this time we are going to work through the ANOVA "by hand".
+
+We are going to work with the data set on aldrin levels at differnet water depths of the Wolf River.
+
+```{r}
+#aldrin <- read.csv("https://www.dropbox.com/s/sfstj4p8beajir5/aldrin.csv?dl=1")
+aldrin <- read.csv("https://bit.ly/2DXjm59")
+summary(aldrin)
+
+```
+
+Let's make a box plot of these data
+
+```{r}
+library(ggplot2)
+
+ggplot(data = aldrin, aes(x = depth, y = aldrin)) +
+  geom_boxplot()
+```
+
+As before, we can say that just looking at the box polt, it does appear as though there are differences in the levels of aldrin at the different depths.
+
+We can also visualize these data as a scatter plot.
+
+```{r}
+ggplot(data = aldrin, aes(x = depth, y = aldrin, color = depth)) +
+  geom_point(position = "jitter") +
+  theme_bw()
+```
+
+
+## Carry out an ANOVA *by hand*
+
+### Let's start by calculating the sums of squares total
+
+$$
+SST = \sum_{i=1}^n (x_i -\bar{x})^2
+$$
+, where *n* is the total number of observations.
+
+```{r}
+# Calculate the grand mean
+grand_mean <- mean(aldrin$aldrin)
+
+# Calcualte the differences between the individual observations and the grand mean
+diffs <- aldrin$aldrin - grand_mean
+
+# Calculate the squared differences (or squared deviations of the observations from the mean)
+sqr_diffs <- diffs^2
+
+# Calculate the sum of squared differences
+(ss_total <- sum(sqr_diffs))
+
+```
+
+
+### Next calculate the sums of squares groups
+
+$$
+SSG = \sum_{i=1}^k n_i(\bar{x}_i -\bar{x})^2
+$$
+, where *k* is the number of groups.
+
+```{r}
+# Calculate the grand mean (again)
+grand_mean <- mean(aldrin$aldrin)
+
+# Make subsets of the data for each of the depths
+unique(aldrin$depth)
+
+aldrin_bottom <- subset(aldrin, depth == "bottom")
+aldrin_middepth <- subset(aldrin, depth == "middepth")
+aldrin_surface <- subset(aldrin, depth == "surface")
+
+# Calculate the group means
+bottom_mean <- mean(aldrin_bottom$aldrin)
+middepth_mean <- mean(aldrin_middepth$aldrin)
+surface_mean <- mean(aldrin_surface$aldrin)
+
+# Calculate the sums of squared groups
+ss_group <-
+  sum(10*(bottom_mean - grand_mean)^2 +
+      10*(middepth_mean - grand_mean)^2 +
+      10*(surface_mean - grand_mean)^2)
+
+ss_group
+
+```
+
+
+### Next calculate the sums of squares error (or residual)
+
+As we saw in class two weeks ago, there are two ways to do this. First is to acknowledge that:
+
+$$
+SST = SSG + SSE
+$$
+
+So one way to calculate SSE is the following:
+
+```{r}
+ss_error_1 <- ss_total - ss_group
+ss_error_1
+```
+
+Another way is to calculate the sums of squares error directly, following the equation:
+
+$$
+SSE = \sum_{i=1}^n (x_i - \bar{x}_{i,k})^2 
+$$
+, where $\bar{x}_{i,k}$ is the mean for the group $k$ that a particular $x_i$ belongs too.
+
+```{r}
+ss_error_2 <-
+  sum(sum((aldrin_bottom$aldrin - bottom_mean)^2),
+      sum((aldrin_middepth$aldrin - middepth_mean)^2),
+      sum((aldrin_surface$aldrin - surface_mean)^2))
+ss_error_2
+```
+
+### Now calculate Mean Sums of Squares
+
+Recall that the Mean Sums of Squares Groups is:
+
+$$
+MSG = SSG / df_{group}
+$$
+
+, where $df_{group}$ is the number of groups minus 1, i.e. $k-1$.
+
+And the Mean Sums of Squares Error is:
+
+$$
+MSE = SSE / df_{error}
+$$
+
+, where $df_{error}$ is the sum of the number of observations is each group minus 1.
+
+So to calculate the MSG and MSE, we do
+
+```{r}
+df_group <- (3-1)
+MSG <- ss_group / df_group
+MSG
+```
+
+and
+
+```{r}
+df_error <- sum((nrow(aldrin_bottom) - 1),
+                        (nrow(aldrin_middepth) - 1),
+                        (nrow(aldrin_surface) -1))
+MSE <- ss_error_2 / df_error
+
+MSE
+```
+
+
+### Calculate the F-stat for this data set
+
+```{r}
+f_stat <- MSG/MSE
+```
+
+### Finally, calcualte the probability of this particular F value
+
+```{r}
+pf(q = f_stat, df1 = df_group, df2 = df_error, lower.tail = FALSE)
+```
+
+
+
+## Carry out an ANOVA using Rs internal functions
+
+ANOVA is a kind of linear model (we'll talk more about this next week), so we use the `lm` function in R first.
+
+```{r}
+aldrin_lm <- lm(data = aldrin, aldrin~depth)
+```
+
+Next, we use a special summary command called `anova` to show the results of our linear model.
+
+```{r}
+anova(aldrin_lm)
+```
+
+You could do something similar with the `aov` function. 
+
+```{r}
+aldrin_aov <- aov(data = aldrin, aldrin~depth)
+summary(aldrin_aov)
+```
+
+
+
+In the past, we dicussed the possibility of doing multiple comparisons to test for which groups are different from each other.
+In practice, we would normally use a method like Tukey's Honset Significant Differences test, which I implement below. Note that I use the `aov` command here, instead of the `anova(lm())` syntax. 
+
+```{r}
+TukeyHSD(aov(data = aldrin, aldrin~depth))
+```
+
