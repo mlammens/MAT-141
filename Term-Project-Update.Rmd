@@ -1,5 +1,5 @@
 ---
-title: "MAT 141 - FA20 - PLV Term Project - Update Activity"
+title: "MAT 141 - FA21 - PLV Term Project - Update Activity"
 author: "PUT YOUR NAME HERE"
 output: word_document
 ---
@@ -8,7 +8,7 @@ output: word_document
 
 ***Instructions***
 
-*There are several sections below. These are the sections I am expecting to see in your final report. You can/ should use this is a template for your report. For the purposes of the Term Project Update, you only need to complete the sections that have questions and tasks. Remove all of my text, which is italicized in the Word doc version of this document. I expect you to be able to `knit` this documents and submit both the Rmd and docx versions on Classes.*
+*There are several sections below. These are the sections I am expecting to see in your final report. You can/ should use this as a template for your report. For the purposes of the Term Project Update, you only need to complete the sections that have questions and tasks. Remove all of my text, which is italicized in the Word doc version of this document. I expect you to be able to `knit` this documents and submit both the Rmd and docx versions on Classes.*
 
 # Introduction
 
@@ -28,9 +28,6 @@ output: word_document
 ## Put code to input data here
 ```
 
-## No data set yet?
-
-*If you have not found a data set yet, then you must describe in detail the steps you have taken to try to find data to analyze. What sources have you searched? What journal articles or other academic sources have you found related to your topic?*
 
 ## Figures and Tables
 

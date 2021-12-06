@@ -1,10 +1,12 @@
 ---
 title: "ANOVA Visual"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 aldrin <- read.csv("https://www.dropbox.com/s/sfstj4p8beajir5/aldrin.csv?dl=1")
 library(ggplot2)
 

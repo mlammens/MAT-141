@@ -12,8 +12,6 @@ Write your name below next to the * sign.
 --->
 
 *
-* 
-* 
 
 # Overview
 
@@ -43,7 +41,7 @@ Use a boxplot to visualize the differences between the three different **vegetat
 
 Based on the information given and this visualization, do you think these data meet the assumptions for a $t$ test? Address each of the three assumptions in your answer.
 
-**Write your answer below this line.**
+**Write your answer here.**
 
 
 ## $t$ test (10 points)
@@ -58,7 +56,7 @@ Because the $t$ test is only appropriate for comparing at most two groups of dat
 
 Based on the $t$ test results, can you conclude any of the groups are different from each other?
 
-**Write your answer below this line.**
+**Write your answer here.**
 
 
 # ANOVA with R (5 points)
@@ -74,4 +72,6 @@ Use either `summary(aov())` or `anova(lm())` to perform an ANOVA for this data s
 ```
 
 Do your conclusions about the means of the different vegetation types based on the ANOVA match your conclusions based on the three *t* tests?
+
+**Write your answer here.**
 
