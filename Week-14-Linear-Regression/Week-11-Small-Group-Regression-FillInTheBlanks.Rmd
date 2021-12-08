@@ -1,9 +1,8 @@
 ---
-title: "Week 11 - Correlation and Regression - Class Plan"
+title: "Week 14 - Correlation and Regression - Class Plan"
 author: "Matthew Aiello-Lammens"
-date: "11/02/2020"
 output:
-  word_document:
+  html_document:
     toc: yes
 ---
 
@@ -78,7 +77,7 @@ Effects of starvation and humidity on water loss in the confused flour beetle.
 Here, looking at the relationship between humidity and weight loss
 
 ```{r}
-flr_beetle <- read.csv(file = "https://goo.gl/AiuemL")
+flr_beetle = read.csv(file = "https://goo.gl/AiuemL")
 flr_beetle
 ```
 
