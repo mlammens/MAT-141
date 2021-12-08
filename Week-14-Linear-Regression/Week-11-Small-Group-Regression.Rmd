@@ -1,9 +1,8 @@
 ---
-title: "Week 11 - Correlation and Regression - Class Plan"
+title: "Week 14 - Correlation and Regression - Class Plan"
 author: "Matthew Aiello-Lammens"
-date: "11/02/2020"
 output:
-  word_document:
+  html_document:
     toc: yes
 ---
 
@@ -27,7 +26,7 @@ library(ggplot2)
 ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + 
   geom_point()
 
-covar <- sum((iris$Sepal.Length - mean(iris$Sepal.Length)) * (iris$Sepal.Width - mean(iris$Sepal.Width)))/ (nrow(iris) - 1)
+covar = sum((iris$Sepal.Length - mean(iris$Sepal.Length)) * (iris$Sepal.Width - mean(iris$Sepal.Width)))/ (nrow(iris) - 1)
 print(covar)
 
 ## Confirm
@@ -46,7 +45,7 @@ $$
 
 
 ```{r}
-cor_iris <- covar / (sd(iris$Sepal.Length)*sd(iris$Sepal.Width))
+cor_iris = covar / (sd(iris$Sepal.Length)*sd(iris$Sepal.Width))
 print(cor_iris)
 
 ## Use `cor` to find correlation value
@@ -84,7 +83,7 @@ Effects of starvation and humidity on water loss in the confused flour beetle.
 Here, looking at the relationship between humidity and weight loss
 
 ```{r}
-flr_beetle <- read.csv(file = "https://goo.gl/AiuemL")
+flr_beetle = read.csv(file = "https://goo.gl/AiuemL")
 flr_beetle
 ```
 
@@ -98,7 +97,7 @@ ggplot(data = flr_beetle, aes(x = HUMIDITY, y = WEIGHTLOSS)) +
 Run a linear regression
 
 ```{r}
-flr_beetle_lm <- lm(data = flr_beetle, WEIGHTLOSS ~ HUMIDITY)
+flr_beetle_lm = lm(data = flr_beetle, WEIGHTLOSS ~ HUMIDITY)
 
 summary(flr_beetle_lm)
 ```
