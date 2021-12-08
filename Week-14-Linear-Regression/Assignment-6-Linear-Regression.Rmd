@@ -26,7 +26,7 @@ For this problem set we will use data on cell survival for fourteen plates expos
 You can acquire these data by using the following command:
 
 ```{r}
-cell_survival <- read.csv(file = "https://mlammens.github.io/ENS-623-Research-Stats/data/cell_survival.csv")
+cell_survival = read.csv(file = "https://mlammens.github.io/ENS-623-Research-Stats/data/cell_survival.csv")
 ```
 
 # Problem 1
