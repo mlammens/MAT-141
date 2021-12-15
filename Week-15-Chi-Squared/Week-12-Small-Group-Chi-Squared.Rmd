@@ -17,42 +17,6 @@ $$
 
 where $o =$ observed and $e =$ expected frequencies.
 
-## Goodness of fit tests
-
-To examine if some set of data is distributed in a specific way, or has a frequency based on a known distribution, we can use a $\chi^2$ test.
-
-### Example - COVID deaths and race
-
-First, let's gather the information on COVID deaths from the CDC website here - [https://covid.cdc.gov/covid-data-tracker/#demographics](https://covid.cdc.gov/covid-data-tracker/#demographics).
-
-Second, open the data set in a Excel (or the equivalent).
-
-Third, gather information on the population percentages from the Census here - [https://www.census.gov/quickfacts/fact/table/US/PST045219](https://www.census.gov/quickfacts/fact/table/US/PST045219). Add these percentages to the data sheet.
-
-Forth, read in the data sheet.
-
-```{r}
-#covid = read.csv(file.choose())
-covid = read.csv("~/Dropbox/00_Sort/deaths_by_race_ethnicity__all_age_groups.csv")
-```
-
-
-Calculate $\frac{(observed - expected)^2}{expected}$.
-
-```{r}
-covid$obs_exp = ((covid$Death_Percentage - covid$Pop_Percentage)^2) / covid$Pop_Percentage
-```
-
-Finally, calculate $\chi^2$ and its probability.
-
-```{r}
-chi_sq = sum(covid$obs_exp)
-pchisq(q = chi_sq, df = 6, lower.tail = FALSE)
-```
-
-
-
-
 ## Contingency tables
 
 Examine if two or more categorical variables are associated with each other. This is essentially an extension of the $\chi^2$ analysis. The **Null** hypothesis is that the variables are **not** associated.
