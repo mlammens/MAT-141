@@ -1,7 +1,6 @@
 ---
 title: "Week 1 - Intro - Class Plan"
 author: "Matthew Aiello-Lammens"
-date: "9/8/2021"
 output:
   html_document: default
 ---
@@ -13,6 +12,8 @@ output:
 Using the index card I've given you, tell me:
 
 * Your name - full name, if there is a different name I should use, phonetic hints about pronouncing your name, pronouns
+* What year are you in at Pace?
+* What is your major?
 * Why are you in this class?
 * What are you hoping you will get out of this class?
 * Career aspirations?
@@ -20,7 +21,7 @@ Using the index card I've given you, tell me:
 
 **Using "Classes" during class**
 
-* Classes / Brightspace - our Learning Management System for this course (and for the future!)
+* Classes / D2L Brightspace - our Learning Management System for this course
 * "In class" submissions and assignments will be through Classes
 * We'll go through the class format and more on using our LMS after our activity for the day
 
@@ -52,8 +53,6 @@ Briefly, you will create a poster that describes and visualizes the data you hav
 
 * Each group will present their posters
 
-### 5 MINUTE BREAK
-
 ## Peer review our classmates posters (9:05 AM to 9:20 AM)
 
 * Complete peer-review form
@@ -69,12 +68,12 @@ This semester will be an(other) adventure! We're in this together, so please com
 ### Class meetings
 
 * Classes will be a mixture of lecture, problem solving, and activities (some in groups and some solo)
-* I expect you to come to class having done assignments ahead of time, which will often include watching pre-recorded lectures and completing an associated quiz. **Completing the quiz in a timely matter is very important for you to be able to complete in-class assignments in the allotted time.**
-* Exams will be in class. I will provide a formula sheet and you can bring a single page of notes. **No calculators are allowed.**
+* I expect you to come to class having done any assignments that were due, which may include watching pre-recorded lectures.
+* Exams will be in class. I will provide a formula sheet and you can bring a single page of notes and a calculator (you do not need a graphing calculator).
 * Please email me about any accommodations.
 
 ### Syllabus
 
-* There are a lot of categories in the 'assessment' section. Most of these are meant to be 'low-stakes' and taking into account that we will *not* be meeting for 3-hours that we would during a normal semester.
+* There are a lot of categories in the 'assessment' section. Most of these are meant to be 'low-stakes'.
 * The textbook is freely available as a PDF, and pretty cheap on Amazon.
 * In addition to a spreadsheet program, we will be using R/RStudio. Why R/RStudio? In short, because it's industry standard. Also, data science is a marketable skill to have. Lastly, programming facilitates learning.
