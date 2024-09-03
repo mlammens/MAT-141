@@ -1,7 +1,6 @@
 ---
-title: "Week 7 - Class Plan - Confidence Intervals"
+title: "Week 8 - Class Plan - Confidence Intervals"
 author: "Matthew Aiello-Lammens"
-date: "10/20/2021"
 output:
   html_document:
     toc: yes
@@ -220,6 +219,12 @@ Does our Confidence Interval contain the *true* population mean?
 ***
 
 **Challenge:** what happens to the Confidence Interval if you increase the sample size to 100?
+
+***
+
+***
+
+**Challenge (if we have time):** Using a sample size of 100, calculate the confidence intervals for the average heights of males and females separately. 
 
 ***
 
