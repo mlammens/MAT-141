@@ -1,19 +1,22 @@
 ---
 title: "Week 2 - Monday - Intro to Day - Class Plan"
-author: "Matthew Aiello-Lammens"
-date: "9/13/2021"
 output:
   html_document: default
 ---
 
-## Review of lecture materials (8:00 - 8:05 minimum)
+## Learning Objectives
 
-Take 5 minutes to review the slides from the recorded lecture and identify any questions.
+* Be able to classify variables as either numerical or categorical.
+* Identify and distinguish explanatory (predictor) and response variables.
+* Identify and distinguish observational and experimental studies.
+* Describe the benefits and drawbacks of common study designs.
+* Describe the relationship between a sample and a population.
 
-## Practice Problems (8:05 - 9:00 AM)
+## Lecture on data collection, observational studies, and experiments - with practice problems (8:00 - 9:15 AM)
 
-Break up into groups and work through practice problems as a class. No work collected during this section.
+For practice problems, you can work individually or in groups. We'll go through the problems as a class. No work is collected during this section.
+
 
 ## Chimowitz et al. 2011 assignment (9:00 AM to 10:00 AM)
 
-In groups, work on the Chimowitz assignment. Each individual submits their assignment by the end of the class period.
+In groups, work on the Chimowitz assignment. **Each individual submits** their assignment by the end of the class period.
