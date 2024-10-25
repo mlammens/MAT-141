@@ -1,7 +1,6 @@
 ---
 title: "Week 8 - Wed - Class Plan - Hypothesis Testing"
 author: "Matthew Aiello-Lammens"
-date: "10/27/2021"
 output:
   html_document:
     toc: yes
@@ -12,10 +11,6 @@ output:
 * Compare and contrast Confidence Intervals and Hypothesis Tests
 * Apply a hypothesis test on normally distributed (or assumed normally distributed) data
 * Simulate the effects of setting your Type I error rate (i.e., $\alpha$) value equal to 0.05
-
-# Complete Monday Lecture
-
-[Hypothesis testing lecture](https://docs.google.com/presentation/d/1KyEPsVpfnhfuFg2ee_P8hgrLO-WB1_xUBXqEemdt-uA/edit?usp=sharing)
 
 # Worked example on 1-sample hypothesis test
 
@@ -28,6 +23,13 @@ Let's begin by loading the data into our environment.
 library(openintro)
 data(yrbss)
 ```
+
+We'll be working with the height data again, so let's filter out the NAs.
+
+```{r}
+yrbss = yrbss[!is.na(yrbss$height), ]
+```
+
 
 Next, draw a random sample of these data, with sample size equal to 100.
 
@@ -53,10 +55,10 @@ $$
 
 
 ```{r}
-mean(yrbss_samp$height, na.rm = TRUE)
+mean(yrbss_samp$height)
 
-mean(yrbss_samp$height, na.rm = TRUE) + 1.96*(sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100))
-mean(yrbss_samp$height, na.rm = TRUE) - 1.96*(sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100))
+mean(yrbss_samp$height) + 1.96*(sd(yrbss_samp$height)/sqrt(100))
+mean(yrbss_samp$height) - 1.96*(sd(yrbss_samp$height)/sqrt(100))
 
 ```
 
@@ -67,7 +69,7 @@ Does our **95% confidence interval** calculated in above *include* the true popu
 
 
 ```{r}
-mean(yrbss$height, na.rm = TRUE)
+mean(yrbss$height)
 ```
 
 > In my case, my 95% **DOES** include the population mean. For the most part, we should expect this to be the case, though we could get a set of data in our sample that happens to be extreme, and therefore, the CI does not include the mean.
@@ -80,13 +82,13 @@ Using the **population mean** calculated above, and the sample mean calculated e
 
 ```{r}
 # Get the sample mean (again)
-yrbss_samp_mean = mean(yrbss_samp$height, na.rm = TRUE)
+yrbss_samp_mean = mean(yrbss_samp$height)
 
 # Get the population mean (again)
-yrbss_pop_mean = mean(yrbss$height, na.rm = TRUE)
+yrbss_pop_mean = mean(yrbss$height)
 
 # Get the Standard Error of the Mean for the sample (again)
-yrbss_samp_SE = sd(yrbss_samp$height, na.rm = TRUE)/sqrt(100)
+yrbss_samp_SE = sd(yrbss_samp$height)/sqrt(100)
 
 ## Calcualte the Z statistic
 z_stat = (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
@@ -116,10 +118,10 @@ for(x in 1:100){
   yrbss_samp = yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
   
   # calculate the new sample mean
-  yrbss_samp_mean = mean(yrbss_samp$height, na.rm = TRUE)
+  yrbss_samp_mean = mean(yrbss_samp$height)
 
   # calculate the new SE
-  yrbss_samp_SE = sd(yrbss_samp$height, na.rm = TRUE)/sqrt(nrow(yrbss_samp))
+  yrbss_samp_SE = sd(yrbss_samp$height)/sqrt(nrow(yrbss_samp))
 
   # calcualte the Z statistic
   z_stat = (yrbss_samp_mean - yrbss_pop_mean) / yrbss_samp_SE
@@ -140,4 +142,30 @@ sum(p_vals < 0.05)
 ```
 
 That's pretty close to a 5% type I error rate!
+
+# Camparing males and females
+
+Let's now split our sample data by sex, separating male and female measurements.
+
+```{r}
+samp_male = subset(yrbss_samp, gender == "male")
+samp_female = subset(yrbss_samp, gender == "female")
+```
+
+Next, calculate confidence intervals for each of the male and female means.
+
+```{r}
+# sample means
+male_mean = mean(samp_male$height)
+female_mean = mean(samp_female$height)
+
+# male CI
+male_lower = mean(samp_male$height) - sd(samp_male$height)/sqrt(nrow(samp_male))
+male_upper = mean(samp_male$height) + sd(samp_male$height)/sqrt(nrow(samp_male))
+
+# female CI
+female_lower = mean(samp_female$height) - sd(samp_female$height)/sqrt(nrow(samp_female))
+female_upper = mean(samp_female$height) + sd(samp_female$height)/sqrt(nrow(samp_female))
+
+```
 
