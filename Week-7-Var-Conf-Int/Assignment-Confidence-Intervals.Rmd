@@ -1,5 +1,5 @@
 ---
-title: "Assignment 4 - Confidence Intervals and Hypothesis Testing"
+title: "Confidence Intervals and Hypothesis Testing"
 output:
   word_document: default
   html_document: default
@@ -7,11 +7,7 @@ output:
 
 ## Assignment Author
 
-<!--- 
-Write your name below next to the * sign.
---->
 
-*
 
 ## Working with the YRBSS data set
 
@@ -30,7 +26,7 @@ yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
 ```
 
 
-## Problem 1 (5 points)
+## Step 1 
 
 Calculate the **sample mean** and the **95% Confidence Interval** for **height** based on your sample.
 
@@ -39,7 +35,7 @@ Calculate the **sample mean** and the **95% Confidence Interval** for **height**
 # Put your code here
 ```
 
-## Problem 2 (5 points)
+## Step 2 
 
 You can calculate the **population mean** for **height** for the `yrbss` data set. 
 Does your **95% confidence interval** calculated in Problem 1 *include* the true population mean?
@@ -53,35 +49,15 @@ Does your **95% confidence interval** calculated in Problem 1 *include* the true
 **Answer to question here.**
 
 
-## Problem 3 (5 points)
+## Step 3
 
-Using the **population mean** calculated in Problem 2, and the sample mean calculated in Problem 1, calculate the $z$ statistic associated with your sample mean. Is your sample mean significantly different from the population mean?
+Using the **population mean** calculated in Problem 2, and the sample mean calculated in Problem 1, calculate the $z$ statistic associated with your sample mean. Based on this Z value, do you think your sample mean is significantly different from the population mean?
 
 
 ```{r}
 # Put code to calculate z statistic and associated probability here
 
 ```
-
-**Answer to question here.**
-
-# Problem 4 (10 points)
-
-Using your sample, calculate the **sample means** and **confidence intervals** for **height** for males and females separately. Based on these values, is there a difference between male and female height? Explain your answer.
-
-You will need a new R function to separate males and females. See the code provided below:
-
-```{r}
-yrbss_samp_female = subset(yrbss_samp, gender == "female")
-yrbss_samp_male = subset(yrbss_samp, gender == "male")
-```
-
-
-
-```{r}
-# Put your code here
-```
-
 
 **Answer to question here.**
 

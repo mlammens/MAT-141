@@ -36,6 +36,26 @@ Remember, that the population mean is going to be the mean value for the *full* 
 mean(yrbss$height, na.rm = TRUE)
 ```
 
+#### Filtering a data set
+
+It will be easier to do the subsequent analyses if we filter out the height values that are `NA`s. 
+We'll do this by using what we know about accessing vectors and data frames by indexs.
+
+```{r}
+# Find all the NA values in the heights column
+# The `is.na` function returns a logical vector, with TRUE for values that are NA and FALSE otherwise
+heights_na = is.na(yrbss$height)
+
+# To get the values that are numbers, negate the heights_na vector
+heights_num = !heights_na
+
+# Now use the `which` function to determine the values that are TRUE
+heights_num_true = which(heights_num)
+
+# Finally, use the vector we just created as row indices to make a new table
+yrbss_noNAs = yrbss[heights_num_true, ]
+```
+
 
 ### Sample Parameter Estimates
 
@@ -47,13 +67,13 @@ We'll choose a subset at random, but we'll make it so that everyone in the class
 
 ```{r}
 set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+yrbss_samp <- yrbss_noNAs[sample(x = 1:nrow(yrbss_noNAs), replace = FALSE, size = 100), ]
 ```
 
 Let's calculate the mean height based on our sample.
 
 ```{r}
-mean(yrbss_samp$height, na.rm = TRUE)
+mean(yrbss_samp$height)
 ```
 
 How does it compare to the true mean?
@@ -75,10 +95,10 @@ samp_means <- c()
 # start a for loop the does 100 iterations
 for(x in 1:100){
   # get a sample of the data of size 100
-  yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 100), ]
+  yrbss_samp <- yrbss_noNAs[sample(x = 1:nrow(yrbss_noNAs), replace = FALSE, size = 100), ]
   
   # calculate the mean of this sample
-  mean_samp <- mean(yrbss_samp$height, na.rm = TRUE)
+  mean_samp <- mean(yrbss_samp$height)
   
   # add this mean to the vector of sample means
   samp_means <- c(samp_means, mean_samp)
@@ -182,26 +202,26 @@ We'll learn more about this distribution later!
 
 ### Calculating Confidence Intervals
 
-Let's calculate the Confidence Interval for our estimate of mean height, using our very first sample of the yrbss data.
+Let's calculate the Confidence Interval for our estimate of mean height, using our very first sample of the yrbss_noNAs data.
 
 First, get the sample again.
 
 ```{r}
 set.seed(1981)
-yrbss_samp <- yrbss[sample(x = 1:nrow(yrbss), replace = FALSE, size = 10), ]
+yrbss_samp <- yrbss_noNAs[sample(x = 1:nrow(yrbss_noNAs), replace = FALSE, size = 10), ]
 ```
 
 Calculate our sample means.
 
 ```{r}
-mean_yrbss_samp <- mean(yrbss_samp$height, na.rm = TRUE)
+mean_yrbss_samp <- mean(yrbss_samp$height)
 ```
 
 
 Now, let's calculate Standard Error.
 
 ```{r}
-se_yrbss_samp <- sd(yrbss_samp$height, na.rm = TRUE) / sqrt(nrow(yrbss_samp))
+se_yrbss_samp <- sd(yrbss_samp$height) / sqrt(nrow(yrbss_samp))
 ```
 
 Now, calculate our 95% Confidence Interval.
