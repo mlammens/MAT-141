@@ -79,34 +79,42 @@ Now we assume that any change in *y* is **due** to a change in *x*.
 
 ## Example of linear regression
 
-Effects of starvation and humidity on water loss in the confused flour beetle.
-Here, looking at the relationship between humidity and weight loss
+Here we will work with a data set of weight measurements of whole cats (kg) and their hearts (g). 
+We will use the whole-cat weight to predict heart weight using linear regression.
+
 
 ```{r}
-flr_beetle = read.csv(file = "https://goo.gl/AiuemL")
-flr_beetle
+library(MASS)
+data(cats)
+
+# Filter cats so we are only using the female cats
+cats_female = subset(cats, Sex == "F")
 ```
 
 Plot these data
 
 ```{r}
-ggplot(data = flr_beetle, aes(x = HUMIDITY, y = WEIGHTLOSS)) +
-  geom_point()
+ggplot(data = cats_female, aes(x = Bwt, y = Hwt)) +
+  geom_point() +
+  xlab("Body weight (kg)") +
+  ylab("Heart weight (g)")
 ```
 
 Run a linear regression
 
 ```{r}
-flr_beetle_lm = lm(data = flr_beetle, WEIGHTLOSS ~ HUMIDITY)
+cats_female_lm = lm(data = cats_female, Hwt ~ Bwt)
 
-summary(flr_beetle_lm)
+summary(cats_female_lm)
 ```
 
 Plot these data, with `lm` fit
 
 ```{r}
-ggplot(data = flr_beetle, aes( x = HUMIDITY, y = WEIGHTLOSS)) +
+ggplot(data = cats_female, aes(x = Bwt, y = Hwt)) +
   geom_point() +
+  xlab("Body weight (kg)") +
+  ylab("Heart weight (g)") +  
   stat_smooth(method = "lm") +
   theme_bw()
 
@@ -137,7 +145,7 @@ ggplot(data = flr_beetle, aes( x = HUMIDITY, y = WEIGHTLOSS)) +
 
 
 ```{r}
-plot(flr_beetle_lm)
+plot(cats_female_lm)
 ```
 
 ## Standard error of regression coefficients, the regression line, and $\hat{y}_i$ predictions (OPTIONAL)
