@@ -5,18 +5,55 @@ format:
     reference-doc: "/Users/maiellolammens/bw-reference.docx"
 ---
 
+## Names:
+
+&nbsp;
+
 # Chronic Fatigue Syndrome
 
 [Chronic Fatigue Syndrome](https://www.mayoclinic.org/diseases-conditions/chronic-fatigue-syndrome/symptoms-causes/syc-20360490) (CFS), also known as Myalgic Encephalomyelitis (ME), is a complex and long-term illness characterized by extreme fatigue that doesn't improve with rest and worsens with physical or mental activity. 
 The exact cause is unknown, but researchers believe it may involve a combination of factors such as infections, immune system changes, and hormonal imbalances. 
-Because the symptoms are varied and the causes are not fully understood, CFS presents a valuable case study for exploring how scientists design experiments to investigate complex medical conditions.
+Because the symptoms are varied and the causes are not fully understood, it is the subject of active research.
 
 # Does Cognitive Behavioral Therapy treat CFS?
 
 A group of scientists would like to test whether having patients undergo Cognitive Behavioral Therapy (CBT) can relieve their CFS symptoms.^[Cognitive Behavioral Therapy (CBT) is a structured, goal-oriented form of psychotherapy that helps individuals identify and change unhelpful thoughts and behaviors to improve emotional and physical well-being.] 
+They recruited 60 patients to participate in a study. 
 Their treatment variable is whether a patient receives CBT or receives instructions on how to relax.
 After treatment, they can record whether the patients CFS symptoms improve or not.
 
-***How would you design a study to test whether CBT improves CFS symptoms or not?***
+**How would you design a study to test whether CBT improves CFS symptoms or not?**
 
 
+
+```{=openxml}
+<w:br w:type="page"/>
+```
+
+## Variables and variable types
+
+There are two variables in this study. The **treatment**, which takes a value of "CBT" or "relaxation", and the **status of CFS symptoms**, which takes a value of "improved" or "did not improve". 
+
+**Which variable is the *explanatory* (predictor) variable and which is the *response* variable?**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+**Classify each variable as either *numerical* or *categorical*. Explain your answer.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+## Reflection
+
+In what ways did your study design differ from that presented during lecture? What is the importance of these differences? 
