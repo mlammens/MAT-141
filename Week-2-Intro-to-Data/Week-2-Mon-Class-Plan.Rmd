@@ -1,5 +1,5 @@
 ---
-title: "Week 2 - Monday - Intro to Day - Class Plan"
+title: "Week 2 - Monday - Intro to Data - Class Plan"
 output:
   html_document: default
 ---
@@ -12,11 +12,14 @@ output:
 * Describe the benefits and drawbacks of common study designs.
 * Describe the relationship between a sample and a population.
 
-## Lecture on data collection, observational studies, and experiments - with practice problems (8:00 - 9:15 AM)
+## Readings
 
-For practice problems, you can work individually or in groups. We'll go through the problems as a class. No work is collected during this section.
+* Vu, J. and Harrington, D. Introductory Statistics for the Life and Biomedical Sciences, First Edition. OpenIntro Project **Chapter 1 - Sections 1-3**
+
+## Activities
+
+* CFS study design activity
+* Heights of Pace students study design
+* Practice problems as time permits
 
 
-## Chimowitz et al. 2011 assignment (9:00 AM to 10:00 AM)
-
-In groups, work on the Chimowitz assignment. **Each individual submits** their assignment by the end of the class period.
