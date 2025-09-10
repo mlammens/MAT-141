@@ -1,44 +1,26 @@
 ---
-title: "Week 2 - Wednesday - Intro to Analysis - Class Plan"
-author: "Matthew Aiello-Lammens"
-date: "9/15/2021"
+title: "Week 2 - Wednesday - Data Summaries and Visualization - Class Plan"
 output:
   html_document: default
 ---
 
-## Open time for questions (8:00 - 8:05 minimum)
+## Learning Objectives
+
+* Describe and practice calculating various data summary statistics, including the mean, median, and measures of spread or variability.
+* Identify differences between common summary statistics and know when to apply these metrics.
+* Organize raw data into a frequency distribution using appropriate bin widths.
+* Construct a histogram by hand based on a frequency table.
+* Interpret the shape, center, and spread of a histogram in the context of a life science dataset (e.g., resting heart rates).
+* Describe the distribution of a variable using appropriate statistical language (e.g., skewness, modality, outliers).
 
 
-## Data storage (8:05 - 8:25)
+## Readings
 
-How should you record your measurements and data?
+* Vu, J. and Harrington, D. Introductory Statistics for the Life and Biomedical Sciences, First Edition. OpenIntro Project **Chapter 1 - Sections 4-7**
 
-Most data are collected as hard copies (handwritten) in the field or lab (i.e., in your lab notebook).
-We need to put these data into an electronic format for further analysis.
+## Activities
 
-### EXERCISE - Storing data electronically
+* Wrap-up - CFS study design activity
+* Resting Heart Rate - Data summary and histogram activity
 
-With a partner, put the data from these linked data sheets into a Google Sheets file.
-[https://www.dropbox.com/s/hy1eu9wv8n1adtm/soil_p_data_collection.pdf?dl=0](https://www.dropbox.com/s/hy1eu9wv8n1adtm/soil_p_data_collection.pdf?dl=0) 
 
-### “Long” format
-
-In long format each row corresponds to one individual that was measured (or one **case**, to use our textbook terminology). Some information is redundant (e.g., site, date, vegetation type), but that this is necessary so that each row has all the important information about that individual case! 
-Long format makes sorting easier, as well as enabling all sorts of analyses later on.
-
-## Pivot tables (8:25 - 8:45)
-
-One way to get many summary statistics at a time (and to do a whole lot of other things) is to use pivot tables. 
-Pivot tables are available in most spread sheet programs (Google Sheets, Excel, etc.).
-They can be a bit complicated, and take some time to get used to, but once you do, they are quite powerful
-
-### Steps to your first pivot table
-
-* Go to “Data” and choose “Pivot table …” 
-    * I prefer to have pivot tables as a new sheet, as this is cleaner. I encourage you to do the same.
-* Note that there are some “Suggested” pivots you might do. Try the “Average of phosphorus_lbacre” option
-* You can “Add” a new “Value as”
-    * Choose “phosphorus_lbacre” again, and this time choose “Summarize by” as “STDEV”
-* You can copy-paste your pivot table into another doc to make a nice data table for presentation
-
-## Group work on Assignment 1 (8:45 - end of class)
