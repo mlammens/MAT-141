@@ -1,8 +1,8 @@
 ---
-title: "MAT 141 - EDA Exercise"
-output:
-  word_document: default
-  html_document: default
+title: "MAT 141: Practice with boxplots"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -10,7 +10,13 @@ ex <- data.frame(mohonk = c(0, 1, 4, 4, 5, 6, 6, 7, 8, 8, 10, 11),
                  teatown = c(2, 3, 6, 6, 7, 8, 8, 9, 10, 10, 12, 23))
 ```
 
-Tracey was interested to see if there was a difference in the number of white-footed mouse (WFM) at two different preserves, Mohonk Preserve and Teatown Lake Reservation.
+## Names:
+
+&nbsp;
+
+## Introduction
+
+Tracey was interested to see if there was a difference in the number of white-footed mice (WFM) at two different preserves, Mohonk Preserve and Teatown Lake Reservation.
 She placed 12 camera traps out in each preserve for 2 weeks. 
 She recorded the number of white-footed mouse (WFM) pictures taken by each camera during those two weeks,
 and found the following counts at the two preserves.
@@ -18,16 +24,18 @@ and found the following counts at the two preserves.
 ### Mohonk Preserve WFM Counts
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-cat(sample(ex$mohonk))
+cat(sample(ex$mohonk), sep = "   ")
 ```
 
+&nbsp;
 
 ### Teatown Lake Reservation WFM Counts
 
 ```{r, echo=FALSE}
-cat(sample(ex$teatown))
+cat(sample(ex$teatown), sep = "   ")
 ```
-\bigskip
+
+&nbsp;
 
 For each set of WFM counts, calculate the summary statistics required to construct a box plot :
 
