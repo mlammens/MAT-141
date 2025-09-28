@@ -1,0 +1,112 @@
+---
+title: "Data Summary and Histogram Worksheet: Resting Heart Rates"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+<!---
+Format tables after render so they are clearer.
+--->
+
+## Names:
+
+ 
+
+## Collection of Resting Heart Rate Data
+
+In this worksheet, you and your group will collect data from each other on resting heart rate, calculate a set of data summary statistics, and create a histogram to visualize your data. Your first step is to decide how best to randomly sample the class. Your sample size should be at least 10 individuals. Describe how you chose your random sample and note RHR values for each patient here.
+
+ 
+
+ 
+
+ 
+
+## Calculate the mean (average) RHR
+
+Show your work for calculating the mean here.
+
+ 
+
+ 
+
+ 
+
+## Calculate the standard deviation of RHR
+
+Show your work for calculating the SD here.
+
+ 
+
+ 
+
+ 
+
+
+## Calculate the Median RHR
+
+Show your work for calculating the median here.
+
+ 
+
+ 
+
+ 
+
+
+## Calculate the 25% and 75% percentiles for RHR
+
+ 
+
+ 
+
+ 
+
+
+## Frequency Table
+
+For each number range below, tally the number of values you observed in this range
+
+| Heart Rate Range (bpm) | Frequency |
+|------------------------|-----------|
+| \< 59                  |           |
+| 60–69                  |           |
+| 70–79                  |           |
+| 80–89                  |           |
+| 90–99                  |           |
+| \> 100                 |           |
+
+## Sample Histogram
+
+Using the frequency table numbers, draw a histogram below.
+
+ 
+
+ 
+
+ 
+
+ 
+
+## Reflection Questions
+
+How would you describe the spread, shape, and variability of your data?
+
+ 
+
+ 
+
+ 
+
+ 
+
+How does this figure differ from a bar plot?
+
+ 
+
+ 
+
+ 
+
+ 
