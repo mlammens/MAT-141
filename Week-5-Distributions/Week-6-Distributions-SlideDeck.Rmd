@@ -1,7 +1,5 @@
 ---
-title: "Week 4 - Distribtions of Random Variables"
-author: "Matthew E. Aiello-Lammens"
-date: "9/14/2020"
+title: "Week 7 - Distribtions of Random Variables"
 output: 
   beamer_presentation:
     slide_level: 3
@@ -72,7 +70,7 @@ The probability distribution for $X$ is as follows:
 
 Distributions of random variables that arise in science can be more complex.
 
-In a future small group session, we will run simulations to produce biologically relevant distribution.
+In a future lesson, we will run simulations to produce biologically relevant distribution.
 
 
 ### Expectation of a Random Variable
