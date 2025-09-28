@@ -1,0 +1,31 @@
+---
+title: "Week-5-Distributions-Class-Plan"
+format: docx
+editor: visual
+---
+
+## Learning Objectives
+
+### Normal Distribution LOs
+
+* Describe the characteristics of a normal distribution, including symmetry, unimodality, and the bell-shaped curve.
+* Apply the 68-95-99.7 Rule to interpret variability in normally distributed data.
+* Calculate **Z scores** and use them to determine percentiles and identify unusual observations.
+* Use normal approximation to estimate probabilities in binomial distributions when conditions are met.
+
+### Discrete Distributions LOs
+
+* Distinguish between discrete and continuous random variables and identify examples of each.
+* Calculate probabilities using the Binomial distribution, including expected value and standard deviation.
+* Apply the Poisson distribution to estimate the likelihood of rare events in fixed populations over time.
+
+## Monday Class Plan
+
+1. Complete Lyme Disease probability worksheet
+2. Lecture on the *Normal distribution*
+3. Practice problems (may use distributions web app)
+
+## Wednesday Class Plan
+
+1. Lecture on *Discrete distributions*
+2. Practice problems related to discrete distributions

@@ -1,15 +1,13 @@
 ---
-title: "Week 4 - Probability"
-author: "Matthew E. Aiello-Lammens"
-date: "9/27/2021"
-output: html_document
+title: "Contingency Table Exercise"
+output:
+  word_document: default
+  html_document: default
 ---
 
 ## Learning Objectives
 
 * Identify and practice the uses of **marginal**, **joint**, and **conditional** probabilities in understanding issues of public health and health care coverage.
-
-## Review of some Quiz 3 questions
 
 ### Based on question 2.10 in textbook
 
@@ -24,7 +22,10 @@ Consider the following data on health coverage and health status, as reported by
 
 1. If we draw a survey participant at random, what is the probability that they have excellent health **and** do not have health coverage?
 
-This is an example of calculating a **joint probability**. Look for the cell that corresponds to the number of individuals who have **both** excellent health and no health coverage, then divide this number by the total number of survey participants.
+*This is an example of calculating a **joint probability**. Look for the cell that corresponds to the number of individuals who have **both** excellent health and no health coverage, then divide this number by the total number of survey participants.*
+
+\bigskip
+\bigskip
 
 ```{r}
 
@@ -32,7 +33,10 @@ This is an example of calculating a **joint probability**. Look for the cell tha
 
 2. If we draw a survey participant at random, what is the probability that they do not have health coverage?
 
-This is an example of calculating a **marginal probability**. Look for the *marginal cell* that corresponds to the *total number of participants with no health coverage*, then divide this number by the total number of survey participants.
+*This is an example of calculating a **marginal probability**. Look for the* marginal cell *that corresponds to the* total number of participants with no health coverage, *then divide this number by the total number of survey participants.*
+
+\bigskip
+\bigskip
 
 ```{r}
 
@@ -41,7 +45,10 @@ This is an example of calculating a **marginal probability**. Look for the *marg
 
 3. TRUE or FALSE - The probability that a survey participant has poor health and has health coverage is greater than a participant has poor health and does not have health coverage.
 
-To answer this question, we need to calculate two different conditional probabilities: P(poor health | health coverage)  and P(poor health | no health coverage). To do this, we'll need to focus on each of the health coverage rows separately.
+*To answer this question, we need to calculate two different conditional probabilities: P(poor health | health coverage)  and P(poor health | no health coverage). To do this, we'll need to focus on each of the health coverage rows separately.*
+
+\bigskip
+\bigskip
 
 ```{r}
 
@@ -50,13 +57,16 @@ To answer this question, we need to calculate two different conditional probabil
 
 4. If we draw a survey participant at random and determine they have poor health, what is the probability that they do not have health coverage? 
 
-This is another conditional probability question. In this case, we are *given* the fact that the survey participant has poor health. So, let's only focus on the poor health column. Considering these numbers, what is the probability that the participant does not have health coverage?
+*This is another conditional probability question. In this case, we are **given** the fact that the survey participant has poor health. So, let's only focus on the poor health column. Considering these numbers, what is the probability that the participant does not have health coverage?*
+
+\bigskip
+\bigskip
 
 ```{r}
 
 ```
 
-We could have also applied the equation for conditional probability to the last two problems. 
+*We could have also applied the equation for conditional probability to the last two problems.* 
 
 Recall:
 
@@ -70,19 +80,31 @@ $$
 P(\text{no health coverage} | \text{poor health}) = \frac{P(\text{no health coverage AND poor health})} {P(\text{poor health})}
 $$
 
-Calculate probability of poor health
+*Calculate probability of poor health*
+
+\bigskip
+\bigskip
+
 
 ```{r}
 
 ```
 
-Calculate probability of poor health AND no health coverage
+*Calculate probability of poor health AND no health coverage*
+
+\bigskip
+\bigskip
+
 
 ```{r}
 
 ```
 
-Then we can calculate $P(\text{no health coverage} | \text{poor health})$ as:
+*Then we can calculate $P(\text{no health coverage} | \text{poor health})$ as:*
+
+\bigskip
+\bigskip
+
 
 ```{r}
 

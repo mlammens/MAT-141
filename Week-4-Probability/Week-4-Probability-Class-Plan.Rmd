@@ -1,164 +1,28 @@
 ---
-title: "Week 4 - Probability"
-author: "Matthew E. Aiello-Lammens"
-date: "9/27/2021"
-output: html_document
+title: "Week 4 - Meeting 6 - Intro to Probability"
+output:
+  word_document: default
+  html_document: default
 ---
 
 ## Learning Objectives
 
-* Identify and practice the uses of **marginal**, **joint**, and **conditional** probabilities in understanding issues of public health and health care coverage.
+* Describe the **Law of Large Numbers** and how it is related to *frequentist statistics*.
+* Identify mutually exclusive events.
+* Apply basic concepts of probability, such as the **General Addition Rule**, to calculate the probability(ies) of an event(s).
+* Use the concepts of conditional probability to calculate important measures in life sciences, such as the positive predictive value.
 
-## Review of some Quiz 3 questions
+## Coin flipping activity
 
-### Based on question 2.10 in textbook
+1. Flip a coin 10 times.
+2. For each flip, record a H for heads and a T for tails in a single column of a Google Sheet.
+3. Calculate the probability of getting a H based on 10 flips.
+4. Add your column of 10 flips to the shared class Google Sheet.
 
-Consider the following data on health coverage and health status, as reported by the Behavioral Risk Factor Surveillance System. 
+## Intro to probabiliy lecture and practice problems
 
+## Contingency table practice (in-class assignment)
 
-|                       | Excellent health| Very good health| Good health| Fair health| Poor health| Total |
-|:----------------------|:---------:|:---------:|:----:|:----:|:----:|:-----:|
-|**No health coverage** |459        |727        |854   |385   |99    |2524   |
-|**Yes health coverage**|4198       |6245       |4821  |1634  |578   |17476  |
-|**Total**              |4657       |6972       |5675  |2019  |677   |20000  |
-
-1. If we draw a survey participant at random, what is the probability that they have excellent health **and** do not have health coverage?
-
-This is an example of calculating a **joint probability**. Look for the cell that corresponds to the number of individuals who have **both** excellent health and no health coverage, then divide this number by the total number of survey participants.
-
-```{r}
-# define total number of survey participants
-total_participants = 20000
-
-# define number of participants that are in excellent health and do not have health coverage
-exhealth_nocoverage = 459
-
-# calculate percentage of participants with excellent health but no coverage
-prob_exhealth_nocoverage = exhealth_nocoverage/total_participants
-
-# print this value to screen
-prob_exhealth_nocoverage
-```
-
-2. If we draw a survey participant at random, what is the probability that they do not have health coverage?
-
-This is an example of calculating a **marginal probability**. Look for the *marginal cell* that corresponds to the *total number of participants with no health coverage*, then divide this number by the total number of survey participants.
-
-```{r}
-# define total number of survey participants reporting no health coverage
-tot_nocoverage = 2524
-
-# calculate percentage of participants reporting no health coverage
-prob_nocoverage = tot_nocoverage / total_participants
-
-# print this value to the screen
-prob_nocoverage
-```
-
-
-3. TRUE or FALSE - The probability that a survey participant has poor health and has health coverage is greater than a participant has poor health and does not have health coverage.
-
-To answer this question, we need to calculate two different joint probability: P(poor health AND health coverage) and P(poor health AND no health coverage). 
-
-```{r}
-prob_poorhealth_yescoverage = 578 / total_participants
-prob_poorhealth_nocoverage = 99 / total_participants
-
-prob_poorhealth_yescoverage
-prob_poorhealth_nocoverage
-
-```
-
-
-**Alternative question**
-
-TRUE or FALSE - The probability that a survey participant has poor health **given** they have health coverage is greater than the probability a participant has poor health **given** they do not have health coverage.
-
-To answer this question, we need to calculate two different conditional probabilities: P(poor health | health coverage)  and P(poor health | no health coverage). To do this, we'll need to focus on each of the health coverage rows separately.
-
-```{r}
-# define total number of survey participants reporting no health coverage
-tot_nocoverage = 2524
-
-# define the number of participants with poor health and no health coverage
-poorhealth_nocoverage = 99
-
-# define total number of participants reporting poor health
-tot_yescoverage = 17476
-
-# define the number of participants with poor health and health coverage
-poorhealth_yescoverage = 578
-
-# Calculate the percentages (probabilities) for poor health values within each row separately
-
-# P(poor health | health coverage) 
-poorhealth_yescoverage / tot_yescoverage
-
-# P(poor health | no health coverage) 
-poorhealth_nocoverage / tot_nocoverage
-
-```
-
-
-4. If we draw a survey participant at random and determine they have poor health, what is the probability that they do not have health coverage? 
-
-This is another conditional probability question. In this case, we are *given* the fact that the survey participant has poor health. So, let's only focus on the poor health column. Considering these numbers, what is the probability that the participant does not have health coverage?
-
-```{r}
-# define the total number of participants in poor health
-tot_poorhealth = 677
-
-# define the number of participants with poor health and no health coverage
-poorhealth_nocoverage = 99
-
-# define the number of participants with poor health and health coverage
-poorhealth_yescoverage = 578
-
-# calculate the percentages (probabilities) of each of the health coverage categories, given poor health
-
-# P(no health coverage | poor health)
-poorhealth_nocoverage / tot_poorhealth
-
-# P(yes health coverage | poor health)
-poorhealth_yescoverage / tot_poorhealth
-
-```
-
-We could have also applied the equation for conditional probability to the last two problems. 
-
-Recall:
-
-$$
-P(A|B) = \frac{P(A \cap B)}{P(B)}
-$$
-
-Applying this to the above we would have:
-
-$$
-P(\text{no health coverage} | \text{poor health}) = \frac{P(\text{no health coverage AND poor health})} {P(\text{poor health})}
-$$
-
-Calculate probability of poor health
-
-```{r}
-# define the total participants with poor health
-tot_poorhealth = 677
-
-# P(poor health)
-prob_poorhealth = tot_poorhealth / total_participants
-```
-
-Calculate probability of poor health AND no health coverage
-
-```{r}
-prob_poorhealth_nocoverage = poorhealth_nocoverage / total_participants
-```
-
-Then we can calculate $P(\text{no health coverage} | \text{poor health})$ as:
-
-```{r}
-prob_poorhealth_nocoverage / prob_poorhealth
-```
 
 
 
