@@ -1,0 +1,22 @@
+---
+title: "MAT 141: Analysis Write-up 1 - Instructions"
+output:
+  html_document: default
+---
+
+## Learning Objective
+
+In this assignment, you will apply the main concepts we have gone over in class so far to analyze and contextualize an existing data set. 
+
+## Data Set 
+
+To complete this assignment, you will use the *FAMuSS* data set that is associated with your textbook, and that we used in **Meeting 5 - More EDA practice**.
+I have provided this data set to you as a comma separated values (CSV) file as part of the 'Meeting 5' materials. 
+You should download that data set, and then load it into Google Sheets, MS Excel, or another spread sheet program to complete your analysis.
+
+## Using the Write-up Template
+
+I am providing you with a write-up template. 
+This includes the scoring rubric embedded in the document. 
+When you use this document to write your Analysis Write-up, you **must** remove all of the guidance text I provide (it's all in italics), but keep the section titles. 
+
