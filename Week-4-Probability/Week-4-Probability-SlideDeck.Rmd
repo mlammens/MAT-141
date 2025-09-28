@@ -1,7 +1,6 @@
 ---
-title: "Week 3 - Probability"
+title: "Introduction to Probability"
 author: "Matthew E. Aiello-Lammens"
-date: "9/7/2020"
 output: 
   beamer_presentation:
     slide_level: 3
