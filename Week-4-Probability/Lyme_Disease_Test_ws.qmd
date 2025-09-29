@@ -1,0 +1,52 @@
+---
+title: "MAT 141: Probability – sensitivity, specificity, and medical testing"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Names:
+
+&nbsp;
+
+## Learning Objectives
+
+Apply the principles of probability and conditional probability to calculate the positive predictive rate for Lyme disease testing.
+
+## Lyme disease testing in the community
+
+Lyme disease is caused by the bacterium *Borrelia burgdorferi*, transmitted to humans through the bite of infected blacklegged ticks.
+Testing for Lyme disease is often done using a two-tiered approach, but even these tests are not perfect. 
+A recent review finds that the **False Negative Rate (FNR)** for Lyme disease testing can be around 10% to 30%, depending on the stage of infection and the test used.^[Waddell, L. A., Greig, J., Mascarenhas, M., Harding, S., Lindsay, R., & Ogden, N. (2016). The accuracy of diagnostic tests for Lyme disease in humans, a systematic review and meta-analysis of North American research. PloS one, 11(12), e0168613.] 
+A false negative means the patient does have Lyme disease, but their test is negative. This FNR equates to a **sensitivity** of 70% to 90%, but let’s call it 80% for our calculations.
+
+
+Lyme disease tests also have a **False Positive Rate (FPR)** of approximately 5%. 
+That is, about 5% of patients who do not have Lyme disease will return a positive test result. 
+This FPR equates to a **specificity** of approximately 95%.
+Let’s determine the probability that you actually have Lyme disease, given that you get a positive test result.
+
+The equation we need is as following:
+
+P(D | T⁺) = (sensitivity × prevalence) / (sensitivity × prevalence + (1 - specificity) × (1 - prevalence))
+
+Where:
+
+* D = has Lyme disease
+* T⁺ = has positive test
+* sensitivity = P(positive test | has Lyme disease) = 1 − P(negative test | has Lyme disease)
+* specificity = P(negative test | does not have Lyme disease) = 1 − P(positive test | does not have Lyme disease)
+* prevalence = proportion of the population that has Lyme disease (or pre-test probability based on exposure)
+
+Let's assume you are generally cautious outdoors, but after developing symptoms, your test comes back positive. What is the probability you have Lyme disease? *Show your work on the back of this sheet.*
+
+Note: you can calculate **prevalence** values based on data provided at this site [https://www.health.ny.gov/statistics/diseases/communicable/2012/rates/5.htm](https://www.health.ny.gov/statistics/diseases/communicable/2012/rates/5.htm)
+
+<!---
+Assumptions:
+sensitivity = 80%
+specificity = 95%
+prevalence = 2% (based on regional tick exposure rates)
+P(Lyme | positive test) = (0.8 × 0.02) / ((0.8 × 0.02) + ((1 - 0.95) × (1 - 0.02))) = 0.016 / (0.016 + 0.049) ≈ 0.245
+So, given a positive test result, there’s about a 24.5% chance you actually have Lyme disease.
+--->
