@@ -1,0 +1,61 @@
+---
+title: "MAT 141: Binomial distributions - Polydactyly"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Names:
+
+&nbsp;
+
+## Learning Objectives
+
+Apply binomial and normal probability models to real-world scenarios, and interpret the results in context.
+
+## Polydactyly in Humans
+
+In the United State, approximately 1 in every 500 babies is born with polydactyly, a harmless congenital abnormality in which a newborn has one or more extra fingers or toes. 
+Cases occur at random and independently, without apparent cause.
+
+What is the probability that at least one student in a statistics class of 20 students has this condition?
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+There are approximately 13,000 students at Pace University. How many cases of polydactyly would you
+expect among the student body?
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+With a sample size of 13,000 students, you could use a normal approximation of the binomial distribution to calculate probability values for ranges of values. 
+Considering this fact, what is the approximate probability that you would find more than 31 cases among the student body? **Explain your answer and /or show your calculations.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+You meet a random person on the street, who tells you they were born in the United States and that they have six toes on their left foot. 
+What is the probability that then next random person you meet also has polydactyly. **Explain your answer.**
+
+
+
+
+<!---
+Assumptions:
+sensitivity = 80%
+specificity = 95%
+prevalence = 2% (based on regional tick exposure rates)
+P(Lyme | positive test) = (0.8 × 0.02) / ((0.8 × 0.02) + ((1 - 0.95) × (1 - 0.02))) = 0.016 / (0.016 + 0.049) ≈ 0.245
+So, given a positive test result, there’s about a 24.5% chance you actually have Lyme disease.
+--->
