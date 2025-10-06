@@ -1,0 +1,43 @@
+---
+title: "Course Learning Objectives"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Introduction to Data and Visualization
+
+* Practice summarizing and conveying information in a visual way.
+* Evaluate other students approaches to data visualization.
+* Identify different ways to convey quantitative and categorical data. These could include bar plots, scatter plots, histograms, and box plots.
+* Be able to classify variables as either numerical or categorical.
+* Identify and distinguish explanatory (predictor) and response variables.
+* Identify and distinguish observational and experimental studies.
+* Describe the benefits and drawbacks of common study designs.
+* Describe the relationship between a sample and a population.
+* Describe and practice calculating various data summary statistics, including the mean, median, and measures of spread or variability.
+* Identify differences between common summary statistics and know when to apply these metrics.
+* Organize raw data into a frequency distribution using appropriate bin widths.
+* Construct a histogram by hand based on a frequency table.
+* Interpret the shape, center, and spread of a histogram in the context of a life science dataset (e.g., resting heart rates).
+* Describe the distribution of a variable using appropriate statistical language (e.g., skewness, modality, outliers).
+* Be able to calculate basic summary statistics (mean and standard deviation) "by hand" and using a spread sheet program.
+* Practice using Pivot tables in a spread sheet program.
+* Describe how a histogram plot is a visual representation of the distribution of a set of data.
+* Identify and describe the shape of a distribution of data.
+* Be able to choose and identify a data visualization that is appropriate for a given set of data.
+
+## Probability and Distributions
+
+* Describe the **Law of Large Numbers** and how it is related to *frequentist statistics*.
+* Identify mutually exclusive events.
+* Apply basic concepts of probability, such as the **General Addition Rule**, to calculate the probability(ies) of an event(s).
+* Use the concepts of conditional probability to calculate important measures in life sciences, such as the positive predictive value.
+* Describe the characteristics of a normal distribution, including symmetry, unimodality, and the bell-shaped curve.
+* Apply the 68-95-99.7 Rule to interpret variability in normally distributed data.
+* Calculate **Z scores** and use them to determine percentiles and identify unusual observations.
+* Use normal approximation to estimate probabilities in binomial distributions when conditions are met.
+* Distinguish between discrete and continuous random variables and identify examples of each.
+* Calculate probabilities using the Binomial distribution, including expected value and standard deviation.
+* Apply the Poisson distribution to estimate the likelihood of rare events in fixed populations over time.
+
