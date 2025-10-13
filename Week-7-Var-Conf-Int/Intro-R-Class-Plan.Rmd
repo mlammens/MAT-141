@@ -1,10 +1,11 @@
 ---
-title: "Meeting 12 - Introduction to R/RStudio - Class Plan"
-author: "Matthew E. Aiello-Lammens"
-output: html_document
+title: "Introduction to R/RStudio - Class Plan"
+output:
+  word_document: default
+  html_document: default
 ---
 
-# Today's Learning Outcomes
+## Learning Objectives
 
 By the end of this session you should be able to:
 
@@ -14,31 +15,15 @@ By the end of this session you should be able to:
 * Read in a data set and perform basic data summary procedures in R
 
 
-# Getting started in RStudio
-
-## Accessing RStudio via Pace Virtual Lab
-
-You should be able to use these steps each time you start your RStudio session.
-
-1. Log on to the Pace VirtualLab by going to [https://virtuallab.pace.edu/](https://virtuallab.pace.edu/)
-2. Select the **RStudio** App
-3. Use your Pace log in credentials to log on to the Windows computer that pops up in your browser
-    * iPad users, note you may have to use the Cisco connect 'hamburger' menu in the top-center of the browser to select your keyboard.
-4. Create or Open a new **Project**
-    * Select the **Project: (None)** icon on the upper lefthand corner
-    * For a new project, select **New Project**
-    * To open an existing project, select **Open Project ...**
-    * In either case, when you get to "Browse..." for a file location, select the "Network" button, **THEN** select the "This PC" button.
-    * Under the "This PC" folder, scroll down to select your Pace User ID folder under "Network location"
-    * From here you can either save your new project or open your existing project
-
 ## Downloading R and RStudio on your personal computer
 
 Follow the two-step directions noted here: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). **Make sure to install R, THEN RStudio.**
 
 Now that we have access to RStudio, let's have a look at the components here.
 
-## Overall layout
+## Getting Started with RStudio
+
+### Overall layout
 
 There are four panels in the RStudio interface (though you may only have three open when you first start it), each has valuable information.
 
@@ -51,7 +36,7 @@ There are four panels in the RStudio interface (though you may only have three o
 
 Before we do anything in R/RStudio, let's make a new folder on our computers where our class data can reside.
 You can use your operating systems file manager (i.e., Finder on Mac and Windows Explorer on Windows) to created a new folder where ever suites you. 
-**Call this new folder `MAT-141-FA22`. I STRONGLY RECOMMEND THAT YOU DO NOT PUT THIS FOLDER ON YOUR DESKTOP.**
+**Call this new folder `MAT-141`. I STRONGLY RECOMMEND THAT YOU DO NOT PUT THIS FOLDER ON YOUR DESKTOP.**
 We'll use this folder/directory later when we are asked to set our 'working directory' and when we need a place to store `*.R` and `*.Rmd` files.
 
 See the screen shot below for an example of creating a new folder using Mac Finder.
@@ -61,10 +46,10 @@ See the screen shot below for an example of creating a new folder using Mac Find
 ### Making an R Project
 
 Go back to RStudio.
-Let's make a new R Project associated with your `MAT-141-FA22` directory. 
+Let's make a new R Project associated with your `MAT-141` directory. 
 To make a new project, go to the upper right-hand side of the RStudio interface, where it says **Project: (None)**.
 Click the little downward arrow, select "New Project", then select "Existing Directory" from the window that pops up. 
-Use the graphical user interface (GUI) to navigate to the `MAT-141-FA22` directory, then select "Create Project".
+Use the graphical user interface (GUI) to navigate to the `MAT-141` directory, then select "Create Project".
 Once you've created your project, your RStudio session will restart in this project.
 
 There is also now a file in the folder you just made that ends in *.Rproj.
@@ -87,7 +72,7 @@ Use the `help.search` function to search for something in statistics that you th
 * I know my function - just give me the details - `?barplot`
 
 
-# R as calculator
+## R as calculator
 
 We can use R just like any other calculator. 
 Go to the **Console** tab and type the following and press enter:
@@ -112,7 +97,7 @@ There's internal control for order of operations (Please Excuse My Dear Aunt Sal
 3 * (5 + 7)
 ```
 
-## Internal functions
+### Internal functions
 
 There are a ton of internal functions, and a lot of add-ons.
 
@@ -141,7 +126,7 @@ RStudio even comes with two very useful tools to learn and use Markdown.
 First, go to the `Help` tab and select `Markdown Quick Reference`.
 Second, a more detailed reference can be found in the `Help` -> `Cheatsheets` section.
 
-### Markdown vs R Markdown
+#### Markdown vs R Markdown
 
 R Markdown is a tool that allows you to make a simple text document using the Markdown formatting syntax **with** R code and associated output embedded. 
 
@@ -165,7 +150,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 **Important:** we can write commands in our R script file, then run/execute those commands by pressing `CMD` + `RETURN` (Macs) or `CNTR` + `RETURN` (Windows). We can also execute only a section of code by highlighting it and pressing these same key strokes.
 
-# Variables and objects
+## Variables and objects
 
 There are several basic types of data structures in R.
 
@@ -176,7 +161,7 @@ There are several basic types of data structures in R.
 * **ARRAYS**: higher dimensional matrices are called arrays in R
 * **LISTS**: lists can contain any type of object as list elements. You can have a list of numbers, a list of matrices, a list of characters, etc., or any combination of the above.
 
-## Functions that are useful for understanding the different types of data structures
+### Functions that are useful for understanding the different types of data structures
 
 These functions will tell you what *kind* of variable you are dealing with, as well as some additional information which may be useful as you advance in your use of R.
 
@@ -185,7 +170,7 @@ str()
 class()
 ```
 
-## Practice with variables
+### Practice with variables
 
 Let's define a variable.
 
@@ -225,7 +210,7 @@ What is the value of `my_var_tot` now?
 
 ***
 
-## Make a vector
+### Make a vector
 
 Let's combine multiple values into a vector of length greater than 1.
 
@@ -249,9 +234,9 @@ v3 <- seq(from = 1, to = 10)
 
 ***
 
-# Data frames
+## Data frames
 
-## Reading in your own data
+### Reading in your own data
 
 One of the most basic things you will need to do in R is read in your own data set. 
 You can read in Excel files, simple text files, and even files from Google Sheets.
@@ -456,6 +441,26 @@ ggplot(data = soil_data, aes(x = site, y = pH)) +
   geom_boxplot()
 ```
 
+
+***
+
+## Appendix - Accessing RStudio via Pace Virtual Lab
+
+You can also access RStudio via the Pace Virtual Lab. 
+While working with RStudio on your personal machine is the preferable approach for this class, it is possible to use the virtual lab if needed.
+You should be able to use these steps each time you start your RStudio session.
+
+1. Log on to the Pace VirtualLab by going to [https://virtuallab.pace.edu/](https://virtuallab.pace.edu/)
+2. Select the **RStudio** App
+3. Use your Pace log in credentials to log on to the Windows computer that pops up in your browser
+    * iPad users, note you may have to use the Cisco connect 'hamburger' menu in the top-center of the browser to select your keyboard.
+4. Create or Open a new **Project**
+    * Select the **Project: (None)** icon on the upper lefthand corner
+    * For a new project, select **New Project**
+    * To open an existing project, select **Open Project ...**
+    * In either case, when you get to "Browse..." for a file location, select the "Network" button, **THEN** select the "This PC" button.
+    * Under the "This PC" folder, scroll down to select your Pace User ID folder under "Network location"
+    * From here you can either save your new project or open your existing project
 
 
 
