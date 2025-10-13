@@ -1,0 +1,43 @@
+---
+title: "MAT 141: Confidence Intervals Practice"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Names (identify the recorder):
+
+&nbsp;
+
+## Learning Objectives
+
+* Identify the mathematical relationships between population statistics, sample statistics, and confidence intervals
+* Be able to calculate a margin of error and confidence interval
+
+## Phosphorus Blood Levels
+
+Phosphorus is an essential mineral for life. For example, it's a key component of DNA. Levels of inorganic phosphorus in the blood are known to vary among adults following a **Normal distribution**, with a mean of 1.2 millimoles per liter (mmol/l) and a standard deviation of 0.1 mmol/l.
+
+You are examining whether inorganic phosphorus blood levels decrease with age. To do this, you gather data from blood tests of 12 randomly chosen men and women, ages 75 to 79. Their P levels are below:
+
+1.26  
+1.39  
+1.00  
+1.00  
+1.00  
+1.10  
+0.87  
+1.23  
+1.19  
+1.29  
+1.03  
+1.18  
+
+Using the collected data, calculate the 90%, 95%, and 99% Confidence Intervals for the mean P blood level based on your sample. How do these CIs compare to the population mean for all adults noted above?
+
+```{r, eval=FALSE, echo=FALSE}
+pbl <- c(1.26, 1.39, 1.00, 1.00, 1.00, 1.10, 0.87, 1.23, 1.19, 1.29, 1.03, 1.18)  
+mean(pbl)
+sd(pbl)/sqrt(length(pbl))
+```
+
