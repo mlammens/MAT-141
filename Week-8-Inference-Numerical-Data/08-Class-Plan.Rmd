@@ -1,5 +1,5 @@
 ---
-title: "Week 8 - Wed - Class Plan - Hypothesis Testing"
+title: "Hypothesis Testing Class Plan"
 author: "Matthew Aiello-Lammens"
 output:
   html_document:
