@@ -1,0 +1,36 @@
+---
+title: "MAT 141: Confidence Intervals and Z-tests"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Name:
+
+&nbsp;
+
+## Learning Objectives
+
+Be able to calculate and interpret a confidence interval and conduct a hypothesis test using the Z-test for a population mean
+
+## Introduction
+
+Suppose an investigator takes a random sample of *n* = 50 birth weights from several teaching hospitals located in a densely populated urban area. In their random sample, the sample mean $\bar{x}$ is 3,150 grams and the standard deviation, $s$, is 250 grams.
+
+&nbsp;
+
+**A.** Calculate a 95% confidence interval for the population mean birth weight in these hospitals.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+**B.** The typical weight of a baby at birth for the US population is 3,250 grams. The investigator suspects that the birth weights of babies in these hospitals may differ from the national average due to a variety of factors, including maternal health and access to prenatal care. Carry out the hypothesis test that they would conduct.
+
