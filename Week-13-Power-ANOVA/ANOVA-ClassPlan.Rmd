@@ -1,12 +1,12 @@
 ---
-title: "Week 13 - t tests and ANOVA - Class Plan"
+title: "t tests and ANOVA - Class Plan"
 author: "Matthew Aiello-Lammens"
 output:
+  word_document:
+    toc: yes
   html_document:
     toc: yes
     df_print: paged
-  word_document:
-    toc: yes
 ---
 
 # Class plan
