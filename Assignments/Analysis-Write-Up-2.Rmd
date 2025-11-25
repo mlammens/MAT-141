@@ -1,0 +1,83 @@
+---
+title: "MAT 141 - Analysis Write-Up 2"
+author: "put your name here"
+output:
+  word_document: default
+---
+
+<!---
+HOW TO USE THIS RMD FILE FOR YOUR ANALYSIS WRITE-UP --- I've added text in between these symbols that look like long arrows (they are comment tags in html). You should remove the comments as you go along, BUT make sure you have addressed all of the points in the comments.
+--->
+
+
+# Overview of the data set
+
+<!---
+For this analysis write up, you will use RStudio to analyze a data set related to rates of cell growth for two different cell types - a prostate cancer cell called LNCaP and an immune system cell called NIH3T3. You will use the command given below to load in the data; the data frame is named `blood_serum`. You can learn more about the data set at this website - https://www.openintro.org/data/index.php?data=blood_serum and see a peer-reviewed publication assocaited with these data here - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067579. In the overview section, provide a brief description of the study (you will need to follow the links given for this). Include an appropriate in-text citation with a footnote, using APA citation format. Describe each of the variables (i.e., columns) in the data set and classify them as being either a numerical or a categorical variable type, and whether they are likely to be treated as a predictor or response variable. Word count will probably be around 250 - 300 words.
+
+This section is worth 15 points
+--->
+
+<!---
+I am providing you the code below to read in and clean the data set. You *should* use the `blood_serum` data frame for the rest of the work in this file.
+--->
+
+```{r blood_serum_data}
+# Load in the `tidyverse` package necessar for these analyses
+library(tidyverse)
+
+# Load the blood_serum data
+blood_serum = read_csv("https://raw.githubusercontent.com/mlammens/MAT-141/main/Data/blood_serum.csv")
+
+# Reshape the data to make it easier to calculate a difference column
+blood_serum = pivot_wider(blood_serum, names_from = serum, values_from = growth)
+# Create a `diff` column, which shows change in cell growth before vs after exercise
+blood_serum$diff = blood_serum$after - blood_serum$before
+```
+
+## Effects of exersize on prostate and immune cell growth
+
+<!---
+I'm asking you to examine the effects of exercise, measured as the difference (`diff`) in the pre- and post-exercise cell growth, on the growth of cancer vs. immune cells (in the `cell` column). Include in this section brief sentences / text that informs the reader of what you are examining. Use complete sentences that are grammatically correct. 
+
+This is worth 5 points.
+--->
+
+
+<!---
+BOX PLOT. Make a box plot using `blood_serum` that shows differences in cell growth pre- vs post-exercise for two different cell types - a cancer cell and a immune cell. Make sure your box plot has appropriate axes and a complete figure caption. Use the structure I provide below for the placement of the caption and the code.
+
+This is worth 10 points.
+--->
+
+### Figure 1. YOUR TEXT FOR A CAPTION GOES HERE 
+
+```{r}
+## Box plot code using ggplot goes here
+
+```
+
+
+
+### Statistical analysis
+
+<!---
+t TEST. Carry out a t-test to determine if there is a statistically significant difference cell growth rates for the two different types of cells. Briefly describe what analysis you are doing and why? I.e., are you doing a two-sample t-test? A paired t-test? A one-sample t-test? 
+
+ALSO, describe how your data do, or do not, fit the major assumptions of the t-test - independence, normality, and approximately equal variances.
+
+This is worth 15 points. 
+--->
+
+```{r}
+## Put your t-test code here
+```
+
+
+## Results and Discussion
+
+<!---
+In this section, interpret your box plot figure and t-test results, and make a statement regarding the effects of exercise on the growth of the two different cell types. Make sure to do this in a hypothesis testing framework - describe what your null and alternative hypotheses were, and DESCRIBE WHETHER YOU REJECT OR FAIL TO REJECT THE NULL HYPOTHESIS AND WHY. What do you results suggest about the effects of exercise? The word count for this section should be around 150 - 200 words.
+
+This is worth 5 points.
+---> 
