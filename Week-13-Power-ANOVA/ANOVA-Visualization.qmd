@@ -1,0 +1,62 @@
+---
+title: "MAT 141: ANOVA visualization"
+format: 
+  docx:
+    reference-doc: "/Users/maiellolammens/bw-reference.docx"
+---
+
+## Name:
+
+&nbsp;
+
+## Learning Objectives
+
+* Identify key components (e.g., residuals, sums of squares, etc.) of the calculations for Analysis of Variance (ANOVA)
+
+## Aldrin concentrations in the Wolf River
+
+The Wolf River in Tennessee flows past an abandoned site once used by the pesticide industry for dumping wastes, including chlordane (pesticide), aldrin, and dieldrin (both insecticides)
+These highly toxic organic compounds can cause various cancers and birth defects
+The standard methods to test whether these substances are present in a river is to take samples at six-tenths depth
+But since these compounds are denser than water and their molecules tend to stick to particles of sediment, they are more likely to be found in higher concentrations near the bottom.
+
+Below is a visualization of the components required for the calculations of ANOVA of data on aldrin concentrations measured at three different depths in the Wolf River.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+aldrin <- read.csv("https://www.dropbox.com/s/sfstj4p8beajir5/aldrin.csv?dl=1")
+library(tidyverse)
+library(gt)
+
+aldrin %>%
+  group_by(depth) %>%
+  mutate(rep = row_number()) %>%
+  ungroup() %>%
+  pivot_wider(names_from = depth, values_from = aldrin) %>%
+  dplyr::select(-rep) %>%
+  gt() %>%
+  tab_header(title = "Aldrin Concentrations by Depth")
+```
+
+\newpage
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot() +
+  geom_hline(yintercept = mean(aldrin$aldrin), size = 1) +
+  geom_point(aes(x = "bottom", y = 6.04), data = NULL, shape = 24, size = 4, fill = "#F8766D" ) +
+  geom_point(aes(x = "middepth", y = 5.05), data = NULL, shape = 24, size = 4, fill = "#00BA38" ) +
+  geom_point(aes(x = "surface", y = 4.2), data = NULL, shape = 24, size = 4, fill = "#619CFF" ) +
+  geom_jitter(data = aldrin, aes(x = depth, y = aldrin, color = depth), height = 0, width = 0.25) +
+  guides(color = FALSE) +
+  xlab("Depth") +
+  ylab("Aldrin Concentration") +
+  theme_bw()
+```
+
+## Identify the following components (mark them on the diagram):
+
+1. The grand mean
+2. The group means
+3. $(\bar{x}_{bottom} - \bar{x})$
+4. $(x_{30} - \bar{x})$
+5. $(x_{30} - \bar{x}_{surface})$
